@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Company info */}
           <div>
             <div className="mb-4">
-              <Logo variant="light" size={38} />
+              <Logo variant="light" height={38} />
             </div>
             <p className="text-sm text-gray-400 leading-relaxed">
               Автоматизация диспетчерской службы скорой медицинской помощи с 1992 года.

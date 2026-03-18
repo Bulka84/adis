@@ -34,7 +34,7 @@ export default function Header() {
             </div>
             <div className="flex items-center justify-between h-16">
               <Link href="/">
-                <Logo variant="dark" size={38} />
+                <Logo variant="dark" height={38} />
               </Link>
               <nav className="hidden lg:flex items-center gap-1">
                 {navigation.map((item) => (
