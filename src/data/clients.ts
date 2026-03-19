@@ -580,8 +580,4 @@ export const clients: Client[] = [
   { id: 567, city: "Фершампенуаз", region: "Челябинская область", year: 2019, population: 18784, hasServer: false, workstations: 2, version: "8.5", country: "Россия" },
   { id: 568, city: "Чесма", region: "Челябинская область", year: 2019, population: 18800, hasServer: false, workstations: 2, version: "8.5", country: "Россия" },
   { id: 569, city: "Салехард", region: "Ямало-Ненецкий автономный округ", year: 2000, population: 40000, hasServer: true, workstations: 6, version: "8.4", country: "Россия" },
-  { id: 570, city: "Караганда", region: "Казахстан", year: 2008, population: 500000, hasServer: true, workstations: 25, version: "8.4", country: "Казахстан" },
-  { id: 571, city: "Кызылорда", region: "Казахстан", year: 2013, population: 814588, hasServer: true, workstations: 69, version: "8.4", country: "Казахстан" },
-  { id: 572, city: "Кокшетау", region: "Казахстан", year: 2015, population: 140950, hasServer: true, workstations: 6, version: "8.4", country: "Казахстан" },
-  { id: 573, city: "Алматы", region: "Казахстан", year: 2017, population: 2305884, hasServer: true, workstations: 204, version: "8.4", country: "Казахстан" },
 ];

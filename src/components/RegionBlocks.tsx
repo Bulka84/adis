@@ -83,13 +83,13 @@ export default function RegionBlocks({ clients }: { clients: Client[] }) {
             placeholder="Поиск по городу или региону..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-[#0066CC]/20 focus:border-[#0066CC] transition-colors"
+            className="w-full pl-11 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-colors"
           />
         </div>
         <div className="flex gap-2">
           <button
             onClick={expandAll}
-            className="px-4 py-3 text-sm font-medium text-[#0066CC] bg-white border border-gray-200 rounded-xl hover:bg-blue-50 transition-colors"
+            className="px-4 py-3 text-sm font-medium text-primary bg-white border border-gray-200 rounded-xl hover:bg-blue-50 transition-colors"
           >
             Развернуть все
           </button>
@@ -114,22 +114,19 @@ export default function RegionBlocks({ clients }: { clients: Client[] }) {
           return (
             <div
               key={region.name}
-              className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               {/* Region header */}
               <button
                 onClick={() => toggle(region.name)}
                 className="w-full flex items-center gap-4 p-5 text-left hover:bg-gray-50/50 transition-colors"
               >
-                <div className="w-12 h-12 bg-[#E8F4FD] rounded-xl flex items-center justify-center flex-shrink-0">
-                  <Building2 size={22} className="text-[#0066CC]" />
+                <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center flex-shrink-0">
+                  <Building2 size={22} className="text-primary" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2">
-                    <h3 className="font-semibold text-[#1A1A2E] truncate">{region.name}</h3>
-                    {region.country === "Казахстан" && (
-                      <span className="text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full flex-shrink-0">KZ</span>
-                    )}
+                    <h3 className="font-semibold text-gray-900 truncate">{region.name}</h3>
                   </div>
                   <div className="flex items-center gap-4 mt-1 text-xs text-gray-400">
                     <span className="flex items-center gap-1">
@@ -147,7 +144,7 @@ export default function RegionBlocks({ clients }: { clients: Client[] }) {
                   </div>
                 </div>
                 <div className="flex items-center gap-3 flex-shrink-0">
-                  <span className="text-2xl font-bold text-[#0066CC]">{region.clients.length}</span>
+                  <span className="text-2xl font-bold text-primary">{region.clients.length}</span>
                   <ChevronDown
                     size={20}
                     className={`text-gray-400 transition-transform duration-300 ${isOpen ? "rotate-180" : ""}`}
@@ -157,16 +154,16 @@ export default function RegionBlocks({ clients }: { clients: Client[] }) {
 
               {/* Cities grid */}
               {isOpen && (
-                <div className="border-t border-gray-100 bg-gray-50/30 p-4">
+                <div className="border-t border-gray-200 bg-gray-50/30 p-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
                     {region.clients.map((client) => (
                       <div
                         key={client.id}
-                        className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-100"
+                        className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-200"
                       >
-                        <MapPin size={14} className="text-[#0066CC] flex-shrink-0" />
+                        <MapPin size={14} className="text-primary flex-shrink-0" />
                         <div className="flex-1 min-w-0">
-                          <span className="text-sm font-medium text-[#1A1A2E] truncate block">{client.city}</span>
+                          <span className="text-sm font-medium text-gray-900 truncate block">{client.city}</span>
                           <div className="flex items-center gap-3 text-xs text-gray-400 mt-0.5">
                             <span>{client.year} г.</span>
                             <span>{client.workstations} АРМ</span>
@@ -175,7 +172,7 @@ export default function RegionBlocks({ clients }: { clients: Client[] }) {
                             )}
                           </div>
                         </div>
-                        <span className="text-[10px] bg-[#E8F4FD] text-[#0066CC] px-2 py-0.5 rounded-full font-medium flex-shrink-0">
+                        <span className="text-[10px] gradient-bg-subtle text-primary px-2 py-0.5 rounded-full font-medium flex-shrink-0">
                           v{client.version}
                         </span>
                       </div>

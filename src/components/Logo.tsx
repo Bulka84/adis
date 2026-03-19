@@ -25,8 +25,8 @@ export default function Logo({
         priority
       />
       <span
-        className={`text-xl font-bold leading-tight ${
-          variant === "dark" ? "text-[#1A1A2E]" : "text-white"
+        className={`text-xl font-extrabold leading-tight ${
+          variant === "dark" ? "text-gray-900" : "text-white"
         }`}
       >
         АДИС

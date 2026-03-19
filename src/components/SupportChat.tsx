@@ -53,10 +53,11 @@ export default function SupportChat() {
       {/* Floating button */}
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 z-50 w-14 h-14 bg-[#C41E3A] text-white rounded-full shadow-lg shadow-[#C41E3A]/30 hover:bg-[#9B1B30] transition-all hover:scale-105 flex items-center justify-center ${isOpen ? "scale-0 opacity-0" : "scale-100 opacity-100"}`}
-        aria-label="Открыть чат поддержки"
+        className={`fixed bottom-6 right-6 z-50 gradient-bg text-white rounded-full shadow-lg shadow-blue-600/30 hover:shadow-blue-600/50 transition-all hover:scale-105 flex items-center gap-2 px-5 py-3 text-sm font-semibold ${isOpen ? "scale-0 opacity-0" : "scale-100 opacity-100"}`}
+        aria-label="Обратиться в техподдержку"
       >
-        <MessageCircle size={24} />
+        <MessageCircle size={20} />
+        <span className="hidden sm:inline">Обратиться в техподдержку</span>
       </button>
 
       {/* Chat panel */}
@@ -64,7 +65,7 @@ export default function SupportChat() {
         className={`fixed bottom-6 right-6 z-50 w-[380px] max-w-[calc(100vw-2rem)] bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden transition-all duration-300 origin-bottom-right ${isOpen ? "scale-100 opacity-100" : "scale-0 opacity-0 pointer-events-none"}`}
       >
         {/* Header */}
-        <div className="bg-[#C41E3A] px-5 py-4 flex items-center justify-between">
+        <div className="gradient-bg px-5 py-4 flex items-center justify-between">
           <div>
             <h3 className="text-white font-semibold text-lg">Поддержка</h3>
             <p className="text-white/70 text-xs">Опишите вашу проблему</p>
@@ -92,7 +93,7 @@ export default function SupportChat() {
                     setRegion(e.target.value);
                     setCity("");
                   }}
-                  className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#C41E3A]/20 focus:border-[#C41E3A] bg-white"
+                  className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary bg-white"
                 >
                   <option value="">Выберите регион</option>
                   {regions.map((r) => (
@@ -127,7 +128,7 @@ export default function SupportChat() {
               <button
                 onClick={() => setStep(2)}
                 disabled={!region || !city}
-                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 bg-[#C41E3A] text-white text-sm font-medium rounded-lg hover:bg-[#9B1B30] transition-colors disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed"
+                className="w-full flex items-center justify-center gap-2 px-4 py-2.5 btn-gradient text-sm font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 Далее
                 <ChevronRight size={16} />
@@ -151,7 +152,7 @@ export default function SupportChat() {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   placeholder="Ваше имя"
-                  className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#C41E3A]/20 focus:border-[#C41E3A]"
+                  className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                 />
               </div>
 
@@ -164,7 +165,7 @@ export default function SupportChat() {
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
                   placeholder="+7 (___) ___-__-__ или email"
-                  className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#C41E3A]/20 focus:border-[#C41E3A]"
+                  className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                 />
               </div>
 
@@ -192,7 +193,7 @@ export default function SupportChat() {
                 <button
                   onClick={handleSubmit}
                   disabled={!name || !contact || !message || isSubmitting}
-                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 bg-[#C41E3A] text-white text-sm font-medium rounded-lg hover:bg-[#9B1B30] transition-colors disabled:bg-gray-200 disabled:text-gray-400 disabled:cursor-not-allowed"
+                  className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 btn-gradient text-sm font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
                     "Отправка..."
@@ -213,7 +214,7 @@ export default function SupportChat() {
               <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
                 <CheckCircle size={32} className="text-green-500" />
               </div>
-              <h4 className="text-lg font-semibold text-[#1A1A2E] mb-2">
+              <h4 className="text-lg font-bold text-gray-900 mb-2">
                 Обращение отправлено
               </h4>
               <p className="text-sm text-gray-500 mb-6">

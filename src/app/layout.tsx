@@ -8,7 +8,7 @@ import SupportChat from "@/components/SupportChat";
 const inter = Inter({
   variable: "--font-inter",
   subsets: ["latin", "cyrillic"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["300", "400", "500", "600", "700", "800", "900"],
 });
 
 export const metadata: Metadata = {
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | ПК «АДИС»",
   },
   description:
-    "Программный комплекс автоматизации диспетчерской службы станции скорой медицинской помощи. Разработка и внедрение с 1992 года. 50+ городов России и Казахстана.",
+    "Программный комплекс автоматизации диспетчерской службы станции скорой медицинской помощи. Разработка и внедрение с 1992 года. 50+ городов России.",
   keywords: [
     "АДИС",
     "скорая помощь",
@@ -48,7 +48,7 @@ export default function RootLayout({
     <html lang="ru">
       <body className={`${inter.variable} antialiased`}>
         <Header />
-        <main className="pt-[104px] md:pt-[120px]">{children}</main>
+        <main>{children}</main>
         <Footer />
         <SupportChat />
       </body>

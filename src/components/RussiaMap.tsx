@@ -40,7 +40,7 @@ export default function RussiaMap({ className = "" }: { className?: string }) {
             style={{ left: `${region.x}%`, top: `${region.y}%` }}
           >
             <div
-              className="rounded-full bg-[#C41E3A]/30 border border-[#C41E3A]/50 flex items-center justify-center"
+              className="rounded-full bg-blue-600/30 border border-violet-500/50 flex items-center justify-center"
               style={{ width: `${r * 2}px`, height: `${r * 2}px` }}
             >
               <span className="text-[9px] font-bold text-white leading-none">

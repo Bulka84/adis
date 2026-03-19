@@ -19,8 +19,8 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="text-center py-12">
-        <CheckCircle size={48} className="mx-auto text-accent mb-4" />
-        <h3 className="text-xl font-semibold text-dark mb-2">Заявка отправлена!</h3>
+        <CheckCircle size={48} className="mx-auto text-green-500 mb-4" />
+        <h3 className="text-xl font-bold text-gray-900 mb-2">Заявка отправлена!</h3>
         <p className="text-gray-500">Мы свяжемся с вами в ближайшее время.</p>
       </div>
     );
@@ -95,7 +95,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full sm:w-auto px-8 py-3.5 bg-primary text-white font-medium rounded-lg hover:bg-primary-dark transition-colors flex items-center justify-center gap-2 disabled:opacity-60"
+        className="w-full sm:w-auto px-8 py-3.5 btn-gradient font-semibold rounded-xl flex items-center justify-center gap-2 disabled:opacity-60"
       >
         <Send size={18} />
         {loading ? "Отправка..." : "Отправить заявку"}

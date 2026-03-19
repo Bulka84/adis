@@ -19,22 +19,25 @@ const workstations = [
 ];
 
 const subsystems = [
-  { title: "Диспетчерская", description: "Подсистема оперативного режима — полный цикл обработки вызовов от приёма до завершения обслуживания.", icon: Monitor, color: "border-blue-200 bg-blue-50" },
-  { title: "Архив", description: "Подсистема ведения архива — накопление, справочная и статистическая обработка информации по вызовам.", icon: Archive, color: "border-green-200 bg-green-50" },
-  { title: "Аптека", description: "Подсистема учёта медикаментов — контроль расхода медсредств на станции, подстанциях и в сумках бригад.", icon: Pill, color: "border-purple-200 bg-purple-50" },
-  { title: "НСИ", description: "Подсистема ведения справочников — адресные базы, классификаторы, нормативно-справочная информация.", icon: BookOpen, color: "border-orange-200 bg-orange-50" },
+  { title: "Диспетчерская", description: "Подсистема оперативного режима — полный цикл обработки вызовов от приёма до завершения обслуживания.", icon: Monitor },
+  { title: "Архив", description: "Подсистема ведения архива — накопление, справочная и статистическая обработка информации по вызовам.", icon: Archive },
+  { title: "Аптека", description: "Подсистема учёта медикаментов — контроль расхода медсредств на станции, подстанциях и в сумках бригад.", icon: Pill },
+  { title: "НСИ", description: "Подсистема ведения справочников — адресные базы, классификаторы, нормативно-справочная информация.", icon: BookOpen },
 ];
 
 export default function ProductPage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-gradient-to-br from-[#E8F4FD] via-white to-[#FDF2F4] py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-5xl font-bold text-[#1A1A2E] mb-6">
+      <section className="hero-dark py-32 lg:py-40">
+        <div className="hero-gradient-overlay" />
+        <div className="hero-grid-pattern" />
+        <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
+          <span className="section-tag section-tag-light mb-4">Продукт</span>
+          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
             ПК &laquo;АДИС&raquo;
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl leading-relaxed">
+          <p className="text-xl text-white/60 max-w-3xl leading-relaxed">
             Уникальный программный продукт, поддерживающий в полном объёме весь процесс
             обработки вызовов на станциях скорой медицинской помощи — от приёма вызова
             диспетчером &laquo;03&raquo; до статистической обработки накопленных данных.
@@ -43,17 +46,22 @@ export default function ProductPage() {
       </section>
 
       {/* Subsystems */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#1A1A2E] mb-12">Подсистемы</h2>
+      <section className="py-24">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="section-tag mb-4">Состав</span>
+            <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">Подсистемы</h2>
+          </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {subsystems.map((item) => (
-              <div key={item.title} className={`p-8 rounded-2xl border-2 ${item.color}`}>
+              <div key={item.title} className="p-8 rounded-2xl border border-gray-200 bg-white card-hover">
                 <div className="flex items-start gap-4">
-                  <item.icon size={32} className="text-[#0066CC] shrink-0 mt-1" />
+                  <div className="w-12 h-12 gradient-bg-subtle rounded-lg flex items-center justify-center shrink-0 text-primary">
+                    <item.icon size={24} />
+                  </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-[#1A1A2E] mb-2">{item.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{item.description}</p>
+                    <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                    <p className="text-gray-500 leading-relaxed">{item.description}</p>
                   </div>
                 </div>
               </div>
@@ -63,11 +71,14 @@ export default function ProductPage() {
       </section>
 
       {/* Technical Details */}
-      <section className="py-20 bg-[#F8FAFB]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#1A1A2E] mb-6">Техническая реализация</h2>
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="section-tag mb-4">Технологии</span>
+            <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">Техническая реализация</h2>
+          </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-            <div className="space-y-6 text-gray-600 leading-relaxed">
+            <div className="space-y-6 text-gray-500 leading-relaxed text-[15px]">
               <p>
                 ПК &laquo;АДИС&raquo; поставляется в различных конфигурациях, учитывающих
                 специфику организации службы СМП малых, средних и больших городов.
@@ -82,19 +93,19 @@ export default function ProductPage() {
                 На серверах устанавливается ОС Linux.
               </p>
             </div>
-            <div className="space-y-6 text-gray-600 leading-relaxed">
+            <div className="space-y-6 text-gray-500 leading-relaxed text-[15px]">
               <p>
-                <strong className="text-[#1A1A2E]">Надёжность:</strong> схемотехнические решения
+                <strong className="text-gray-900">Надёжность:</strong> схемотехнические решения
                 позволяют поддерживать работоспособность при отказах любых устройств.
                 Переход на резервный сервер занимает не более 3 минут без потери информации.
               </p>
               <p>
-                <strong className="text-[#1A1A2E]">Простота освоения:</strong> подготовка
+                <strong className="text-gray-900">Простота освоения:</strong> подготовка
                 диспетчера — не более 2 часов. Через 2 смены работы под наблюдением
                 диспетчер может работать самостоятельно.
               </p>
               <p>
-                <strong className="text-[#1A1A2E]">Технологии:</strong> C, C++, PHP, JavaScript.
+                <strong className="text-gray-900">Технологии:</strong> C, C++, PHP, JavaScript.
                 СУБД PostgreSQL, MySQL. Серверная ОС — Linux.
               </p>
             </div>
@@ -103,22 +114,24 @@ export default function ProductPage() {
       </section>
 
       {/* Workstations */}
-      <section className="py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl font-bold text-[#1A1A2E] mb-4">
-            Автоматизированные рабочие места
-          </h2>
-          <p className="text-lg text-gray-500 mb-12 max-w-2xl">
-            Полный набор АРМ покрывает все потребности диспетчерской службы СМП.
-            Конкретный набор определяется технологией работы вашей станции.
-          </p>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {workstations.map((ws) => (
-              <div key={ws.name} className="p-6 bg-white rounded-xl border border-gray-100 hover:shadow-md transition-shadow">
-                <div className="w-12 h-12 bg-[#E8F4FD] rounded-xl flex items-center justify-center mb-4">
-                  <ws.icon size={24} className="text-[#0066CC]" />
+      <section className="py-24">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-16">
+            <span className="section-tag mb-4">АРМ</span>
+            <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
+              Автоматизированные рабочие места
+            </h2>
+            <p className="text-lg text-gray-500 max-w-[560px] mx-auto mt-4">
+              Полный набор АРМ покрывает все потребности диспетчерской службы СМП.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+            {workstations.map((ws, i) => (
+              <div key={ws.name} className="relative p-7 bg-white rounded-2xl border border-gray-200 card-hover module-card-top overflow-hidden">
+                <div className="text-[32px] font-extrabold leading-none mb-3 gradient-text">
+                  {String(i + 1).padStart(2, "0")}
                 </div>
-                <h3 className="font-semibold text-[#1A1A2E] mb-2">{ws.name}</h3>
+                <h3 className="font-bold text-gray-900 mb-2 text-base">{ws.name}</h3>
                 <p className="text-sm text-gray-500">{ws.description}</p>
               </div>
             ))}

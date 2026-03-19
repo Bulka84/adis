@@ -5,7 +5,7 @@ import RegionBlocks from "@/components/RegionBlocks";
 
 export const metadata: Metadata = {
   title: "Внедрения",
-  description: "ПК «АДИС» внедрён и успешно работает на станциях СМП более чем в 50 городах России и Казахстана.",
+  description: "ПК «АДИС» внедрён и успешно работает на станциях СМП более чем в 50 городах России.",
 };
 
 export default function ClientsPage() {
@@ -13,52 +13,47 @@ export default function ClientsPage() {
   const totalWorkstations = clients.reduce((sum, c) => sum + c.workstations, 0);
   const totalPopulation = clients.reduce((sum, c) => sum + c.population, 0);
 
+  const stats = [
+    { icon: Building2, value: `${clients.length}+`, label: "городов" },
+    { icon: MapPin, value: `${regions.length}`, label: "регионов" },
+    { icon: Server, value: `${totalWorkstations}+`, label: "АРМ установлено" },
+    { icon: Users, value: `${Math.round(totalPopulation / 1000000)}M+`, label: "населения обслуживается" },
+  ];
+
   return (
     <>
-      <section className="bg-gradient-to-br from-[#E8F4FD] via-white to-[#F0F7FD] py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl sm:text-5xl font-bold text-[#1A1A2E] mb-6">
+      <section className="hero-dark py-32 lg:py-40">
+        <div className="hero-gradient-overlay" />
+        <div className="hero-grid-pattern" />
+        <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
+          <span className="section-tag section-tag-light mb-4">Внедрения</span>
+          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
             География внедрений
           </h1>
-          <p className="text-xl text-gray-600 max-w-3xl">
+          <p className="text-xl text-white/60 max-w-3xl">
             ПК &laquo;АДИС&raquo; внедрён и успешно работает на станциях скорой
-            медицинской помощи в городах Российской Федерации и Казахстана.
+            медицинской помощи в городах Российской Федерации.
           </p>
         </div>
       </section>
 
       {/* Stats */}
-      <section className="relative -mt-8 z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16">
-        <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            <div className="text-center">
-              <Building2 size={28} className="mx-auto text-[#0066CC] mb-2" />
-              <div className="text-3xl font-bold text-[#1A1A2E]">{clients.length}+</div>
-              <div className="text-sm text-gray-500">городов</div>
-            </div>
-            <div className="text-center">
-              <MapPin size={28} className="mx-auto text-[#0066CC] mb-2" />
-              <div className="text-3xl font-bold text-[#1A1A2E]">{regions.length}</div>
-              <div className="text-sm text-gray-500">регионов</div>
-            </div>
-            <div className="text-center">
-              <Server size={28} className="mx-auto text-[#0066CC] mb-2" />
-              <div className="text-3xl font-bold text-[#1A1A2E]">{totalWorkstations}+</div>
-              <div className="text-sm text-gray-500">АРМ установлено</div>
-            </div>
-            <div className="text-center">
-              <Users size={28} className="mx-auto text-[#0066CC] mb-2" />
-              <div className="text-3xl font-bold text-[#1A1A2E]">
-                {Math.round(totalPopulation / 1000000)}M+
+      <section className="relative -mt-12 z-10 max-w-[1200px] mx-auto px-6 mb-16">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
+          {stats.map((stat) => (
+            <div key={stat.label} className="bg-white rounded-2xl border border-gray-200 p-6 text-center card-hover">
+              <div className="w-10 h-10 gradient-bg-subtle rounded-lg flex items-center justify-center mx-auto mb-3 text-primary">
+                <stat.icon size={20} />
               </div>
-              <div className="text-sm text-gray-500">населения обслуживается</div>
+              <div className="text-3xl font-extrabold text-gray-900 mb-1">{stat.value}</div>
+              <div className="text-sm text-gray-500">{stat.label}</div>
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
       {/* Region Blocks */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
+      <section className="max-w-[1200px] mx-auto px-6 pb-24">
         <RegionBlocks clients={clients} />
       </section>
     </>

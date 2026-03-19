@@ -1,0 +1,299 @@
+<svg viewBox="0 0 1000 640" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet">
+  <defs>
+    <radialGradient id="dg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#93c5fd" stop-opacity="1"/>
+      <stop offset="40%" stop-color="#60a5fa" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dg-main" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#c4b5fd" stop-opacity="1"/>
+      <stop offset="100%" stop-color="#818cf8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6b6b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#ef4444" stop-opacity="0"/>
+    </radialGradient>
+    <style>
+      .map-lines path {
+        stroke-dasharray: 6 4;
+        animation: line-flow 25s linear infinite;
+      }
+      @keyframes line-flow {
+        to { stroke-dashoffset: -120; }
+      }
+      .map-data-flow circle {
+        filter: drop-shadow(0 0 3px rgba(239, 68, 68, 0.6));
+      }
+    </style>
+  </defs>
+
+  <!-- Connection lines -->
+  <g class="map-lines" stroke="#60a5fa" fill="none" opacity="0.12" stroke-width="0.7">
+    <path id="r1" d="M250,390 L215,330"/>
+    <path id="r2" d="M250,390 L195,358"/>
+    <path id="r3" d="M250,390 L290,340"/>
+    <path id="r4" d="M250,390 L232,405"/>
+    <path id="r5" d="M250,390 L340,400"/>
+    <path id="r6" d="M250,390 L290,418"/>
+    <path id="r7" d="M340,400 L355,410"/>
+    <path id="r8" d="M355,410 L370,410"/>
+    <path id="r9" d="M340,400 L415,365"/>
+    <path id="r10" d="M415,365 L425,388"/>
+    <path id="r11" d="M415,365 L388,348"/>
+    <path id="r12" d="M415,365 L445,345"/>
+    <path id="r13" d="M445,345 L510,375"/>
+    <path id="r14" d="M510,375 L565,360"/>
+    <path id="r15" d="M565,360 L640,385"/>
+    <path id="r16" d="M640,385 L790,365"/>
+  </g>
+
+  <!-- Red data flow dots -->
+  <g class="map-data-flow">
+    <circle r="6" fill="url(#rg)" opacity="0.5">
+      <animateMotion dur="3.5s" repeatCount="indefinite" begin="0s"><mpath href="#r1"/></animateMotion>
+    </circle>
+    <circle r="2" fill="#ef4444">
+      <animateMotion dur="3.5s" repeatCount="indefinite" begin="0s"><mpath href="#r1"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3.5s" repeatCount="indefinite" begin="0s"/>
+    </circle>
+
+    <circle r="6" fill="url(#rg)" opacity="0.5">
+      <animateMotion dur="4s" repeatCount="indefinite" begin="1.2s"><mpath href="#r5"/></animateMotion>
+    </circle>
+    <circle r="2" fill="#ef4444">
+      <animateMotion dur="4s" repeatCount="indefinite" begin="1.2s"><mpath href="#r5"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="4s" repeatCount="indefinite" begin="1.2s"/>
+    </circle>
+
+    <circle r="6" fill="url(#rg)" opacity="0.5">
+      <animateMotion dur="3.8s" repeatCount="indefinite" begin="2.5s"><mpath href="#r9"/></animateMotion>
+    </circle>
+    <circle r="2" fill="#ef4444">
+      <animateMotion dur="3.8s" repeatCount="indefinite" begin="2.5s"><mpath href="#r9"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3.8s" repeatCount="indefinite" begin="2.5s"/>
+    </circle>
+
+    <circle r="6" fill="url(#rg)" opacity="0.5">
+      <animateMotion dur="4.5s" repeatCount="indefinite" begin="0.8s"><mpath href="#r13"/></animateMotion>
+    </circle>
+    <circle r="2" fill="#ef4444">
+      <animateMotion dur="4.5s" repeatCount="indefinite" begin="0.8s"><mpath href="#r13"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="4.5s" repeatCount="indefinite" begin="0.8s"/>
+    </circle>
+
+    <circle r="6" fill="url(#rg)" opacity="0.5">
+      <animateMotion dur="3.2s" repeatCount="indefinite" begin="3s"><mpath href="#r14"/></animateMotion>
+    </circle>
+    <circle r="2" fill="#ef4444">
+      <animateMotion dur="3.2s" repeatCount="indefinite" begin="3s"><mpath href="#r14"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3.2s" repeatCount="indefinite" begin="3s"/>
+    </circle>
+
+    <circle r="6" fill="url(#rg)" opacity="0.5">
+      <animateMotion dur="4.2s" repeatCount="indefinite" begin="1.8s"><mpath href="#r15"/></animateMotion>
+    </circle>
+    <circle r="2" fill="#ef4444">
+      <animateMotion dur="4.2s" repeatCount="indefinite" begin="1.8s"><mpath href="#r15"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="4.2s" repeatCount="indefinite" begin="1.8s"/>
+    </circle>
+
+    <circle r="6" fill="url(#rg)" opacity="0.5">
+      <animateMotion dur="3.6s" repeatCount="indefinite" begin="4s"><mpath href="#r6"/></animateMotion>
+    </circle>
+    <circle r="2" fill="#ef4444">
+      <animateMotion dur="3.6s" repeatCount="indefinite" begin="4s"><mpath href="#r6"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3.6s" repeatCount="indefinite" begin="4s"/>
+    </circle>
+
+    <circle r="6" fill="url(#rg)" opacity="0.5">
+      <animateMotion dur="5s" repeatCount="indefinite" begin="2s"><mpath href="#r16"/></animateMotion>
+    </circle>
+    <circle r="2" fill="#ef4444">
+      <animateMotion dur="5s" repeatCount="indefinite" begin="2s"><mpath href="#r16"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="5s" repeatCount="indefinite" begin="2s"/>
+    </circle>
+
+    <circle r="5" fill="url(#rg)" opacity="0.4">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="5s" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#r3"/></animateMotion>
+    </circle>
+    <circle r="1.5" fill="#ef4444">
+      <animateMotion dur="3s" repeatCount="indefinite" begin="5s" keyPoints="1;0" keyTimes="0;1" calcMode="linear"><mpath href="#r3"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3s" repeatCount="indefinite" begin="5s"/>
+    </circle>
+
+    <circle r="5" fill="url(#rg)" opacity="0.4">
+      <animateMotion dur="3.4s" repeatCount="indefinite" begin="3.5s"><mpath href="#r12"/></animateMotion>
+    </circle>
+    <circle r="1.5" fill="#ef4444">
+      <animateMotion dur="3.4s" repeatCount="indefinite" begin="3.5s"><mpath href="#r12"/></animateMotion>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="3.4s" repeatCount="indefinite" begin="3.5s"/>
+    </circle>
+  </g>
+
+  <!-- City dots -->
+
+  <!-- Москва — main hub -->
+  <circle cx="250" cy="390" r="22" fill="url(#dg-main)">
+    <animate attributeName="opacity" values="0.15;0.9;0.15;0.85;0.15" keyTimes="0;0.06;0.14;0.2;1" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="250" cy="390" r="5" fill="#a78bfa">
+    <animate attributeName="opacity" values="0.5;1;0.5;1;0.5" keyTimes="0;0.06;0.14;0.2;1" dur="1.8s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="250" cy="390" r="2.5" fill="#fff"/>
+
+  <!-- Санкт-Петербург -->
+  <circle cx="215" cy="330" r="14" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.85;0.1;0.8;0.1" keyTimes="0;0.06;0.14;0.2;1" dur="2.2s" repeatCount="indefinite" begin="0.3s"/>
+  </circle>
+  <circle cx="215" cy="330" r="3.5" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.5;1;0.5;1;0.5" keyTimes="0;0.06;0.14;0.2;1" dur="2.2s" repeatCount="indefinite" begin="0.3s"/>
+  </circle>
+  <circle cx="215" cy="330" r="1.5" fill="#fff" opacity="0.9"/>
+
+  <!-- Мурманск -->
+  <circle cx="228" cy="280" r="7" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.05;0.6;0.05" keyTimes="0;0.08;1" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+  </circle>
+  <circle cx="228" cy="280" r="1.8" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.3;1;0.3" keyTimes="0;0.08;1" dur="3s" repeatCount="indefinite" begin="1.5s"/>
+  </circle>
+
+  <!-- Псков -->
+  <circle cx="195" cy="358" r="10" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.75;0.1" keyTimes="0;0.08;1" dur="2.8s" repeatCount="indefinite" begin="0.6s"/>
+  </circle>
+  <circle cx="195" cy="358" r="2.5" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.5;1;0.5" keyTimes="0;0.08;1" dur="2.8s" repeatCount="indefinite" begin="0.6s"/>
+  </circle>
+
+  <!-- Вологда -->
+  <circle cx="290" cy="340" r="10" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.7;0.1" keyTimes="0;0.08;1" dur="2.6s" repeatCount="indefinite" begin="1.1s"/>
+  </circle>
+  <circle cx="290" cy="340" r="2.5" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.5;1;0.5" keyTimes="0;0.08;1" dur="2.6s" repeatCount="indefinite" begin="1.1s"/>
+  </circle>
+
+  <!-- Брянск -->
+  <circle cx="232" cy="405" r="10" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.7;0.1" keyTimes="0;0.08;1" dur="3s" repeatCount="indefinite" begin="0.8s"/>
+  </circle>
+  <circle cx="232" cy="405" r="2.5" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.5;1;0.5" keyTimes="0;0.08;1" dur="3s" repeatCount="indefinite" begin="0.8s"/>
+  </circle>
+
+  <!-- Ростов-на-Дону -->
+  <circle cx="252" cy="422" r="8" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.05;0.6;0.05" keyTimes="0;0.08;1" dur="3.2s" repeatCount="indefinite" begin="2s"/>
+  </circle>
+  <circle cx="252" cy="422" r="2" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.4;1;0.4" keyTimes="0;0.08;1" dur="3.2s" repeatCount="indefinite" begin="2s"/>
+  </circle>
+
+  <!-- Волгоград -->
+  <circle cx="290" cy="418" r="8" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.65;0.1" keyTimes="0;0.08;1" dur="2.5s" repeatCount="indefinite" begin="1.3s"/>
+  </circle>
+  <circle cx="290" cy="418" r="2" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.4;1;0.4" keyTimes="0;0.08;1" dur="2.5s" repeatCount="indefinite" begin="1.3s"/>
+  </circle>
+
+  <!-- Ульяновск -->
+  <circle cx="340" cy="400" r="12" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.85;0.1;0.8;0.1" keyTimes="0;0.06;0.14;0.2;1" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+  </circle>
+  <circle cx="340" cy="400" r="3" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.5;1;0.5;1;0.5" keyTimes="0;0.06;0.14;0.2;1" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+  </circle>
+
+  <!-- Самара -->
+  <circle cx="355" cy="410" r="12" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.8;0.1;0.75;0.1" keyTimes="0;0.06;0.14;0.2;1" dur="2.3s" repeatCount="indefinite" begin="1s"/>
+  </circle>
+  <circle cx="355" cy="410" r="3" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.5;1;0.5;1;0.5" keyTimes="0;0.06;0.14;0.2;1" dur="2.3s" repeatCount="indefinite" begin="1s"/>
+  </circle>
+
+  <!-- Оренбург -->
+  <circle cx="370" cy="410" r="7" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.05;0.55;0.05" keyTimes="0;0.08;1" dur="3.5s" repeatCount="indefinite" begin="2.2s"/>
+  </circle>
+  <circle cx="370" cy="410" r="1.8" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.3;1;0.3" keyTimes="0;0.08;1" dur="3.5s" repeatCount="indefinite" begin="2.2s"/>
+  </circle>
+
+  <!-- Пермь -->
+  <circle cx="388" cy="348" r="9" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.7;0.1" keyTimes="0;0.08;1" dur="2.4s" repeatCount="indefinite" begin="1.8s"/>
+  </circle>
+  <circle cx="388" cy="348" r="2.2" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.5;1;0.5" keyTimes="0;0.08;1" dur="2.4s" repeatCount="indefinite" begin="1.8s"/>
+  </circle>
+
+  <!-- Екатеринбург -->
+  <circle cx="415" cy="365" r="14" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.9;0.1;0.85;0.1" keyTimes="0;0.06;0.14;0.2;1" dur="2.1s" repeatCount="indefinite" begin="0.7s"/>
+  </circle>
+  <circle cx="415" cy="365" r="3.5" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.5;1;0.5;1;0.5" keyTimes="0;0.06;0.14;0.2;1" dur="2.1s" repeatCount="indefinite" begin="0.7s"/>
+  </circle>
+  <circle cx="415" cy="365" r="1.5" fill="#fff" opacity="0.8"/>
+
+  <!-- Челябинск -->
+  <circle cx="425" cy="388" r="10" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.7;0.1" keyTimes="0;0.08;1" dur="2.7s" repeatCount="indefinite" begin="1.4s"/>
+  </circle>
+  <circle cx="425" cy="388" r="2.5" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.5;1;0.5" keyTimes="0;0.08;1" dur="2.7s" repeatCount="indefinite" begin="1.4s"/>
+  </circle>
+
+  <!-- Тюмень -->
+  <circle cx="445" cy="345" r="8" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.6;0.1" keyTimes="0;0.08;1" dur="3s" repeatCount="indefinite" begin="0.9s"/>
+  </circle>
+  <circle cx="445" cy="345" r="2" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.4;1;0.4" keyTimes="0;0.08;1" dur="3s" repeatCount="indefinite" begin="0.9s"/>
+  </circle>
+
+  <!-- Новосибирск -->
+  <circle cx="510" cy="375" r="10" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.8;0.1;0.75;0.1" keyTimes="0;0.06;0.14;0.2;1" dur="2.4s" repeatCount="indefinite" begin="1.2s"/>
+  </circle>
+  <circle cx="510" cy="375" r="2.5" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.5;1;0.5;1;0.5" keyTimes="0;0.06;0.14;0.2;1" dur="2.4s" repeatCount="indefinite" begin="1.2s"/>
+  </circle>
+
+  <!-- Красноярск -->
+  <circle cx="565" cy="360" r="13" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.85;0.1;0.8;0.1" keyTimes="0;0.06;0.14;0.2;1" dur="2s" repeatCount="indefinite" begin="1.6s"/>
+  </circle>
+  <circle cx="565" cy="360" r="3.5" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.5;1;0.5;1;0.5" keyTimes="0;0.06;0.14;0.2;1" dur="2s" repeatCount="indefinite" begin="1.6s"/>
+  </circle>
+  <circle cx="565" cy="360" r="1.5" fill="#fff" opacity="0.7"/>
+
+  <!-- Иркутск -->
+  <circle cx="640" cy="385" r="12" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.75;0.1" keyTimes="0;0.08;1" dur="2.6s" repeatCount="indefinite" begin="2.1s"/>
+  </circle>
+  <circle cx="640" cy="385" r="3" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.5;1;0.5" keyTimes="0;0.08;1" dur="2.6s" repeatCount="indefinite" begin="2.1s"/>
+  </circle>
+
+  <!-- Якутск -->
+  <circle cx="700" cy="290" r="7" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.05;0.5;0.05" keyTimes="0;0.08;1" dur="3.5s" repeatCount="indefinite" begin="2.8s"/>
+  </circle>
+  <circle cx="700" cy="290" r="1.8" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.3;0.9;0.3" keyTimes="0;0.08;1" dur="3.5s" repeatCount="indefinite" begin="2.8s"/>
+  </circle>
+
+  <!-- Владивосток -->
+  <circle cx="790" cy="365" r="8" fill="url(#dg)">
+    <animate attributeName="opacity" values="0.1;0.65;0.1" keyTimes="0;0.08;1" dur="3s" repeatCount="indefinite" begin="3.2s"/>
+  </circle>
+  <circle cx="790" cy="365" r="2" fill="#60a5fa">
+    <animate attributeName="opacity" values="0.4;1;0.4" keyTimes="0;0.08;1" dur="3s" repeatCount="indefinite" begin="3.2s"/>
+  </circle>
+
+</svg>
