@@ -27,7 +27,7 @@ export default function RussiaMap({ className = "" }: { className?: string }) {
     <div className={`relative ${className}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/russia-map.png"
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/russia-map.png`}
         alt="Карта внедрений ПК АДИС по России"
         className="w-full h-auto"
       />

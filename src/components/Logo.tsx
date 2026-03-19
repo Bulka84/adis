@@ -16,7 +16,7 @@ export default function Logo({
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       <Image
-        src="/logo-nst.png"
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logo-nst.png`}
         alt="НСТ — Новые Системные Технологии"
         width={width}
         height={height}

@@ -102,7 +102,7 @@ export default function HomePage() {
         {/* Russia map background */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-[1]">
           <Image
-            src="/russia-map-3d.jpg"
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/russia-map-3d.jpg`}
             alt=""
             width={1920}
             height={1080}
