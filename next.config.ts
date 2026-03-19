@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
-const basePath = process.env.NODE_ENV === "production" ? "/adis" : "";
+const isProd = process.env.GITHUB_ACTIONS === "true";
+const basePath = isProd ? "/adis" : "";
 
 const nextConfig: NextConfig = {
   output: "export",

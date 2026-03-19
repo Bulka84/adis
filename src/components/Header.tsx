@@ -37,7 +37,16 @@ export default function Header() {
     >
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="flex items-center justify-between">
-          <Link href="/" className="w-0 lg:w-auto" />
+          <Link
+            href="/"
+            className={`text-sm font-semibold transition-colors duration-200 ${
+              scrolled
+                ? "text-gray-700 hover:text-primary"
+                : "text-white hover:text-white/80"
+            }`}
+          >
+            Главная
+          </Link>
 
           <nav className="hidden lg:flex items-center gap-8">
             {navigation.map((item) => (
