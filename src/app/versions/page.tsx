@@ -39,7 +39,7 @@ const versions = [
 export default function VersionsPage() {
   return (
     <>
-      <section className="hero-dark py-32 lg:py-40">
+      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
         <div className="hero-gradient-overlay" />
         <div className="hero-grid-pattern" />
         <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
@@ -47,10 +47,23 @@ export default function VersionsPage() {
           <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
             Версии ПК &laquo;АДИС&raquo;
           </h1>
-          <p className="text-xl text-white/60 max-w-3xl">
+          <p className="text-xl text-white/60 max-w-3xl mb-12">
             История развития программного комплекса. Каждая новая версия
             расширяет возможности автоматизации и повышает удобство работы.
           </p>
+          <div className="flex flex-wrap gap-4">
+            {[
+              { value: "8.5", label: "Актуальная версия" },
+              { value: "30+", label: "лет развития" },
+              { value: "5", label: "мажорных релизов" },
+              { value: "6+", label: "новых функций в 8.5" },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-4 text-center">
+                <div className="text-3xl font-extrabold text-white mb-1">{item.value}</div>
+                <div className="text-sm text-white/50">{item.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -73,7 +86,7 @@ export default function VersionsPage() {
                   <div className={`p-8 rounded-2xl border ${
                     ver.current
                       ? "border-primary/30 bg-primary-light/30"
-                      : "border-gray-200 bg-white"
+                      : "border-gray-200/60 bg-white"
                   } card-hover`}>
                     <div className="flex flex-wrap items-center gap-3 mb-4">
                       <h3 className="text-xl font-extrabold text-gray-900">

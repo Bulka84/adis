@@ -19,7 +19,7 @@ const services = [
 export default function ServicesPage() {
   return (
     <>
-      <section className="hero-dark py-32 lg:py-40">
+      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
         <div className="hero-gradient-overlay" />
         <div className="hero-grid-pattern" />
         <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
@@ -27,10 +27,25 @@ export default function ServicesPage() {
           <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
             Услуги и цены
           </h1>
-          <p className="text-xl text-white/60 max-w-3xl">
+          <p className="text-xl text-white/60 max-w-3xl mb-12">
             Процесс внедрения ПК &laquo;АДИС&raquo; сопровождается комплексом
             услуг, обеспечивающих полноценный запуск и эксплуатацию системы.
           </p>
+          <div className="grid grid-cols-2 lg:grid-cols-3 gap-4 max-w-3xl">
+            {[
+              { icon: Settings, label: "Анализ и настройка" },
+              { icon: GraduationCap, label: "Обучение персонала" },
+              { icon: Wrench, label: "Техподдержка" },
+              { icon: Monitor, label: "Инсталляция ПО" },
+              { icon: Database, label: "Администрирование БД" },
+              { icon: HeadphonesIcon, label: "Сопровождение" },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-4 flex items-center gap-3">
+                <item.icon size={20} className="text-primary shrink-0" />
+                <span className="text-sm text-white/80 font-medium">{item.label}</span>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -38,7 +53,7 @@ export default function ServicesPage() {
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((service) => (
-              <div key={service.title} className="p-7 bg-white rounded-2xl border border-gray-200 card-hover">
+              <div key={service.title} className="p-7 bg-white rounded-2xl border border-gray-200/60 card-hover">
                 <div className="w-12 h-12 gradient-bg-subtle rounded-lg flex items-center justify-center mb-5 text-primary">
                   <service.icon size={24} />
                 </div>

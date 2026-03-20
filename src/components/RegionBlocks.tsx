@@ -114,7 +114,7 @@ export default function RegionBlocks({ clients }: { clients: Client[] }) {
           return (
             <div
               key={region.name}
-              className="bg-white rounded-2xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="bg-white rounded-2xl border border-gray-200/60 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               {/* Region header */}
               <button
@@ -159,7 +159,7 @@ export default function RegionBlocks({ clients }: { clients: Client[] }) {
                     {region.clients.map((client) => (
                       <div
                         key={client.id}
-                        className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-200"
+                        className="flex items-center gap-3 bg-white rounded-xl px-4 py-3 border border-gray-200/60"
                       >
                         <MapPin size={14} className="text-primary flex-shrink-0" />
                         <div className="flex-1 min-w-0">

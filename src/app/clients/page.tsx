@@ -22,7 +22,7 @@ export default function ClientsPage() {
 
   return (
     <>
-      <section className="hero-dark py-32 lg:py-40">
+      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
         <div className="hero-gradient-overlay" />
         <div className="hero-grid-pattern" />
         <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
@@ -30,30 +30,24 @@ export default function ClientsPage() {
           <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
             География внедрений
           </h1>
-          <p className="text-xl text-white/60 max-w-3xl">
+          <p className="text-xl text-white/60 max-w-3xl mb-12">
             ПК &laquo;АДИС&raquo; внедрён и успешно работает на станциях скорой
             медицинской помощи в городах Российской Федерации.
           </p>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="relative -mt-12 z-10 max-w-[1200px] mx-auto px-6 mb-16">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-5">
-          {stats.map((stat) => (
-            <div key={stat.label} className="bg-white rounded-2xl border border-gray-200 p-6 text-center card-hover">
-              <div className="w-10 h-10 gradient-bg-subtle rounded-lg flex items-center justify-center mx-auto mb-3 text-primary">
-                <stat.icon size={20} />
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {stats.map((stat) => (
+              <div key={stat.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
+                <stat.icon size={24} className="text-primary mx-auto mb-3" />
+                <div className="text-2xl font-extrabold text-white mb-1">{stat.value}</div>
+                <div className="text-sm text-white/50">{stat.label}</div>
               </div>
-              <div className="text-3xl font-extrabold text-gray-900 mb-1">{stat.value}</div>
-              <div className="text-sm text-gray-500">{stat.label}</div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Region Blocks */}
-      <section className="max-w-[1200px] mx-auto px-6 pb-24">
+      <section className="max-w-[1200px] mx-auto px-6 py-24">
         <RegionBlocks clients={clients} />
       </section>
     </>

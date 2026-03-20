@@ -162,7 +162,7 @@ export default function HomePage() {
             {subsystems.map((item) => (
               <div
                 key={item.title}
-                className="p-7 bg-white rounded-2xl border border-gray-200 card-hover group"
+                className="p-7 bg-white rounded-2xl border border-gray-200/60 card-hover group"
               >
                 <div className="w-12 h-12 gradient-bg-subtle rounded-lg flex items-center justify-center mb-5 text-primary group-hover:scale-110 transition-transform">
                   <item.icon size={24} />
@@ -189,7 +189,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Advantages Section ===== */}
-      <section className="py-24 lg:py-28 bg-gray-50">
+      <section className="py-24 lg:py-28 bg-[#e2e6ef]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-tag mb-4">Эффективность</span>
@@ -205,7 +205,7 @@ export default function HomePage() {
             {advantages.map((item) => (
               <div
                 key={item.title}
-                className="bg-white p-9 rounded-2xl border border-gray-200 card-hover"
+                className="bg-white p-9 rounded-2xl border border-gray-200/60 card-hover"
               >
                 <div className="w-12 h-12 gradient-bg-subtle rounded-lg flex items-center justify-center mb-5 text-primary">
                   <item.icon size={24} />
@@ -283,7 +283,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Testimonials Section ===== */}
-      <section className="py-24 lg:py-28 bg-gray-50">
+      <section className="py-24 lg:py-28 bg-[#e2e6ef]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-tag mb-4">Отзывы</span>
@@ -298,7 +298,7 @@ export default function HomePage() {
             {testimonials.map((item, i) => (
               <div
                 key={i}
-                className="bg-white p-8 rounded-2xl border border-gray-200 card-hover"
+                className="bg-white p-8 rounded-2xl border border-gray-200/60 card-hover"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
@@ -359,7 +359,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Contact Form Section ===== */}
-      <section id="form" className="py-24 lg:py-28 bg-gray-50">
+      <section id="form" className="py-24 lg:py-28 bg-[#e2e6ef]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
@@ -386,7 +386,7 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <div className="bg-white rounded-2xl border border-gray-200 shadow-lg p-8">
+            <div className="bg-white rounded-2xl border border-gray-200/60 shadow-lg p-8">
               <ContactForm />
             </div>
           </div>

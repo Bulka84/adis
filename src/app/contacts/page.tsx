@@ -17,7 +17,7 @@ const contacts = [
 export default function ContactsPage() {
   return (
     <>
-      <section className="hero-dark py-32 lg:py-40">
+      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
         <div className="hero-gradient-overlay" />
         <div className="hero-grid-pattern" />
         <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
@@ -25,10 +25,25 @@ export default function ContactsPage() {
           <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
             Контакты
           </h1>
-          <p className="text-xl text-white/60 max-w-3xl">
+          <p className="text-xl text-white/60 max-w-3xl mb-12">
             Свяжитесь с нами для получения информации о ПК &laquo;АДИС&raquo;
             и обсуждения возможностей автоматизации вашей станции СМП.
           </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {contacts.map((item) => (
+              <div key={item.title} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
+                <item.icon size={24} className="text-primary mb-3" />
+                <div className="text-sm text-white/50 mb-1">{item.title}</div>
+                {item.lines.map((line) =>
+                  item.href ? (
+                    <a key={line} href={item.href} className="text-white font-medium text-sm hover:text-primary transition-colors">{line}</a>
+                  ) : (
+                    <div key={line} className="text-white font-medium text-sm">{line}</div>
+                  )
+                )}
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -60,7 +75,7 @@ export default function ContactsPage() {
                 ))}
               </div>
 
-              <div className="p-6 bg-gray-50 rounded-2xl border border-gray-200">
+              <div className="p-6 bg-white rounded-2xl border border-gray-200/60">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 gradient-bg-subtle rounded-lg flex items-center justify-center text-primary">
                     <Clock size={16} />
@@ -78,9 +93,9 @@ export default function ContactsPage() {
             </div>
 
             {/* Form */}
-            <div id="form">
+            <div id="form" className="scroll-mt-28">
               <h2 className="text-2xl font-extrabold text-gray-900 mb-8">Написать нам</h2>
-              <div className="bg-white rounded-2xl border border-gray-200 shadow-lg p-8">
+              <div className="bg-white rounded-2xl border border-gray-200/60 shadow-lg p-8">
                 <ContactForm />
               </div>
             </div>

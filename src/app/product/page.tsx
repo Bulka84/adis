@@ -29,7 +29,7 @@ export default function ProductPage() {
   return (
     <>
       {/* Hero */}
-      <section className="hero-dark py-32 lg:py-40">
+      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
         <div className="hero-gradient-overlay" />
         <div className="hero-grid-pattern" />
         <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
@@ -37,11 +37,25 @@ export default function ProductPage() {
           <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
             ПК &laquo;АДИС&raquo;
           </h1>
-          <p className="text-xl text-white/60 max-w-3xl leading-relaxed">
+          <p className="text-xl text-white/60 max-w-3xl leading-relaxed mb-12">
             Уникальный программный продукт, поддерживающий в полном объёме весь процесс
             обработки вызовов на станциях скорой медицинской помощи — от приёма вызова
             диспетчером &laquo;03&raquo; до статистической обработки накопленных данных.
           </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { icon: Monitor, value: "9+", label: "типов АРМ" },
+              { icon: Server, value: "4", label: "подсистемы" },
+              { icon: Shield, value: "3 мин", label: "переход на резерв" },
+              { icon: Users, value: "2 часа", label: "обучение диспетчера" },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
+                <item.icon size={24} className="text-primary mx-auto mb-3" />
+                <div className="text-2xl font-extrabold text-white mb-1">{item.value}</div>
+                <div className="text-sm text-white/50">{item.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -71,7 +85,7 @@ export default function ProductPage() {
       </section>
 
       {/* Technical Details */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-[#e2e6ef]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-tag mb-4">Технологии</span>
@@ -127,7 +141,7 @@ export default function ProductPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {workstations.map((ws, i) => (
-              <div key={ws.name} className="relative p-7 bg-white rounded-2xl border border-gray-200 card-hover module-card-top overflow-hidden">
+              <div key={ws.name} className="relative p-7 bg-white rounded-2xl border border-gray-200/60 card-hover module-card-top overflow-hidden">
                 <div className="text-[32px] font-extrabold leading-none mb-3 gradient-text">
                   {String(i + 1).padStart(2, "0")}
                 </div>

@@ -37,7 +37,7 @@ const testimonials = [
 export default function CasesPage() {
   return (
     <>
-      <section className="hero-dark py-32 lg:py-40">
+      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
         <div className="hero-gradient-overlay" />
         <div className="hero-grid-pattern" />
         <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
@@ -45,10 +45,24 @@ export default function CasesPage() {
           <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
             Кейсы и отзывы
           </h1>
-          <p className="text-xl text-white/60 max-w-3xl">
+          <p className="text-xl text-white/60 max-w-3xl mb-12">
             Реальные результаты внедрения ПК &laquo;АДИС&raquo; на станциях
             скорой медицинской помощи по всей России.
           </p>
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { icon: MapPin, value: "3+", label: "кейса внедрений" },
+              { icon: Star, value: "4.9", label: "средняя оценка" },
+              { icon: Calendar, value: "20+", label: "лет опыта" },
+              { icon: CheckCircle, value: "100%", label: "успешных запусков" },
+            ].map((item) => (
+              <div key={item.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
+                <item.icon size={24} className="text-primary mx-auto mb-3" />
+                <div className="text-2xl font-extrabold text-white mb-1">{item.value}</div>
+                <div className="text-sm text-white/50">{item.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -61,7 +75,7 @@ export default function CasesPage() {
           </div>
           <div className="space-y-6">
             {cases.map((item) => (
-              <div key={item.city} className="bg-white rounded-2xl border border-gray-200 overflow-hidden card-hover">
+              <div key={item.city} className="bg-white rounded-2xl border border-gray-200/60 overflow-hidden card-hover">
                 <div className="relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-[3px] gradient-bg" />
                   <div className="p-8 lg:p-10">
@@ -109,7 +123,7 @@ export default function CasesPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-[#e2e6ef]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-tag mb-4">Отзывы</span>
@@ -117,7 +131,7 @@ export default function CasesPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testimonials.map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl border border-gray-200 card-hover">
+              <div key={i} className="bg-white p-8 rounded-2xl border border-gray-200/60 card-hover">
                 <Quote size={32} className="text-primary/20 mb-4" />
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (

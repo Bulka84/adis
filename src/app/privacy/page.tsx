@@ -35,7 +35,7 @@ const sections = [
 export default function PrivacyPage() {
   return (
     <>
-      <section className="hero-dark py-32 lg:py-40">
+      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
         <div className="hero-gradient-overlay" />
         <div className="hero-grid-pattern" />
         <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
@@ -70,7 +70,7 @@ export default function PrivacyPage() {
           ))}
         </div>
 
-        <div className="mt-16 p-6 bg-gray-50 rounded-2xl border border-gray-200">
+        <div className="mt-16 p-6 bg-white rounded-2xl border border-gray-200/60">
           <h3 className="font-bold text-gray-900 mb-4">Реквизиты оператора</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-500">
             <div>
