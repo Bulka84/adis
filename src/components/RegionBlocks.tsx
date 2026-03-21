@@ -114,7 +114,7 @@ export default function RegionBlocks({ clients }: { clients: Client[] }) {
           return (
             <div
               key={region.name}
-              className="bg-white rounded-2xl border border-gray-200/60 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+              className="bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] overflow-hidden shadow-sm hover:shadow-md transition-shadow"
             >
               {/* Region header */}
               <button

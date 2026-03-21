@@ -53,7 +53,7 @@ export default function ServicesPage() {
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((service) => (
-              <div key={service.title} className="p-7 bg-white rounded-2xl border border-gray-200/60 card-hover">
+              <div key={service.title} className="p-7 bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] card-hover">
                 <div className="w-12 h-12 gradient-bg-subtle rounded-lg flex items-center justify-center mb-5 text-primary">
                   <service.icon size={24} />
                 </div>

@@ -85,8 +85,8 @@ export default function VersionsPage() {
 
                   <div className={`p-8 rounded-2xl border ${
                     ver.current
-                      ? "border-primary/30 bg-primary-light/30"
-                      : "border-gray-200/60 bg-white"
+                      ? "border-[#b0ccf5] bg-[#e8f0fe] shadow-md"
+                      : "border-[#b0ccf5] bg-[#e8f0fe]"
                   } card-hover`}>
                     <div className="flex flex-wrap items-center gap-3 mb-4">
                       <h3 className="text-xl font-extrabold text-gray-900">

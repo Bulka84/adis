@@ -75,7 +75,7 @@ export default function CasesPage() {
           </div>
           <div className="space-y-6">
             {cases.map((item) => (
-              <div key={item.city} className="bg-white rounded-2xl border border-gray-200/60 overflow-hidden card-hover">
+              <div key={item.city} className="bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] overflow-hidden card-hover">
                 <div className="relative overflow-hidden">
                   <div className="absolute top-0 left-0 right-0 h-[3px] gradient-bg" />
                   <div className="p-8 lg:p-10">
@@ -123,7 +123,7 @@ export default function CasesPage() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-24 bg-[#e2e6ef]">
+      <section className="py-24 bg-[#dce0ea]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-tag mb-4">Отзывы</span>
@@ -131,7 +131,7 @@ export default function CasesPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testimonials.map((item, i) => (
-              <div key={i} className="bg-white p-8 rounded-2xl border border-gray-200/60 card-hover">
+              <div key={i} className="bg-[#e8f0fe] p-8 rounded-2xl border border-[#b0ccf5] card-hover">
                 <Quote size={32} className="text-primary/20 mb-4" />
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (

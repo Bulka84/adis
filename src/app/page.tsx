@@ -100,20 +100,24 @@ export default function HomePage() {
         <div className="hero-grid-pattern" />
 
         {/* Russia map background */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden z-[1]">
+        <div className="absolute inset-[-10%] pointer-events-none z-[1]"
+          style={{
+            maskImage: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 2%, rgba(0,0,0,0.2) 8%, black 20%, rgba(0,0,0,0.15) 55%, transparent 70%)",
+            WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 2%, rgba(0,0,0,0.2) 8%, black 20%, rgba(0,0,0,0.15) 55%, transparent 70%)",
+          }}
+        >
           <Image
             src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/russia-map-3d.jpg`}
             alt=""
-            width={1920}
-            height={1080}
-            className="w-full max-w-[1400px] h-auto object-contain opacity-70 translate-y-[3%]"
+            fill
+            className="object-cover opacity-70"
             style={{
               filter: "invert(1) brightness(1.8) sepia(1) hue-rotate(190deg) saturate(1.5) brightness(0.9) contrast(1.1)",
-              maskImage: "radial-gradient(ellipse 70% 65% at 50% 48%, transparent 5%, rgba(0,0,0,0.4) 15%, black 30%, rgba(0,0,0,0.3) 75%, transparent 92%)",
-              WebkitMaskImage: "radial-gradient(ellipse 70% 65% at 50% 48%, transparent 5%, rgba(0,0,0,0.4) 15%, black 30%, rgba(0,0,0,0.3) 75%, transparent 92%)",
             }}
             priority
           />
+        </div>
+        <div className="absolute inset-0 pointer-events-none overflow-hidden z-[1]">
           <HeroMapOverlay />
         </div>
 
@@ -162,7 +166,7 @@ export default function HomePage() {
             {subsystems.map((item) => (
               <div
                 key={item.title}
-                className="p-7 bg-white rounded-2xl border border-gray-200/60 card-hover group"
+                className="p-7 bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] card-hover group"
               >
                 <div className="w-12 h-12 gradient-bg-subtle rounded-lg flex items-center justify-center mb-5 text-primary group-hover:scale-110 transition-transform">
                   <item.icon size={24} />
@@ -189,7 +193,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Advantages Section ===== */}
-      <section className="py-24 lg:py-28 bg-[#e2e6ef]">
+      <section className="py-24 lg:py-28 bg-[#dce0ea]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-tag mb-4">Эффективность</span>
@@ -205,7 +209,7 @@ export default function HomePage() {
             {advantages.map((item) => (
               <div
                 key={item.title}
-                className="bg-white p-9 rounded-2xl border border-gray-200/60 card-hover"
+                className="bg-[#e8f0fe] p-9 rounded-2xl border border-[#b0ccf5] card-hover"
               >
                 <div className="w-12 h-12 gradient-bg-subtle rounded-lg flex items-center justify-center mb-5 text-primary">
                   <item.icon size={24} />
@@ -283,7 +287,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Testimonials Section ===== */}
-      <section className="py-24 lg:py-28 bg-[#e2e6ef]">
+      <section className="py-24 lg:py-28 bg-[#dce0ea]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-tag mb-4">Отзывы</span>
@@ -298,7 +302,7 @@ export default function HomePage() {
             {testimonials.map((item, i) => (
               <div
                 key={i}
-                className="bg-white p-8 rounded-2xl border border-gray-200/60 card-hover"
+                className="bg-[#e8f0fe] p-8 rounded-2xl border border-[#b0ccf5] card-hover"
               >
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, j) => (
@@ -359,7 +363,7 @@ export default function HomePage() {
       </section>
 
       {/* ===== Contact Form Section ===== */}
-      <section id="form" className="py-24 lg:py-28 bg-[#e2e6ef]">
+      <section id="form" className="py-24 lg:py-28 bg-[#dce0ea]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
@@ -386,7 +390,7 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <div className="bg-white rounded-2xl border border-gray-200/60 shadow-lg p-8">
+            <div className="bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] shadow-lg p-8">
               <ContactForm />
             </div>
           </div>

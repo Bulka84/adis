@@ -75,7 +75,7 @@ export default function ContactsPage() {
                 ))}
               </div>
 
-              <div className="p-6 bg-white rounded-2xl border border-gray-200/60">
+              <div className="p-6 bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5]">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-8 h-8 gradient-bg-subtle rounded-lg flex items-center justify-center text-primary">
                     <Clock size={16} />
@@ -95,7 +95,7 @@ export default function ContactsPage() {
             {/* Form */}
             <div id="form" className="scroll-mt-28">
               <h2 className="text-2xl font-extrabold text-gray-900 mb-8">Написать нам</h2>
-              <div className="bg-white rounded-2xl border border-gray-200/60 shadow-lg p-8">
+              <div className="bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] shadow-lg p-8">
                 <ContactForm />
               </div>
             </div>

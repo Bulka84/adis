@@ -70,7 +70,7 @@ export default function PrivacyPage() {
           ))}
         </div>
 
-        <div className="mt-16 p-6 bg-white rounded-2xl border border-gray-200/60">
+        <div className="mt-16 p-6 bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5]">
           <h3 className="font-bold text-gray-900 mb-4">Реквизиты оператора</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-500">
             <div>

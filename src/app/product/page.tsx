@@ -68,7 +68,7 @@ export default function ProductPage() {
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {subsystems.map((item) => (
-              <div key={item.title} className="p-8 rounded-2xl border border-gray-200 bg-white card-hover">
+              <div key={item.title} className="p-8 rounded-2xl border border-[#b0ccf5] bg-[#e8f0fe] card-hover">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 gradient-bg-subtle rounded-lg flex items-center justify-center shrink-0 text-primary">
                     <item.icon size={24} />
@@ -85,7 +85,7 @@ export default function ProductPage() {
       </section>
 
       {/* Technical Details */}
-      <section className="py-24 bg-[#e2e6ef]">
+      <section className="py-24 bg-[#dce0ea]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-tag mb-4">Технологии</span>
@@ -141,7 +141,7 @@ export default function ProductPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {workstations.map((ws, i) => (
-              <div key={ws.name} className="relative p-7 bg-white rounded-2xl border border-gray-200/60 card-hover module-card-top overflow-hidden">
+              <div key={ws.name} className="relative p-7 bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] card-hover module-card-top overflow-hidden">
                 <div className="text-[32px] font-extrabold leading-none mb-3 gradient-text">
                   {String(i + 1).padStart(2, "0")}
                 </div>
