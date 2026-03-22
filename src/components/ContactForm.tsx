@@ -65,7 +65,7 @@ export default function ContactForm() {
           id="email"
           name="email"
           className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
-          placeholder="email@example.com"
+          placeholder="ivanov@mail.ru"
         />
       </div>
       <div>

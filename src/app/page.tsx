@@ -336,7 +336,7 @@ export default function HomePage() {
 
             <div className="relative z-[1]">
               <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-white leading-[1.2] tracking-[-0.02em] mb-4">
-                Бесплатная консультация
+                Предварительная консультация
               </h2>
               <p className="text-lg text-white/80 max-w-[500px] mx-auto mb-8 leading-relaxed">
                 Ответим на ваши вопросы и подготовим предложение по автоматизации вашей станции СМП.
