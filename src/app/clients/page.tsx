@@ -18,7 +18,7 @@ export default function ClientsPage() {
 
   const stats = [
     { icon: Building2, value: `${regions.length}`, label: "регионов за всю историю" },
-    { icon: CheckCircle, value: `${activeRegions.length}`, label: "активных регионов" },
+    { icon: CheckCircle, value: `${clients.length}+`, label: "внедрённых городов" },
     { icon: Server, value: `${totalWorkstations}+`, label: "АРМ установлено" },
     { icon: Users, value: `${Math.round(totalPopulation / 1000000)}M+`, label: "населения обслуживается" },
   ];
