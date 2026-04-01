@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 
 const counters = [
-  { target: 34, suffix: "", label: "лет на рынке" },
+  { target: 34, suffix: "", label: "года на рынке" },
   { target: 500, suffix: "+", label: "городов внедрений" },
   { target: 573, suffix: "", label: "рабочих мест" },
   { target: 18, suffix: "M+", label: "населения обслуживается" },
