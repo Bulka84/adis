@@ -21,7 +21,7 @@ export default function ClientsPage() {
     { icon: Building2, value: `${regions.length}`, label: "регионов за всю историю" },
     { icon: CheckCircle, value: `${activeClients.length}+`, label: "внедрённых городов" },
     { icon: Server, value: `${totalWorkstations}+`, label: "АРМ установлено" },
-    { icon: Users, value: `${Math.round(totalPopulation / 1000000)}M+`, label: "населения обслуживается" },
+    { icon: Users, value: "18M+", label: "населения обслуживается" },
   ];
 
   return (
