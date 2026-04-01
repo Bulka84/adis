@@ -377,7 +377,7 @@ export default function HomePage() {
               </p>
               <div className="space-y-4">
                 {[
-                  { icon: Clock, text: "Обучение диспетчера — не более 2 часов" },
+                  { icon: Clock, text: "Обучение диспетчера — не более 16 часов" },
                   { icon: Shield, text: "Переход на резервный сервер — не более 3 минут" },
                   { icon: HeartPulse, text: "Сопровождение и техническая поддержка" },
                 ].map((item) => (

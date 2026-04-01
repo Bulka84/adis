@@ -47,7 +47,7 @@ export default function ProductPage() {
               { icon: Monitor, value: "9+", label: "типов АРМ" },
               { icon: Server, value: "4", label: "подсистемы" },
               { icon: Shield, value: "3 мин", label: "переход на резерв" },
-              { icon: Users, value: "2 часа", label: "обучение диспетчера" },
+              { icon: Users, value: "16 часов", label: "обучение диспетчера" },
             ].map((item) => (
               <div key={item.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
                 <item.icon size={24} className="text-primary mx-auto mb-3" />
@@ -115,7 +115,7 @@ export default function ProductPage() {
               </p>
               <p>
                 <strong className="text-gray-900">Простота освоения:</strong> подготовка
-                диспетчера — не более 2 часов. Через 2 смены работы под наблюдением
+                диспетчера — не более 16 часов. Через 2 смены работы под наблюдением
                 диспетчер может работать самостоятельно.
               </p>
               <p>
