@@ -116,7 +116,7 @@ export default function ClientsPage() {
             Регионы
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
-            Подробная информация по городам и рабочим местам в регионах, где ПК &laquo;АДИС&raquo; работает сегодня
+            Подробная информация по городам и рабочим местам в регионах
           </p>
         </div>
         <RegionBlocks clients={activeClients} />
