@@ -86,9 +86,9 @@ const testimonials = [
 ];
 
 const geoRegions = [
-  "Москва", "Архангельск", "Екатеринбург", "Пермь", "Краснодар",
-  "Ульяновск", "Барнаул", "Саратов", "Оренбург",
-  "Мурманск", "Сыктывкар", "Нижневартовск", "Вологда",
+  "Красноярск", "Ижевск", "Екатеринбург", "Пермь", "Магадан",
+  "Ульяновск", "Кызыл", "Волгоград", "Иркутск",
+  "Южно-Сахалинск", "Челябинск", "Петрозаводск", "Томск",
 ];
 
 export default function HomePage() {
@@ -263,7 +263,7 @@ export default function HomePage() {
               <div className="text-sm text-white/45">по всей России</div>
             </div>
             <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 text-center hover:bg-white/[0.08] hover:border-white/[0.15] transition-all">
-              <div className="text-[42px] font-extrabold leading-none mb-2 bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">573</div>
+              <div className="text-[42px] font-extrabold leading-none mb-2 bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">570</div>
               <div className="text-base font-semibold text-white mb-1">Рабочих места</div>
               <div className="text-sm text-white/45">Активных АРМ</div>
             </div>
