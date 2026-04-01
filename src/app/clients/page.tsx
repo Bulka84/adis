@@ -79,9 +79,7 @@ export default function ClientsPage() {
                 {regions.map((r, i) => (
                   <tr
                     key={r.id}
-                    className={`border-t border-gray-100 ${
-                      r.active ? "bg-white" : "bg-gray-50 text-gray-400"
-                    } hover:bg-blue-50/50 transition-colors`}
+                    className="border-t border-gray-100 bg-white hover:bg-blue-50/50 transition-colors"
                   >
                     <td className="px-5 py-3.5 text-gray-400">{i + 1}</td>
                     <td className="px-5 py-3.5 font-medium text-gray-900">
