@@ -57,7 +57,7 @@ export default function ClientsPage() {
           <div className="text-center mb-12">
             <span className="section-tag mb-4">История</span>
             <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.02em] mb-4">
-              Хронология внедрений
+              История внедрений
             </h2>
             <p className="text-gray-500 max-w-2xl mx-auto">
               Полная история внедрений ПК &laquo;АДИС&raquo; с 1992 года по настоящее время
@@ -112,7 +112,6 @@ export default function ClientsPage() {
       {/* Active Region Blocks (detailed) */}
       <section className="max-w-[1200px] mx-auto px-6 py-24">
         <div className="text-center mb-12">
-          <span className="section-tag mb-4">Детализация</span>
           <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.02em] mb-4">
             Регионы
           </h2>
