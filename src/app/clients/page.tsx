@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { clients } from "@/data/clients";
 import { regions } from "@/data/regions";
-import { MapPin, Building2, Users, Server, Calendar, CheckCircle, XCircle } from "lucide-react";
+import { MapPin, Building2, Users, Server, CheckCircle } from "lucide-react";
 import RegionBlocks from "@/components/RegionBlocks";
 
 export const metadata: Metadata = {
@@ -72,7 +72,6 @@ export default function ClientsPage() {
                   <th className="text-left px-5 py-4 font-semibold">Дата запуска</th>
                   <th className="text-center px-5 py-4 font-semibold">АРМ</th>
                   <th className="text-center px-5 py-4 font-semibold">ПС</th>
-                  <th className="text-center px-5 py-4 font-semibold">Статус</th>
                 </tr>
               </thead>
               <tbody>
@@ -94,19 +93,6 @@ export default function ClientsPage() {
                     <td className="px-5 py-3.5">{r.date}</td>
                     <td className="px-5 py-3.5 text-center font-semibold">{r.totalArm}</td>
                     <td className="px-5 py-3.5 text-center">{r.totalSubstations}</td>
-                    <td className="px-5 py-3.5 text-center">
-                      {r.active ? (
-                        <span className="inline-flex items-center gap-1.5 text-xs font-medium text-green-700 bg-green-50 px-2.5 py-1 rounded-full">
-                          <CheckCircle size={12} />
-                          Активен
-                        </span>
-                      ) : (
-                        <span className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full">
-                          <XCircle size={12} />
-                          Завершён
-                        </span>
-                      )}
-                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -119,7 +105,6 @@ export default function ClientsPage() {
                   <td className="px-5 py-3.5"></td>
                   <td className="px-5 py-3.5 text-center">{regions.reduce((s, r) => s + r.totalArm, 0)}</td>
                   <td className="px-5 py-3.5 text-center">{regions.reduce((s, r) => s + r.totalSubstations, 0)}</td>
-                  <td className="px-5 py-3.5"></td>
                 </tr>
               </tfoot>
             </table>
