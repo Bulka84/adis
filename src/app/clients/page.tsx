@@ -6,7 +6,7 @@ import RegionBlocks from "@/components/RegionBlocks";
 
 export const metadata: Metadata = {
   title: "Внедрения",
-  description: "ПК «АДИС» внедрён и успешно работает на станциях СМП более чем в 50 городах России и за рубежом.",
+  description: "ПК «АДИС» внедрён и успешно работает на станциях СМП более чем в 500 городах России и за рубежом.",
 };
 
 export default function ClientsPage() {

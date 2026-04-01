@@ -235,7 +235,7 @@ export default function HomePage() {
               География внедрений
             </h2>
             <p className="text-lg text-white/60 max-w-[560px] mx-auto mt-4 leading-relaxed">
-              ПК &laquo;АДИС&raquo; внедрён и работает на станциях СМП более чем в 50 городах
+              ПК &laquo;АДИС&raquo; внедрён и работает на станциях СМП более чем в 500 городах
             </p>
           </div>
 
