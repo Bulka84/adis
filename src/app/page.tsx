@@ -258,7 +258,7 @@ export default function HomePage() {
           {/* Geo stat cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 text-center hover:bg-white/[0.08] hover:border-white/[0.15] transition-all">
-              <div className="text-[42px] font-extrabold leading-none mb-2 bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">50+</div>
+              <div className="text-[42px] font-extrabold leading-none mb-2 bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">500+</div>
               <div className="text-base font-semibold text-white mb-1">Городов</div>
               <div className="text-sm text-white/45">по всей России</div>
             </div>
