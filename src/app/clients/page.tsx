@@ -18,7 +18,7 @@ export default function ClientsPage() {
   const totalPopulation = activeClients.reduce((sum, c) => sum + c.population, 0);
 
   const stats = [
-    { icon: Building2, value: `${regions.length}`, label: "регионов за всю историю" },
+    { icon: Building2, value: "35", label: "Регионов" },
     { icon: CheckCircle, value: "500+", label: "внедрённых городов" },
     { icon: Server, value: `${totalWorkstations}+`, label: "АРМ установлено" },
     { icon: Users, value: "18M+", label: "населения обслуживается" },
