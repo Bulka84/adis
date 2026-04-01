@@ -54,7 +54,7 @@ export default function VersionsPage() {
           <div className="flex flex-wrap gap-4">
             {[
               { value: "8.5", label: "Актуальная версия" },
-              { value: "30+", label: "лет развития" },
+              { value: "34", label: "года развития" },
               { value: "5", label: "мажорных релизов" },
               { value: "6+", label: "новых функций в 8.5" },
             ].map((item) => (

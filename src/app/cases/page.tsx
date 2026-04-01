@@ -233,7 +233,7 @@ export default function CasesPage() {
             {[
               { icon: MapPin, value: "35", label: "регионов внедрения" },
               { icon: Star, value: "4.9", label: "средняя оценка" },
-              { icon: Calendar, value: "30+", label: "лет опыта" },
+              { icon: Calendar, value: "34", label: "года опыта" },
               { icon: CheckCircle, value: "100%", label: "успешных запусков" },
             ].map((item) => (
               <div key={item.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
