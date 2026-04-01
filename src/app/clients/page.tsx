@@ -10,15 +10,16 @@ export const metadata: Metadata = {
 };
 
 export default function ClientsPage() {
-  const clientRegions = [...new Set(clients.map((c) => c.region))].sort();
-  const totalWorkstations = clients.reduce((sum, c) => sum + c.workstations, 0);
-  const totalPopulation = clients.reduce((sum, c) => sum + c.population, 0);
   const activeRegions = regions.filter((r) => r.active);
   const inactiveRegions = regions.filter((r) => !r.active);
+  const activeRegionNames = new Set(activeRegions.map((r) => r.region));
+  const activeClients = clients.filter((c) => activeRegionNames.has(c.region));
+  const totalWorkstations = activeClients.reduce((sum, c) => sum + c.workstations, 0);
+  const totalPopulation = activeClients.reduce((sum, c) => sum + c.population, 0);
 
   const stats = [
     { icon: Building2, value: `${regions.length}`, label: "регионов за всю историю" },
-    { icon: CheckCircle, value: `${clients.length}+`, label: "внедрённых городов" },
+    { icon: CheckCircle, value: `${activeClients.length}+`, label: "внедрённых городов" },
     { icon: Server, value: `${totalWorkstations}+`, label: "АРМ установлено" },
     { icon: Users, value: `${Math.round(totalPopulation / 1000000)}M+`, label: "населения обслуживается" },
   ];
@@ -123,7 +124,7 @@ export default function ClientsPage() {
             Подробная информация по городам и рабочим местам в регионах, где ПК &laquo;АДИС&raquo; работает сегодня
           </p>
         </div>
-        <RegionBlocks clients={clients} />
+        <RegionBlocks clients={activeClients} />
       </section>
     </>
   );
