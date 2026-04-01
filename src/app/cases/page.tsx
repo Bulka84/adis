@@ -231,7 +231,7 @@ export default function CasesPage() {
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: MapPin, value: "18", label: "активных регионов" },
+              { icon: MapPin, value: "35", label: "регионов внедрения" },
               { icon: Star, value: "4.9", label: "средняя оценка" },
               { icon: Calendar, value: "30+", label: "лет опыта" },
               { icon: CheckCircle, value: "100%", label: "успешных запусков" },
