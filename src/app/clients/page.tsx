@@ -1,21 +1,24 @@
 import type { Metadata } from "next";
 import { clients } from "@/data/clients";
-import { MapPin, Building2, Users, Server } from "lucide-react";
+import { regions } from "@/data/regions";
+import { MapPin, Building2, Users, Server, Calendar, CheckCircle, XCircle } from "lucide-react";
 import RegionBlocks from "@/components/RegionBlocks";
 
 export const metadata: Metadata = {
   title: "Внедрения",
-  description: "ПК «АДИС» внедрён и успешно работает на станциях СМП более чем в 50 городах России.",
+  description: "ПК «АДИС» внедрён и успешно работает на станциях СМП более чем в 50 городах России и за рубежом.",
 };
 
 export default function ClientsPage() {
-  const regions = [...new Set(clients.map((c) => c.region))].sort();
+  const clientRegions = [...new Set(clients.map((c) => c.region))].sort();
   const totalWorkstations = clients.reduce((sum, c) => sum + c.workstations, 0);
   const totalPopulation = clients.reduce((sum, c) => sum + c.population, 0);
+  const activeRegions = regions.filter((r) => r.active);
+  const inactiveRegions = regions.filter((r) => !r.active);
 
   const stats = [
-    { icon: Building2, value: `${clients.length}+`, label: "городов" },
-    { icon: MapPin, value: `${regions.length}`, label: "регионов" },
+    { icon: Building2, value: `${regions.length}`, label: "регионов за всю историю" },
+    { icon: CheckCircle, value: `${activeRegions.length}`, label: "активных регионов" },
     { icon: Server, value: `${totalWorkstations}+`, label: "АРМ установлено" },
     { icon: Users, value: `${Math.round(totalPopulation / 1000000)}M+`, label: "населения обслуживается" },
   ];
@@ -31,8 +34,9 @@ export default function ClientsPage() {
             География внедрений
           </h1>
           <p className="text-xl text-white/60 max-w-3xl mb-12">
-            ПК &laquo;АДИС&raquo; внедрён и успешно работает на станциях скорой
-            медицинской помощи в городах Российской Федерации.
+            С 1992 года ПК &laquo;АДИС&raquo; внедрён в {regions.length} регионах
+            России и за рубежом. Сегодня система активно работает
+            в {activeRegions.length} регионах.
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {stats.map((stat) => (
@@ -46,8 +50,94 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      {/* Region Blocks */}
+      {/* Full history table */}
+      <section className="py-24 bg-gray-50">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="section-tag mb-4">История</span>
+            <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.02em] mb-4">
+              Хронология внедрений
+            </h2>
+            <p className="text-gray-500 max-w-2xl mx-auto">
+              Полная история внедрений ПК &laquo;АДИС&raquo; с 1992 года по настоящее время
+            </p>
+          </div>
+          <div className="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
+            <table className="w-full text-sm">
+              <thead>
+                <tr className="bg-gradient-to-r from-[#1a3a5c] to-[#2563eb] text-white">
+                  <th className="text-left px-5 py-4 font-semibold">№</th>
+                  <th className="text-left px-5 py-4 font-semibold">Регион</th>
+                  <th className="text-left px-5 py-4 font-semibold">Город</th>
+                  <th className="text-left px-5 py-4 font-semibold">Дата запуска</th>
+                  <th className="text-center px-5 py-4 font-semibold">АРМ</th>
+                  <th className="text-center px-5 py-4 font-semibold">ПС</th>
+                  <th className="text-center px-5 py-4 font-semibold">Статус</th>
+                </tr>
+              </thead>
+              <tbody>
+                {regions.map((r, i) => (
+                  <tr
+                    key={r.id}
+                    className={`border-t border-gray-100 ${
+                      r.active ? "bg-white" : "bg-gray-50 text-gray-400"
+                    } hover:bg-blue-50/50 transition-colors`}
+                  >
+                    <td className="px-5 py-3.5 text-gray-400">{i + 1}</td>
+                    <td className="px-5 py-3.5 font-medium text-gray-900">
+                      {r.region}
+                      {r.country !== "Россия" && (
+                        <span className="ml-2 text-xs text-gray-400">({r.country})</span>
+                      )}
+                    </td>
+                    <td className="px-5 py-3.5">{r.city}</td>
+                    <td className="px-5 py-3.5">{r.date}</td>
+                    <td className="px-5 py-3.5 text-center font-semibold">{r.totalArm}</td>
+                    <td className="px-5 py-3.5 text-center">{r.totalSubstations}</td>
+                    <td className="px-5 py-3.5 text-center">
+                      {r.active ? (
+                        <span className="inline-flex items-center gap-1.5 text-xs font-medium text-green-700 bg-green-50 px-2.5 py-1 rounded-full">
+                          <CheckCircle size={12} />
+                          Активен
+                        </span>
+                      ) : (
+                        <span className="inline-flex items-center gap-1.5 text-xs font-medium text-gray-400 bg-gray-100 px-2.5 py-1 rounded-full">
+                          <XCircle size={12} />
+                          Завершён
+                        </span>
+                      )}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr className="bg-gray-100 font-semibold border-t-2 border-gray-200">
+                  <td className="px-5 py-3.5" colSpan={2}>Итого: {regions.length} регионов</td>
+                  <td className="px-5 py-3.5">
+                    <span className="text-green-600">{activeRegions.length} активных</span> / <span className="text-gray-400">{inactiveRegions.length} завершённых</span>
+                  </td>
+                  <td className="px-5 py-3.5"></td>
+                  <td className="px-5 py-3.5 text-center">{regions.reduce((s, r) => s + r.totalArm, 0)}</td>
+                  <td className="px-5 py-3.5 text-center">{regions.reduce((s, r) => s + r.totalSubstations, 0)}</td>
+                  <td className="px-5 py-3.5"></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      {/* Active Region Blocks (detailed) */}
       <section className="max-w-[1200px] mx-auto px-6 py-24">
+        <div className="text-center mb-12">
+          <span className="section-tag mb-4">Детализация</span>
+          <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.02em] mb-4">
+            Активные регионы
+          </h2>
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            Подробная информация по городам и рабочим местам в регионах, где ПК &laquo;АДИС&raquo; работает сегодня
+          </p>
+        </div>
         <RegionBlocks clients={clients} />
       </section>
     </>
