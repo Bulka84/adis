@@ -35,9 +35,7 @@ export default function ClientsPage() {
             География внедрений
           </h1>
           <p className="text-xl text-white/60 max-w-3xl mb-12">
-            С 1992 года ПК &laquo;АДИС&raquo; внедрён в {regions.length} регионах
-            России и за рубежом. Сегодня система активно работает
-            в {activeRegions.length} регионах.
+            С 1992 года ПК &laquo;АДИС&raquo; был внедрён в 35 регионах России и за рубежом.
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {stats.map((stat) => (
