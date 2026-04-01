@@ -100,9 +100,7 @@ export default function ClientsPage() {
               <tfoot>
                 <tr className="bg-gray-100 font-semibold border-t-2 border-gray-200">
                   <td className="px-5 py-3.5" colSpan={2}>Итого: {regions.length} регионов</td>
-                  <td className="px-5 py-3.5">
-                    <span className="text-green-600">{activeRegions.length} активных</span> / <span className="text-gray-400">{inactiveRegions.length} завершённых</span>
-                  </td>
+                  <td className="px-5 py-3.5"></td>
                   <td className="px-5 py-3.5"></td>
                   <td className="px-5 py-3.5 text-center">{regions.reduce((s, r) => s + r.totalArm, 0)}</td>
                   <td className="px-5 py-3.5 text-center">{regions.reduce((s, r) => s + r.totalSubstations, 0)}</td>
@@ -118,7 +116,7 @@ export default function ClientsPage() {
         <div className="text-center mb-12">
           <span className="section-tag mb-4">Детализация</span>
           <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.02em] mb-4">
-            Активные регионы
+            Регионы
           </h2>
           <p className="text-gray-500 max-w-2xl mx-auto">
             Подробная информация по городам и рабочим местам в регионах, где ПК &laquo;АДИС&raquo; работает сегодня
