@@ -47,7 +47,7 @@ export default function ProductPage() {
               { icon: Monitor, value: "9+", label: "типов АРМ" },
               { icon: Server, value: "4", label: "подсистемы" },
               { icon: Shield, value: "3 мин", label: "переход на резерв" },
-              { icon: Users, value: "16 часов", label: "обучение диспетчера" },
+              { icon: Users, value: "16 часов", label: "подготовка диспетчера" },
             ].map((item) => (
               <div key={item.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
                 <item.icon size={24} className="text-primary mx-auto mb-3" />
