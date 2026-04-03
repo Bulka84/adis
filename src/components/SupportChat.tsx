@@ -4,6 +4,17 @@ import { useState, useMemo } from "react";
 import { MessageCircle, X, ChevronRight, ChevronLeft, CheckCircle, Send } from "lucide-react";
 import { clients } from "@/data/clients";
 
+const CONTACT_EMAIL = "nst@adis-nst.ru";
+
+function buildMailtoUrl(subject: string, lines: string[]) {
+  const params = new URLSearchParams({
+    subject,
+    body: lines.join("\n"),
+  });
+
+  return `mailto:${CONTACT_EMAIL}?${params.toString()}`;
+}
+
 export default function SupportChat() {
   const [isOpen, setIsOpen] = useState(false);
   const [step, setStep] = useState(1);
@@ -43,7 +54,20 @@ export default function SupportChat() {
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    const mailtoUrl = buildMailtoUrl("Обращение в техподдержку с сайта АДИС", [
+      "Новое обращение в техподдержку с сайта.",
+      "",
+      `Регион: ${region || "-"}`,
+      `Город: ${city || "-"}`,
+      `Имя: ${name || "-"}`,
+      `Контакт: ${contact || "-"}`,
+      "",
+      "Описание проблемы:",
+      message || "-",
+    ]);
+
+    window.location.href = mailtoUrl;
     setIsSubmitting(false);
     setStep(3);
   };

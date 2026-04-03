@@ -3,6 +3,17 @@
 import { useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
 
+const CONTACT_EMAIL = "nst@adis-nst.ru";
+
+function buildMailtoUrl(subject: string, lines: string[]) {
+  const params = new URLSearchParams({
+    subject,
+    body: lines.join("\n"),
+  });
+
+  return `mailto:${CONTACT_EMAIL}?${params.toString()}`;
+}
+
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -10,10 +21,30 @@ export default function ContactForm() {
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setLoading(true);
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    const formData = new FormData(e.currentTarget);
+    const name = String(formData.get("name") ?? "").trim();
+    const phone = String(formData.get("phone") ?? "").trim();
+    const email = String(formData.get("email") ?? "").trim();
+    const organization = String(formData.get("organization") ?? "").trim();
+    const message = String(formData.get("message") ?? "").trim();
+
+    const mailtoUrl = buildMailtoUrl("Заявка с сайта АДИС", [
+      "Новая заявка с сайта.",
+      "",
+      `Имя: ${name || "-"}`,
+      `Телефон: ${phone || "-"}`,
+      `Email: ${email || "-"}`,
+      `Организация: ${organization || "-"}`,
+      "",
+      "Сообщение:",
+      message || "-",
+    ]);
+
+    window.location.href = mailtoUrl;
     setLoading(false);
     setSubmitted(true);
+    e.currentTarget.reset();
   }
 
   if (submitted) {

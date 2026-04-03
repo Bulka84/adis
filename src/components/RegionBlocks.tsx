@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import { ChevronDown, MapPin, Server, Users, Calendar, Building2, Search } from "lucide-react";
+import { ChevronDown, MapPin, Server, Calendar, Building2, Search } from "lucide-react";
 import type { Client } from "@/data/clients";
 
 interface RegionData {

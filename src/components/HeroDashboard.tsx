@@ -23,12 +23,19 @@ export default function HeroDashboard() {
   const [clock, setClock] = useState("08:52:01");
 
   useEffect(() => {
-    const now = new Date();
-    setClock(now.toLocaleTimeString("ru-RU"));
-    const t = setInterval(() => {
+    const updateClock = () => {
       setClock(new Date().toLocaleTimeString("ru-RU"));
+    };
+
+    const initialUpdate = window.setTimeout(updateClock, 0);
+    const t = setInterval(() => {
+      updateClock();
     }, 1000);
-    return () => clearInterval(t);
+
+    return () => {
+      clearTimeout(initialUpdate);
+      clearInterval(t);
+    };
   }, []);
 
   return (

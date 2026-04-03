@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { clients } from "@/data/clients";
 import { regions } from "@/data/regions";
-import { MapPin, Building2, Users, Server, CheckCircle } from "lucide-react";
+import { Building2, Users, Server, CheckCircle } from "lucide-react";
 import RegionBlocks from "@/components/RegionBlocks";
 
 export const metadata: Metadata = {
@@ -11,11 +11,9 @@ export const metadata: Metadata = {
 
 export default function ClientsPage() {
   const activeRegions = regions.filter((r) => r.active);
-  const inactiveRegions = regions.filter((r) => !r.active);
   const activeRegionNames = new Set(activeRegions.map((r) => r.region));
   const activeClients = clients.filter((c) => activeRegionNames.has(c.region));
   const totalWorkstations = activeClients.reduce((sum, c) => sum + c.workstations, 0);
-  const totalPopulation = activeClients.reduce((sum, c) => sum + c.population, 0);
 
   const stats = [
     { icon: Building2, value: "35", label: "Регионов" },
