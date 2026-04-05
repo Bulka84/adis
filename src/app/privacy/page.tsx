@@ -34,6 +34,8 @@ const sections = [
 ];
 
 export default function PrivacyPage() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   return (
     <>
       <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
@@ -72,7 +74,7 @@ export default function PrivacyPage() {
             </div>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/documents/nst-ppd.pdf"
+                href={`${basePath}/documents/nst-ppd.pdf`}
                 target="_blank"
                 className="inline-flex items-center gap-2 px-4 py-2.5 btn-gradient rounded-xl text-sm font-semibold"
               >
@@ -80,7 +82,7 @@ export default function PrivacyPage() {
                 Открыть
               </Link>
               <a
-                href="/documents/nst-ppd.pdf"
+                href={`${basePath}/documents/nst-ppd.pdf`}
                 download
                 className="inline-flex items-center gap-2 px-4 py-2.5 border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
               >

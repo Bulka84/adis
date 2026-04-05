@@ -3,6 +3,8 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import Logo from "./Logo";
 
 export default function Footer() {
+  const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
   return (
     <footer className="bg-gray-950 pt-16 pb-0">
       <div className="max-w-[1200px] mx-auto px-6">
@@ -64,7 +66,7 @@ export default function Footer() {
               <p className="text-sm text-white/45">ООО Фирма &laquo;Новые Системные Технологии&raquo;</p>
               <p className="text-sm text-white/45 mt-1">ИНН: 7717026492</p>
               <a
-                href="/documents/nst-ppd.pdf"
+                href={`${basePath}/documents/nst-ppd.pdf`}
                 target="_blank"
                 rel="noreferrer"
                 className="text-sm text-white/45 hover:text-white transition-colors mt-2 inline-block"
@@ -72,7 +74,7 @@ export default function Footer() {
                 Политика обработки персональных данных
               </a>
               <a
-                href="/documents/nst-spd.pdf"
+                href={`${basePath}/documents/nst-spd.pdf`}
                 target="_blank"
                 rel="noreferrer"
                 className="text-sm text-white/45 hover:text-white transition-colors mt-2 inline-block"

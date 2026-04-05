@@ -4,6 +4,7 @@ import { useState } from "react";
 import { Send, CheckCircle } from "lucide-react";
 
 const CONTACT_EMAIL = "nst@adis-nst.ru";
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 function buildMailtoUrl(subject: string, lines: string[]) {
   const params = new URLSearchParams({
@@ -134,7 +135,7 @@ export default function ContactForm() {
       <p className="text-xs text-gray-400">
         Нажимая кнопку, вы соглашаетесь с{" "}
         <a
-          href="/documents/nst-ppd.pdf"
+          href={`${BASE_PATH}/documents/nst-ppd.pdf`}
           target="_blank"
           rel="noreferrer"
           className="underline hover:text-primary"
