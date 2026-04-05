@@ -133,7 +133,12 @@ export default function ContactForm() {
       </button>
       <p className="text-xs text-gray-400">
         Нажимая кнопку, вы соглашаетесь с{" "}
-        <a href="/privacy" className="underline hover:text-primary">
+        <a
+          href="/documents/nst-ppd.pdf"
+          target="_blank"
+          rel="noreferrer"
+          className="underline hover:text-primary"
+        >
           политикой обработки персональных данных
         </a>
       </p>

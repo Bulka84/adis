@@ -26,7 +26,6 @@ export default function Footer() {
                 { name: "О продукте", href: "/product" },
                 { name: "Внедрения", href: "/clients" },
                 { name: "Услуги и цены", href: "/services" },
-                { name: "Сопровождение", href: "/support" },
                 { name: "Кейсы и отзывы", href: "/cases" },
                 { name: "Версии", href: "/versions" },
                 { name: "Контакты", href: "/contacts" },
@@ -64,12 +63,22 @@ export default function Footer() {
             <div className="mt-6 pt-4 border-t border-white/[0.08]">
               <p className="text-sm text-white/45">ООО Фирма &laquo;Новые Системные Технологии&raquo;</p>
               <p className="text-sm text-white/45 mt-1">ИНН: 7717026492</p>
-              <Link href="/privacy" className="text-sm text-white/45 hover:text-white transition-colors mt-2 inline-block">
+              <a
+                href="/documents/nst-ppd.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm text-white/45 hover:text-white transition-colors mt-2 inline-block"
+              >
                 Политика обработки персональных данных
-              </Link>
-              <Link href="/consent" className="text-sm text-white/45 hover:text-white transition-colors mt-2 inline-block">
+              </a>
+              <a
+                href="/documents/nst-spd.pdf"
+                target="_blank"
+                rel="noreferrer"
+                className="text-sm text-white/45 hover:text-white transition-colors mt-2 inline-block"
+              >
                 Согласие посетителя сайта на обработку персональных данных
-              </Link>
+              </a>
             </div>
           </div>
         </div>
