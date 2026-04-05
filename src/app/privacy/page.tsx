@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Shield, FileText } from "lucide-react";
+import Link from "next/link";
+import { Shield, FileText, Download } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Политика обработки персональных данных",
@@ -55,6 +56,41 @@ export default function PrivacyPage() {
       </section>
 
       <section className="max-w-4xl mx-auto px-6 py-16 lg:py-20">
+        <div className="mb-12 p-6 bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5]">
+          <h2 className="text-xl font-extrabold text-gray-900 mb-4">Документ политики</h2>
+          <div className="bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-4">
+            <div className="flex items-start gap-3">
+              <div className="w-10 h-10 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary shrink-0">
+                <FileText size={20} />
+              </div>
+              <div>
+                <h3 className="font-bold text-gray-900 leading-snug">
+                  Политика обработки персональных данных
+                </h3>
+                <p className="text-sm text-gray-500 mt-1">PDF-документ</p>
+              </div>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/documents/nst-ppd.pdf"
+                target="_blank"
+                className="inline-flex items-center gap-2 px-4 py-2.5 btn-gradient rounded-xl text-sm font-semibold"
+              >
+                <FileText size={16} />
+                Открыть
+              </Link>
+              <a
+                href="/documents/nst-ppd.pdf"
+                download
+                className="inline-flex items-center gap-2 px-4 py-2.5 border border-gray-200 rounded-xl text-sm font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
+              >
+                <Download size={16} />
+                Скачать
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div className="space-y-10">
           {sections.map((section) => (
             <div key={section.title}>

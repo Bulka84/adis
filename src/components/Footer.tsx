@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand */}
           <div>
             <div className="mb-4">
-              <Logo variant="light" height={36} />
+              <Logo variant="light" height={36} showLabel={false} />
             </div>
             <p className="text-sm text-white/45 leading-relaxed max-w-[340px]">
               Автоматизация диспетчерской службы скорой медицинской помощи с 1992 года.
@@ -26,6 +26,7 @@ export default function Footer() {
                 { name: "О продукте", href: "/product" },
                 { name: "Внедрения", href: "/clients" },
                 { name: "Услуги и цены", href: "/services" },
+                { name: "Сопровождение", href: "/support" },
                 { name: "Кейсы и отзывы", href: "/cases" },
                 { name: "Версии", href: "/versions" },
                 { name: "Контакты", href: "/contacts" },
@@ -65,6 +66,9 @@ export default function Footer() {
               <p className="text-sm text-white/45 mt-1">ИНН: 7717026492</p>
               <Link href="/privacy" className="text-sm text-white/45 hover:text-white transition-colors mt-2 inline-block">
                 Политика обработки персональных данных
+              </Link>
+              <Link href="/consent" className="text-sm text-white/45 hover:text-white transition-colors mt-2 inline-block">
+                Согласие посетителя сайта на обработку персональных данных
               </Link>
             </div>
           </div>
