@@ -19,7 +19,8 @@ const workstations = [
   { name: "АРМ «Заправка сумок»", description: "Комплектование и пополнение сумок бригад с фиксацией расхода медикаментов.", icon: Pill },
   { name: "АРМ «Контроль аптеки»", description: "Контроль движения, наличия и использования медицинских средств в подсистеме аптеки.", icon: Pill },
   { name: "АРМ справочной и статистической служб", description: "Генератор отчётов, анализ за любой период", icon: BarChart3 },
-  { name: "АРМ административного аппарата", description: "Стратегическое управление, долгосрочное планирование", icon: Server },
+  { name: "АРМ оперативного дежурного", description: "Контроль оперативной обстановки по региону.", icon: Server },
+  { name: "АРМ статистической и административной службы", description: "СМП регионального уровня показателей оперативности как по региону в целом, так и по отдельным районным станциям и отделениям СМП.", icon: BarChart3 },
 ];
 
 const subsystems = [
@@ -48,7 +49,7 @@ export default function ProductPage() {
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: Monitor, value: "13+", label: "типов АРМ" },
+              { icon: Monitor, value: "14+", label: "типов АРМ" },
               { icon: Server, value: "4", label: "подсистемы" },
               { icon: Shield, value: "3 мин", label: "переход на резерв" },
               { icon: Users, value: "16 часов", label: "подготовка диспетчера" },
