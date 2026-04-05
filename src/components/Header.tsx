@@ -8,6 +8,7 @@ const navigation = [
   { name: "О продукте", href: "/product" },
   { name: "Внедрения", href: "/clients" },
   { name: "Услуги", href: "/services" },
+  { name: "Сопровождение", href: "/support" },
   { name: "Версии", href: "/versions" },
   { name: "Кейсы", href: "/cases" },
   { name: "Контакты", href: "/contacts" },

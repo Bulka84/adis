@@ -4,12 +4,14 @@ interface LogoProps {
   variant?: "dark" | "light";
   className?: string;
   height?: number;
+  showLabel?: boolean;
 }
 
 export default function Logo({
   variant = "dark",
   className = "",
   height = 36,
+  showLabel = true,
 }: LogoProps) {
   const width = Math.round(height * (334 / 108));
 
@@ -24,13 +26,15 @@ export default function Logo({
         style={{ height, width: "auto" }}
         priority
       />
-      <span
-        className={`text-xl font-extrabold leading-tight ${
-          variant === "dark" ? "text-gray-900" : "text-white"
-        }`}
-      >
-        АДИС
-      </span>
+      {showLabel && (
+        <span
+          className={`text-xl font-extrabold leading-tight ${
+            variant === "dark" ? "text-gray-900" : "text-white"
+          }`}
+        >
+          АДИС
+        </span>
+      )}
     </div>
   );
 }
