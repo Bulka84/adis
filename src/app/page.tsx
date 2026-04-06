@@ -3,7 +3,7 @@ import Image from "next/image";
 import {
   Clock,
   HeartPulse,
-  Ruble,
+  RussianRuble,
   Monitor,
   Archive,
   Pill,
@@ -58,7 +58,7 @@ const advantages = [
     title: "Сокращение затрат",
     description:
       "Рациональное управление ресурсами, оптимизация графиков бригад, контроль расхода медикаментов.",
-    icon: Ruble,
+    icon: RussianRuble,
   },
 ];
 
