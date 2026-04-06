@@ -13,12 +13,12 @@ export default function Logo({
   height = 36,
   showLabel = true,
 }: LogoProps) {
-  const width = Math.round(height * (334 / 108));
+  const width = Math.round(height * (225 / 92));
 
   return (
     <div className={`flex items-center gap-3 ${className}`}>
       <Image
-        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logo-nst.png`}
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/logo-nst-clean.png`}
         alt="НСТ — Новые Системные Технологии"
         width={width}
         height={height}
