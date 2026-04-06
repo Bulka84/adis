@@ -13,7 +13,7 @@ export default function Logo({
   height = 36,
   showLabel = true,
 }: LogoProps) {
-  const width = Math.round(height * (225 / 92));
+  const width = Math.round(height * (278 / 92));
 
   return (
     <div className={`flex items-center gap-3 ${className}`}>
