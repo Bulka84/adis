@@ -236,14 +236,10 @@ export default function HomePage() {
 
           {/* Region tags */}
           <div className="flex flex-wrap gap-3 justify-center mb-14">
-            {geoRegions.map((region, i) => (
+            {geoRegions.map((region) => (
               <span
                 key={region}
-                className={`px-5 py-2.5 rounded-full text-sm font-medium border transition-all ${
-                  i < 3
-                    ? "bg-gradient-to-r from-blue-600/20 to-violet-600/20 border-blue-600/30 text-blue-400"
-                    : "bg-white/[0.06] border-white/10 text-white/70 hover:bg-white/[0.12] hover:border-white/20 hover:text-white"
-                }`}
+                className="px-5 py-2.5 rounded-full text-sm font-medium border transition-all bg-white/[0.06] border-white/10 text-white/70 hover:bg-white/[0.12] hover:border-white/20 hover:text-white"
               >
                 {region}
               </span>
