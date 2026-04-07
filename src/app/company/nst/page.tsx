@@ -58,9 +58,8 @@ export default function NstCompanyPage() {
             className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8"
           >
             <ArrowLeft size={18} />
-            К странице Компания
+            К странице Компании
           </Link>
-          <span className="section-tag section-tag-light mb-4">Компания</span>
           <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
             ООО Фирма &laquo;Новые Системные Технологии&raquo;
           </h1>
