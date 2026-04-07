@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, LifeBuoy, Mail, Phone, Settings2 } from "lucide-react";
+import { ArrowLeft, LifeBuoy, Settings2 } from "lucide-react";
+import SupportForm from "@/components/SupportForm";
 
 export const metadata: Metadata = {
   title: "ООО «АДИС-НСТ»",
@@ -83,33 +84,10 @@ export default function AdisNstCompanyPage() {
             </div>
             <p className="text-gray-500 leading-relaxed text-[15px] mb-8 max-w-3xl">
               По вопросам внедрения, сопровождения и эксплуатации ПК &laquo;АДИС&raquo;
-              вы можете связаться со службой поддержки по электронной почте или по телефону.
+              вы можете направить обращение через открытую форму поддержки.
             </p>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <a
-                href="mailto:nst@adis-nst.ru"
-                className="flex items-start gap-4 rounded-2xl bg-white border border-white p-6 hover:border-[#b0ccf5] transition-colors"
-              >
-                <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary shrink-0">
-                  <Mail size={20} />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-400 mb-1">Электронная почта</div>
-                  <div className="text-gray-900 font-medium">nst@adis-nst.ru</div>
-                </div>
-              </a>
-              <a
-                href="tel:+74957394807"
-                className="flex items-start gap-4 rounded-2xl bg-white border border-white p-6 hover:border-[#b0ccf5] transition-colors"
-              >
-                <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary shrink-0">
-                  <Phone size={20} />
-                </div>
-                <div>
-                  <div className="text-sm text-gray-400 mb-1">Телефон / Факс</div>
-                  <div className="text-gray-900 font-medium">8(495) 739 4807</div>
-                </div>
-              </a>
+            <div className="bg-[#e8f0fe] rounded-3xl border border-[#b0ccf5] shadow-lg p-8">
+              <SupportForm />
             </div>
           </div>
         </div>
