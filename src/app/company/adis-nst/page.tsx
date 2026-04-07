@@ -86,38 +86,6 @@ export default function AdisNstCompanyPage() {
 
       <section className="py-24">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-3xl p-8 md:p-10 mb-12">
-            <div className="flex items-center gap-3 mb-6">
-              <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary">
-                <Building2 size={22} />
-              </div>
-              <h2 className="text-[clamp(28px,3.4vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
-                Реквизиты
-              </h2>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {requisites.map((item) => (
-                <div key={item.title} className="rounded-2xl bg-white/80 border border-white p-5">
-                  <div className="flex items-start gap-4">
-                    <div className="w-10 h-10 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary shrink-0">
-                      <item.icon size={18} />
-                    </div>
-                    <div>
-                      <div className="text-sm text-gray-400 mb-1">{item.title}</div>
-                      {item.href ? (
-                        <a href={item.href} className="text-gray-900 hover:text-primary transition-colors">
-                          {item.value}
-                        </a>
-                      ) : (
-                        <div className="text-gray-900 leading-relaxed">{item.value}</div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-
           <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-3xl p-8 md:p-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary">
@@ -155,6 +123,42 @@ export default function AdisNstCompanyPage() {
             </p>
             <div className="bg-[#e8f0fe] rounded-3xl border border-[#b0ccf5] shadow-lg p-8">
               <SupportForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-24">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-3xl p-8 md:p-10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary">
+                <Building2 size={22} />
+              </div>
+              <h2 className="text-[clamp(28px,3.4vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
+                Реквизиты
+              </h2>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {requisites.map((item) => (
+                <div key={item.title} className="rounded-2xl bg-white/80 border border-white p-5">
+                  <div className="flex items-start gap-4">
+                    <div className="w-10 h-10 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary shrink-0">
+                      <item.icon size={18} />
+                    </div>
+                    <div>
+                      <div className="text-sm text-gray-400 mb-1">{item.title}</div>
+                      {item.href ? (
+                        <a href={item.href} className="text-gray-900 hover:text-primary transition-colors">
+                          {item.value}
+                        </a>
+                      ) : (
+                        <div className="text-gray-900 leading-relaxed">{item.value}</div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
