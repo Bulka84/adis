@@ -7,12 +7,12 @@ const CONTACT_EMAIL = "nst@adis-nst.ru";
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 function buildMailtoUrl(subject: string, lines: string[]) {
-  const params = new URLSearchParams({
-    subject,
-    body: lines.join("\n"),
-  });
+  const query = [
+    `subject=${encodeURIComponent(subject)}`,
+    `body=${encodeURIComponent(lines.join("\n"))}`,
+  ].join("&");
 
-  return `mailto:${CONTACT_EMAIL}?${params.toString()}`;
+  return `mailto:${CONTACT_EMAIL}?${query}`;
 }
 
 export default function ContactForm() {
