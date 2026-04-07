@@ -1,38 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import {
-  ArrowLeft,
-  BarChart3,
-  ChevronRight,
-  Cpu,
-  Monitor,
-  Pill,
-  Radio,
-  Server,
-  Shield,
-  Stethoscope,
-  BookOpen,
-  Users,
-} from "lucide-react";
-import {
-  getWorkstationBySlug,
-  workstations,
-  type WorkstationIconKey,
-} from "@/data/workstations";
-
-const iconMap = {
-  monitor: Monitor,
-  stethoscope: Stethoscope,
-  users: Users,
-  shield: Shield,
-  "bar-chart": BarChart3,
-  radio: Radio,
-  cpu: Cpu,
-  pill: Pill,
-  server: Server,
-  "book-open": BookOpen,
-} satisfies Record<WorkstationIconKey, typeof Monitor>;
+import { ArrowLeft, ChevronRight } from "lucide-react";
+import { getWorkstationBySlug, workstations } from "@/data/workstations";
 
 interface WorkstationPageProps {
   params: Promise<{
@@ -74,8 +44,6 @@ export default async function WorkstationPage({
     notFound();
   }
 
-  const Icon = iconMap[workstation.iconKey];
-
   return (
     <>
       <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
@@ -92,11 +60,8 @@ export default async function WorkstationPage({
 
           <div className="max-w-4xl">
             <span className="section-tag section-tag-light mb-4">
-              АРМ {workstation.badge ?? String(workstation.number).padStart(2, "0")}
+              АРМ {String(workstation.number).padStart(2, "0")}
             </span>
-            <div className="w-16 h-16 rounded-2xl bg-white/8 border border-white/12 flex items-center justify-center text-primary mb-6">
-              <Icon size={30} />
-            </div>
             <h1 className="text-[clamp(34px,4.6vw,58px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
               {workstation.name}
             </h1>
@@ -173,7 +138,7 @@ export default async function WorkstationPage({
                     }`}
                   >
                     <span className="text-sm font-semibold leading-snug">
-                      {(item.badge ?? String(item.number).padStart(2, "0"))} {item.name}
+                      {String(item.number).padStart(2, "0")} {item.name}
                     </span>
                     <ChevronRight size={18} className="shrink-0" />
                   </Link>

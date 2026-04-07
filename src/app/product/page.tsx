@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Monitor, Archive, Pill, BookOpen, Server, Shield, Cpu, Users, Radio, BarChart3, Stethoscope, ChevronRight } from "lucide-react";
-import { workstations, type WorkstationIconKey } from "@/data/workstations";
+import { Monitor, Archive, Pill, BookOpen, Server, Shield, Users, ChevronRight } from "lucide-react";
+import { workstations } from "@/data/workstations";
 
 export const metadata: Metadata = {
   title: "О продукте",
@@ -14,19 +14,6 @@ const subsystems = [
   { title: "Аптека", description: "Подсистема учёта медикаментов — контроль расхода медсредств на станции, подстанциях и в сумках бригад.", icon: Pill },
   { title: "НСИ", description: "Подсистема ведения справочников — адресные базы, классификаторы, нормативно-справочная информация.", icon: BookOpen },
 ];
-
-const workstationIcons = {
-  monitor: Monitor,
-  stethoscope: Stethoscope,
-  users: Users,
-  shield: Shield,
-  "bar-chart": BarChart3,
-  radio: Radio,
-  cpu: Cpu,
-  pill: Pill,
-  server: Server,
-  "book-open": BookOpen,
-} satisfies Record<WorkstationIconKey, typeof Monitor>;
 
 export default function ProductPage() {
   return (
@@ -144,8 +131,6 @@ export default function ProductPage() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {workstations.map((ws) => {
-              const Icon = workstationIcons[ws.iconKey];
-
               return (
               <Link
                 key={ws.slug}
@@ -153,10 +138,7 @@ export default function ProductPage() {
                 className="group relative p-7 bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] card-hover module-card-top overflow-hidden block"
               >
                 <div className="text-[32px] font-extrabold leading-none mb-3 gradient-text">
-                  {ws.badge ?? String(ws.number).padStart(2, "0")}
-                </div>
-                <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary mb-4">
-                  <Icon size={22} />
+                  {String(ws.number).padStart(2, "0")}
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2 text-base">{ws.name}</h3>
                 <p className="text-sm text-gray-500">{ws.description}</p>
