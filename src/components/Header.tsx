@@ -5,7 +5,7 @@ import Link from "next/link";
 import { Menu, X, Phone } from "lucide-react";
 
 const navigation = [
-  { name: "Компания", href: "/company" },
+  { name: "Компании", href: "/company" },
   { name: "О продукте", href: "/product" },
   { name: "Внедрения", href: "/clients" },
   { name: "Услуги", href: "/services" },

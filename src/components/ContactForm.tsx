@@ -127,6 +127,25 @@ export default function ContactForm() {
       <label className="flex items-start gap-3 text-sm text-gray-500">
         <input
           type="checkbox"
+          name="policy"
+          required
+          className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20"
+        />
+        <span>
+          Я принимаю{" "}
+          <a
+            href={`${BASE_PATH}/documents/nst-ppd.pdf`}
+            target="_blank"
+            rel="noreferrer"
+            className="underline hover:text-primary"
+          >
+            Политику обработки персональных данных
+          </a>
+        </span>
+      </label>
+      <label className="flex items-start gap-3 text-sm text-gray-500">
+        <input
+          type="checkbox"
           name="consent"
           required
           className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20"
@@ -151,17 +170,6 @@ export default function ContactForm() {
         <Send size={18} />
         {loading ? "Отправка..." : "Отправить заявку"}
       </button>
-      <p className="text-xs text-gray-400">
-        Нажимая кнопку, вы соглашаетесь с{" "}
-        <a
-          href={`${BASE_PATH}/documents/nst-ppd.pdf`}
-          target="_blank"
-          rel="noreferrer"
-          className="underline hover:text-primary"
-        >
-          политикой обработки персональных данных
-        </a>
-      </p>
     </form>
   );
 }

@@ -23,6 +23,7 @@ export default function SupportForm() {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
+  const [policyAccepted, setPolicyAccepted] = useState(false);
   const [consentAccepted, setConsentAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -46,6 +47,7 @@ export default function SupportForm() {
     setName("");
     setContact("");
     setMessage("");
+    setPolicyAccepted(false);
     setConsentAccepted(false);
   };
 
@@ -196,6 +198,26 @@ export default function SupportForm() {
           <label className="flex items-start gap-3 text-xs text-gray-500">
             <input
               type="checkbox"
+              checked={policyAccepted}
+              onChange={(e) => setPolicyAccepted(e.target.checked)}
+              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20"
+            />
+            <span>
+              Я принимаю{" "}
+              <a
+                href={`${BASE_PATH}/documents/nst-ppd.pdf`}
+                target="_blank"
+                rel="noreferrer"
+                className="underline hover:text-primary"
+              >
+                Политику обработки персональных данных
+              </a>
+            </span>
+          </label>
+
+          <label className="flex items-start gap-3 text-xs text-gray-500">
+            <input
+              type="checkbox"
               checked={consentAccepted}
               onChange={(e) => setConsentAccepted(e.target.checked)}
               className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20"
@@ -223,7 +245,7 @@ export default function SupportForm() {
             </button>
             <button
               onClick={handleSubmit}
-              disabled={!name || !contact || !message || !consentAccepted || isSubmitting}
+              disabled={!name || !contact || !message || !policyAccepted || !consentAccepted || isSubmitting}
               className="flex-1 flex items-center justify-center gap-2 px-4 py-3 btn-gradient text-sm font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
