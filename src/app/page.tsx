@@ -11,7 +11,6 @@ import {
   ChevronRight,
   Shield,
   Star,
-  Phone,
   ChevronDown,
 } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
@@ -363,42 +362,6 @@ export default function HomePage() {
                 />
               </a>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== CTA Section ===== */}
-      <section className="py-24 lg:py-28">
-        <div className="max-w-[1200px] mx-auto px-6">
-          <div className="relative gradient-bg rounded-3xl py-[72px] px-12 text-center overflow-hidden">
-            {/* CTA orbs */}
-            <div className="absolute w-[300px] h-[300px] bg-white/15 rounded-full blur-[80px] -top-[100px] -right-[50px]" />
-            <div className="absolute w-[250px] h-[250px] bg-white/10 rounded-full blur-[80px] -bottom-[80px] -left-[30px]" />
-
-            <div className="relative z-[1]">
-              <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-white leading-[1.2] tracking-[-0.02em] mb-4">
-                Предварительная консультация
-              </h2>
-              <p className="text-lg text-white/80 max-w-[500px] mx-auto mb-8 leading-relaxed">
-                Ответим на ваши вопросы и подготовим предложение по автоматизации вашей станции СМП.
-              </p>
-              <div className="flex gap-4 justify-center flex-wrap">
-                <Link
-                  href="/contacts#form"
-                  className="btn-white inline-flex items-center gap-2 px-8 py-4 font-semibold rounded-xl text-[15px]"
-                >
-                  Оставить заявку
-                  <ChevronRight size={20} />
-                </Link>
-                <a
-                  href="tel:+74957394807"
-                  className="btn-ghost-white inline-flex items-center gap-2 px-8 py-4 font-semibold rounded-xl text-[15px]"
-                >
-                  <Phone size={18} />
-                  (495) 739-48-07
-                </a>
-              </div>
-            </div>
           </div>
         </div>
       </section>
