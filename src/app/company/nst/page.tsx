@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Briefcase, Cable, FlaskConical, Wrench } from "lucide-react";
+import { ArrowLeft, Cable } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "ООО Фирма «НСТ»",
   description:
-    "Описание деятельности ООО Фирма «Новые Системные Технологии» в рамках разработки и развития ПК «АДИС».",
+    "Описание деятельности ООО Фирма «Новые Системные Технологии» в точном соответствии с документом.",
 };
 
 const activities = [
@@ -18,27 +18,6 @@ const activities = [
   "Администрирование баз данных.",
   "Научные исследования и разработки в области естественных и технических наук прочие.",
   "Деятельность в области связи на базе проводных технологий.",
-];
-
-const highlights = [
-  {
-    icon: Briefcase,
-    title: "Основная роль",
-    text:
-      "ООО Фирма «Новые Системные Технологии» занимается разработкой, внедрением и обслуживанием собственного программного продукта ПК «АДИС».",
-  },
-  {
-    icon: Cable,
-    title: "Интеграции",
-    text:
-      "Компания разрабатывает средства взаимодействия с другими программно-аппаратными средствами, используемыми в работе служб скорой медицинской помощи.",
-  },
-  {
-    icon: FlaskConical,
-    title: "Развитие продукта",
-    text:
-      "Компания участвует в исследовательских и инженерных работах, связанных с развитием программного комплекса и сопутствующей инфраструктуры.",
-  },
 ];
 
 export default function NstCompanyPage() {
@@ -60,32 +39,23 @@ export default function NstCompanyPage() {
             ООО Фирма &laquo;Новые Системные Технологии&raquo;
           </h1>
           <p className="text-xl text-white/60 max-w-4xl leading-relaxed">
-            Компания занимается разработкой, внедрением и обслуживанием собственного
-            программного продукта ПК &laquo;АДИС&raquo;, а также разработкой средств
-            взаимодействия с другими программно-аппаратными средствами, применяемыми
-            в работе служб скорой медицинской помощи.
+            ООО Фирма &laquo;Новые Системные Технологии&raquo; занимается разработкой,
+            внедрением и обслуживанием собственного программного продукта
+            &laquo;Программный комплекс автоматизации диспетчерской службы станции
+            скорой медицинской помощи ПК &quot;АДИС&quot; (зарегистрирован в едином
+            реестре российских программ для электронных вычислительных машин и баз
+            данных за регистрационным номером 1591 на основании приказа Минкомсвязи
+            России от 06.09.2016 № 426).
           </p>
         </div>
       </section>
 
       <section className="py-24">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-12">
-            {highlights.map((item) => (
-              <div key={item.title} className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-2xl p-8">
-                <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary mb-5">
-                  <item.icon size={22} />
-                </div>
-                <h2 className="text-xl font-extrabold text-gray-900 mb-3">{item.title}</h2>
-                <p className="text-gray-500 leading-relaxed text-[15px]">{item.text}</p>
-              </div>
-            ))}
-          </div>
-
           <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-3xl p-8 md:p-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary">
-                <Wrench size={22} />
+                <Cable size={22} />
               </div>
               <h2 className="text-[clamp(28px,3.4vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
                 Основные направления деятельности
