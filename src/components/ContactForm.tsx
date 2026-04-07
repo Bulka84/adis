@@ -124,6 +124,25 @@ export default function ContactForm() {
           placeholder="Опишите ваши задачи или вопросы"
         />
       </div>
+      <label className="flex items-start gap-3 text-sm text-gray-500">
+        <input
+          type="checkbox"
+          name="consent"
+          required
+          className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20"
+        />
+        <span>
+          Я даю{" "}
+          <a
+            href={`${BASE_PATH}/documents/nst-spd.pdf`}
+            target="_blank"
+            rel="noreferrer"
+            className="underline hover:text-primary"
+          >
+            согласие на обработку персональных данных
+          </a>
+        </span>
+      </label>
       <button
         type="submit"
         disabled={loading}

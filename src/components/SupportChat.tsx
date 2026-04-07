@@ -5,6 +5,7 @@ import { MessageCircle, X, ChevronRight, ChevronLeft, CheckCircle, Send } from "
 import { clients } from "@/data/clients";
 
 const CONTACT_EMAIL = "nst@adis-nst.ru";
+const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 function buildMailtoUrl(subject: string, lines: string[]) {
   const query = [
@@ -23,6 +24,7 @@ export default function SupportChat() {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
+  const [consentAccepted, setConsentAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const regions = useMemo(() => {
@@ -45,6 +47,7 @@ export default function SupportChat() {
     setName("");
     setContact("");
     setMessage("");
+    setConsentAccepted(false);
   };
 
   const handleClose = () => {
@@ -206,6 +209,26 @@ export default function SupportChat() {
                 />
               </div>
 
+              <label className="flex items-start gap-3 text-xs text-gray-500">
+                <input
+                  type="checkbox"
+                  checked={consentAccepted}
+                  onChange={(e) => setConsentAccepted(e.target.checked)}
+                  className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20"
+                />
+                <span>
+                  Я даю{" "}
+                  <a
+                    href={`${BASE_PATH}/documents/nst-spd.pdf`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline hover:text-primary"
+                  >
+                    согласие на обработку персональных данных
+                  </a>
+                </span>
+              </label>
+
               <div className="flex gap-3">
                 <button
                   onClick={() => setStep(1)}
@@ -216,7 +239,7 @@ export default function SupportChat() {
                 </button>
                 <button
                   onClick={handleSubmit}
-                  disabled={!name || !contact || !message || isSubmitting}
+                  disabled={!name || !contact || !message || !consentAccepted || isSubmitting}
                   className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 btn-gradient text-sm font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (

@@ -19,8 +19,7 @@ const versions = [
     features: [
       "Разработан функционал АРМ неотложной помощи (поликлиники)",
       "АРМ диспетчера медицинского округа",
-      "Приём и загрузка координат машин по протоколу ЕГТС (ГОСТ 33472-2015)",
-      "Cервисы интеграции с различными программными АТС",
+      "Интеграция с различными програмными АТС",
     ],
   },
   {
@@ -67,19 +66,6 @@ export default function VersionsPage() {
             История развития программного комплекса. Каждая новая версия
             расширяет возможности автоматизации и повышает удобство работы.
           </p>
-          <div className="flex flex-wrap gap-4">
-            {[
-              { value: "8.5.2", label: "Актуальная версия" },
-              { value: "34", label: "года развития" },
-              { value: "7", label: "версий в истории" },
-              { value: "2", label: "обновления 8.5" },
-            ].map((item) => (
-              <div key={item.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-4 text-center">
-                <div className="text-3xl font-extrabold text-white mb-1">{item.value}</div>
-                <div className="text-sm text-white/50">{item.label}</div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
 

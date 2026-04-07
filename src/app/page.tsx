@@ -317,6 +317,36 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ===== Partners Section ===== */}
+      <section className="py-24 lg:py-28">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="text-center mb-12">
+            <span className="section-tag mb-4">Партнёры</span>
+            <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
+              Официальные партнёры
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            {[
+              { name: "вегастар.рф", href: "https://вегастар.рф" },
+              { name: "astralinux.ru", href: "https://astralinux.ru" },
+            ].map((partner) => (
+              <a
+                key={partner.name}
+                href={partner.href}
+                target="_blank"
+                rel="noreferrer"
+                className="block rounded-2xl border border-[#b0ccf5] bg-[#e8f0fe] p-8 text-center card-hover hover:border-primary/40 transition-colors"
+              >
+                <div className="text-[clamp(24px,3vw,32px)] font-extrabold text-gray-900 tracking-[-0.02em]">
+                  {partner.name}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ===== CTA Section ===== */}
       <section className="py-24 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-6">
