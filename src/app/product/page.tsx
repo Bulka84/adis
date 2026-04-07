@@ -1,27 +1,12 @@
 import type { Metadata } from "next";
-import { Monitor, Archive, Pill, BookOpen, Server, Shield, Cpu, Users, Radio, BarChart3, Stethoscope } from "lucide-react";
+import Link from "next/link";
+import { Monitor, Archive, Pill, BookOpen, Server, Shield, Cpu, Users, Radio, BarChart3, Stethoscope, ChevronRight } from "lucide-react";
+import { workstations, type WorkstationIconKey } from "@/data/workstations";
 
 export const metadata: Metadata = {
   title: "О продукте",
   description: "ПК «АДИС» — программный комплекс автоматизации диспетчерской службы станции скорой медицинской помощи. Полный состав подсистем и АРМ.",
 };
-
-const workstations = [
-  { name: "АРМ диспетчера «03»", description: "Приём вызовов, регистрация, контроль адреса, определение профиля", icon: Monitor },
-  { name: "АРМ старшего врача отдела «03»", description: "Контроль работы диспетчеров и качества медицинской помощи", icon: Stethoscope },
-  { name: "АРМ диспетчера направления", description: "Назначение бригад, формирование списков предложений", icon: Users },
-  { name: "АРМ старшего диспетчера", description: "Общий контроль оперативной обстановки и координация", icon: Shield },
-  { name: "АРМ старшего врача смены", description: "Анализ временных показателей, контроль качества обслуживания", icon: BarChart3 },
-  { name: "АРМ радиооператора", description: "Связь с бригадами, передача информации о вызовах", icon: Radio },
-  { name: "АРМ диспетчера подстанции", description: "Управление бригадами на уровне подстанции", icon: Cpu },
-  { name: "АРМ «Аптека станции»", description: "Учёт медикаментов и контроль движения медицинских средств на уровне станции.", icon: Pill },
-  { name: "АРМ «Аптека подстанции»", description: "Ведение учёта медикаментов и контроль остатков на подстанции.", icon: Pill },
-  { name: "АРМ «Заправка сумок»", description: "Комплектование и пополнение сумок бригад с фиксацией расхода медикаментов.", icon: Pill },
-  { name: "АРМ «Контроль аптеки»", description: "Контроль движения, наличия и использования медицинских средств в подсистеме аптеки.", icon: Pill },
-  { name: "АРМ справочной и статистической служб", description: "Генератор отчётов, анализ за любой период", icon: BarChart3 },
-  { name: "АРМ оперативного дежурного регионального уровня", description: "Контроль оперативной обстановки по региону.", icon: Server },
-  { name: "АРМ статистической и административной службы регионального уровня", description: "Показатели оперативности, как по региону в целом, так и по отдельным районным станциям и отделениям СМП.", icon: BarChart3 },
-];
 
 const subsystems = [
   { title: "Диспетчерская", description: "Подсистема оперативного режима — полный цикл обработки вызовов от приёма до завершения обслуживания.", icon: Monitor },
@@ -29,6 +14,19 @@ const subsystems = [
   { title: "Аптека", description: "Подсистема учёта медикаментов — контроль расхода медсредств на станции, подстанциях и в сумках бригад.", icon: Pill },
   { title: "НСИ", description: "Подсистема ведения справочников — адресные базы, классификаторы, нормативно-справочная информация.", icon: BookOpen },
 ];
+
+const workstationIcons = {
+  monitor: Monitor,
+  stethoscope: Stethoscope,
+  users: Users,
+  shield: Shield,
+  "bar-chart": BarChart3,
+  radio: Radio,
+  cpu: Cpu,
+  pill: Pill,
+  server: Server,
+  "book-open": BookOpen,
+} satisfies Record<WorkstationIconKey, typeof Monitor>;
 
 export default function ProductPage() {
   return (
@@ -49,7 +47,7 @@ export default function ProductPage() {
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {[
-              { icon: Monitor, value: "14+", label: "типов АРМ" },
+              { icon: Monitor, value: "19+", label: "типов АРМ" },
               { icon: Server, value: "4", label: "подсистемы" },
               { icon: Shield, value: "3 мин", label: "переход на резерв" },
               { icon: Users, value: "16 часов", label: "подготовка диспетчера" },
@@ -145,15 +143,29 @@ export default function ProductPage() {
             </p>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {workstations.map((ws, i) => (
-              <div key={ws.name} className="relative p-7 bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] card-hover module-card-top overflow-hidden">
+            {workstations.map((ws) => {
+              const Icon = workstationIcons[ws.iconKey];
+
+              return (
+              <Link
+                key={ws.slug}
+                href={`/product/arms/${ws.slug}`}
+                className="group relative p-7 bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] card-hover module-card-top overflow-hidden block"
+              >
                 <div className="text-[32px] font-extrabold leading-none mb-3 gradient-text">
-                  {String(i + 1).padStart(2, "0")}
+                  {ws.badge ?? String(ws.number).padStart(2, "0")}
+                </div>
+                <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary mb-4">
+                  <Icon size={22} />
                 </div>
                 <h3 className="font-bold text-gray-900 mb-2 text-base">{ws.name}</h3>
                 <p className="text-sm text-gray-500">{ws.description}</p>
-              </div>
-            ))}
+                <div className="mt-5 inline-flex items-center gap-2 text-primary font-semibold text-sm group-hover:text-primary-dark transition-colors">
+                  Подробнее
+                  <ChevronRight size={16} />
+                </div>
+              </Link>
+            )})}
           </div>
         </div>
       </section>
