@@ -36,8 +36,8 @@ export default function CompanyPage() {
             <p className="text-xl text-white/60 leading-relaxed">
               Программный комплекс автоматизации диспетчерской службы станции скорой
               медицинской помощи ПК &laquo;АДИС&raquo; является результатом работы
-              ООО &laquo;АДИС-Новые Системные Технологии&raquo; и ООО Фирма
-              &laquo;Новые Системные Технологии&raquo;.
+              ООО Фирма &laquo;Новые Системные Технологии&raquo; и
+              ООО &laquo;АДИС-Новые Системные Технологии&raquo;.
             </p>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
