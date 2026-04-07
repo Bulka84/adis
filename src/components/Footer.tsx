@@ -63,8 +63,8 @@ export default function Footer() {
               </li>
             </ul>
             <div className="mt-6 pt-4 border-t border-white/[0.08]">
-              <p className="text-sm text-white/45">ООО Фирма &laquo;Новые Системные Технологии&raquo;</p>
-              <p className="text-sm text-white/45 mt-1">ИНН: 7717026492</p>
+              <p className="text-sm text-white/45">ООО &laquo;АДИС-Новые Системные Технологии&raquo;</p>
+              <p className="text-sm text-white/45 mt-1">ИНН / КПП: 7734615804 / 773401001</p>
               <a
                 href={`${basePath}/documents/nst-ppd.pdf`}
                 target="_blank"
@@ -87,7 +87,7 @@ export default function Footer() {
 
         <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-[13px] text-white/30">
-            &copy; 1992&ndash;2026 Фирма &laquo;Новые Системные Технологии&raquo;
+            &copy; 1992&ndash;2026 ООО &laquo;АДИС-Новые Системные Технологии&raquo;
           </p>
           <p className="text-[13px] text-white/30">
             Генеральный директор: Зинин В.В.

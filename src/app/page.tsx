@@ -93,7 +93,7 @@ const partners = [
     src: "/vegastar-logo.png",
     width: 496,
     height: 698,
-    imageClassName: "h-32 md:h-36 w-auto",
+    imageClassName: "h-12 md:h-16 w-auto",
   },
   {
     name: "Astra Linux",
@@ -101,7 +101,7 @@ const partners = [
     src: "/astra-linux-logo.png",
     width: 318,
     height: 98,
-    imageClassName: "h-16 md:h-20 w-auto",
+    imageClassName: "h-6 md:h-8 w-auto",
   },
 ];
 
@@ -337,22 +337,22 @@ export default function HomePage() {
       </section>
 
       {/* ===== Partners Section ===== */}
-      <section className="py-24 lg:py-28">
+      <section className="py-10 lg:py-12">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-6">
             <span className="section-tag mb-4">Партнёры</span>
-            <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
+            <h2 className="text-[clamp(24px,3vw,32px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
               Официальные партнёры
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
             {partners.map((partner) => (
               <a
                 key={partner.name}
                 href={partner.href}
                 target="_blank"
                 rel="noreferrer"
-                className="flex min-h-[220px] items-center justify-center rounded-2xl border border-[#b0ccf5] bg-[#e8f0fe] p-8 text-center card-hover hover:border-primary/40 transition-colors"
+                className="flex min-h-[88px] items-center justify-center rounded-2xl border border-[#b0ccf5] bg-[#e8f0fe] p-4 text-center card-hover hover:border-primary/40 transition-colors"
               >
                 <Image
                   src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${partner.src}`}

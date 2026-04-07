@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "НСТ",
     "103",
   ],
-  authors: [{ name: "ООО Фирма «Новые Системные Технологии»" }],
+  authors: [{ name: "ООО «АДИС-Новые Системные Технологии»" }],
   openGraph: {
     type: "website",
     locale: "ru_RU",
