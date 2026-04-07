@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
@@ -12,12 +12,6 @@ const contacts = [
   { icon: MapPin, title: "Почтовый адрес", lines: ["123154, г. Москва, ул. Маршала Тухачевского, 32-2-401"] },
   { icon: Phone, title: "Телефон", lines: ["(495) 739-48-07"], href: "tel:+74957394807" },
   { icon: Mail, title: "Email", lines: ["nst@adis-nst.ru"], href: "mailto:nst@adis-nst.ru" },
-];
-
-const companyDetails = [
-  { label: "Полное наименование", value: "Общество с ограниченной ответственностью «АДИС-Новые Системные Технологии»" },
-  { label: "Сокращённое наименование", value: "ООО «АДИС-НСТ»" },
-  { label: "ИНН / КПП", value: "7734615804 / 773401001" },
 ];
 
 export default function ContactsPage() {
@@ -79,29 +73,6 @@ export default function ContactsPage() {
                     </div>
                   </div>
                 ))}
-              </div>
-
-              <div className="p-6 bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5]">
-                <div className="flex items-center gap-3 mb-3">
-                  <div className="w-8 h-8 gradient-bg-subtle rounded-lg flex items-center justify-center text-primary">
-                    <Clock size={16} />
-                  </div>
-                  <h3 className="font-bold text-gray-900">Реквизиты</h3>
-                </div>
-                <div className="space-y-3 mb-4">
-                  {companyDetails.map((item) => (
-                    <p key={item.label} className="text-gray-500 text-sm">
-                      <strong className="text-gray-900">{item.label}:</strong> {item.value}
-                    </p>
-                  ))}
-                </div>
-                <p className="text-gray-500 text-sm">
-                  <strong className="text-gray-900">Генеральный директор:</strong> Зинин Владимир Валерьевич,
-                  действующий на основании Устава.
-                </p>
-                <p className="text-gray-400 text-sm mt-2">
-                  Обязательно указывайте свои координаты для связи.
-                </p>
               </div>
             </div>
 
