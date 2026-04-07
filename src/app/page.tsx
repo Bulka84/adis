@@ -86,6 +86,25 @@ const geoRegions = [
   "Южно-Сахалинск", "Челябинск", "Петрозаводск", "Томск",
 ];
 
+const partners = [
+  {
+    name: "Вегастар",
+    href: "https://вегастар.рф",
+    src: "/vegastar-logo.png",
+    width: 496,
+    height: 698,
+    imageClassName: "h-32 md:h-36 w-auto",
+  },
+  {
+    name: "Astra Linux",
+    href: "https://astralinux.ru",
+    src: "/astra-linux-logo.png",
+    width: 318,
+    height: 98,
+    imageClassName: "h-16 md:h-20 w-auto",
+  },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -327,20 +346,21 @@ export default function HomePage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {[
-              { name: "вегастар.рф", href: "https://вегастар.рф" },
-              { name: "astralinux.ru", href: "https://astralinux.ru" },
-            ].map((partner) => (
+            {partners.map((partner) => (
               <a
                 key={partner.name}
                 href={partner.href}
                 target="_blank"
                 rel="noreferrer"
-                className="block rounded-2xl border border-[#b0ccf5] bg-[#e8f0fe] p-8 text-center card-hover hover:border-primary/40 transition-colors"
+                className="flex min-h-[220px] items-center justify-center rounded-2xl border border-[#b0ccf5] bg-[#e8f0fe] p-8 text-center card-hover hover:border-primary/40 transition-colors"
               >
-                <div className="text-[clamp(24px,3vw,32px)] font-extrabold text-gray-900 tracking-[-0.02em]">
-                  {partner.name}
-                </div>
+                <Image
+                  src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}${partner.src}`}
+                  alt={partner.name}
+                  width={partner.width}
+                  height={partner.height}
+                  className={partner.imageClassName}
+                />
               </a>
             ))}
           </div>
