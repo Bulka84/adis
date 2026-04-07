@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Settings2 } from "lucide-react";
+import { ArrowLeft, LifeBuoy, Mail, Phone, Settings2 } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "ООО «АДИС-НСТ»",
@@ -65,6 +65,51 @@ export default function AdisNstCompanyPage() {
                   {item}
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-24">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="bg-[#dce0ea] border border-white rounded-3xl p-8 md:p-10">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary">
+                <LifeBuoy size={22} />
+              </div>
+              <h2 className="text-[clamp(28px,3.4vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
+                Связаться с поддержкой
+              </h2>
+            </div>
+            <p className="text-gray-500 leading-relaxed text-[15px] mb-8 max-w-3xl">
+              По вопросам внедрения, сопровождения и эксплуатации ПК &laquo;АДИС&raquo;
+              вы можете связаться со службой поддержки по электронной почте или по телефону.
+            </p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <a
+                href="mailto:nst@adis-nst.ru"
+                className="flex items-start gap-4 rounded-2xl bg-white border border-white p-6 hover:border-[#b0ccf5] transition-colors"
+              >
+                <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary shrink-0">
+                  <Mail size={20} />
+                </div>
+                <div>
+                  <div className="text-sm text-gray-400 mb-1">Электронная почта</div>
+                  <div className="text-gray-900 font-medium">nst@adis-nst.ru</div>
+                </div>
+              </a>
+              <a
+                href="tel:+74957394807"
+                className="flex items-start gap-4 rounded-2xl bg-white border border-white p-6 hover:border-[#b0ccf5] transition-colors"
+              >
+                <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary shrink-0">
+                  <Phone size={20} />
+                </div>
+                <div>
+                  <div className="text-sm text-gray-400 mb-1">Телефон / Факс</div>
+                  <div className="text-gray-900 font-medium">8(495) 739 4807</div>
+                </div>
+              </a>
             </div>
           </div>
         </div>

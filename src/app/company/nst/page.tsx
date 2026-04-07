@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Cable } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "ООО Фирма «НСТ»",
@@ -67,6 +68,27 @@ export default function NstCompanyPage() {
                   {item}
                 </div>
               ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-24">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
+            <div>
+              <span className="section-tag mb-4">Заявка</span>
+              <h2 className="text-[clamp(28px,3.4vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em] mb-5">
+                Оставить заявку
+              </h2>
+              <p className="text-gray-500 leading-relaxed text-[15px] max-w-xl">
+                Если вам требуется информация о программном комплексе ПК &laquo;АДИС&raquo;,
+                его внедрении, развитии или возможностях использования, заполните форму,
+                и мы свяжемся с вами.
+              </p>
+            </div>
+            <div className="bg-[#e8f0fe] rounded-3xl border border-[#b0ccf5] shadow-lg p-8">
+              <ContactForm />
             </div>
           </div>
         </div>
