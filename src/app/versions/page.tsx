@@ -3,12 +3,28 @@ import { CheckCircle, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
   title: "Версии",
-  description: "История версий ПК «АДИС»: от версии 8.4 до актуальной версии 8.5. Новые возможности и улучшения.",
+  description: "История версий ПК «АДИС»: от версии 8.4 до актуальной версии 8.5 (Пакет обновления 2). Новые возможности и улучшения.",
 };
 
 const versions = [
   {
-    version: "8.5", date: "2024", current: true,
+    version: "8.5 (Пакет обновления 2)", date: "2026", current: true,
+    features: [
+      "Приём и загрузка координат машин по протоколу ЕГТС (ГОСТ 33472-2015)",
+      "АРМ формирования СЭМД и передачи в РЭМД",
+    ],
+  },
+  {
+    version: "8.5 (Пакет обновления 1)", date: "2025", current: false,
+    features: [
+      "Разработан функционал АРМ неотложной помощи (поликлиники)",
+      "АРМ диспетчера медицинского округа",
+      "Приём и загрузка координат машин по протоколу ЕГТС (ГОСТ 33472-2015)",
+      "Cервисы интеграции с различными программными АТС",
+    ],
+  },
+  {
+    version: "8.5", date: "2024", current: false,
     features: [
       "Обновлённый пользовательский интерфейс на всех АРМ",
       "Расширенная интеграция с навигационными системами",
@@ -53,10 +69,10 @@ export default function VersionsPage() {
           </p>
           <div className="flex flex-wrap gap-4">
             {[
-              { value: "8.5", label: "Актуальная версия" },
+              { value: "8.5.2", label: "Актуальная версия" },
               { value: "34", label: "года развития" },
-              { value: "5", label: "мажорных релизов" },
-              { value: "6+", label: "новых функций в 8.5" },
+              { value: "7", label: "версий в истории" },
+              { value: "2", label: "обновления 8.5" },
             ].map((item) => (
               <div key={item.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-4 text-center">
                 <div className="text-3xl font-extrabold text-white mb-1">{item.value}</div>
