@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ChevronRight } from "lucide-react";
+import HeroScrollIndicator from "@/components/HeroScrollIndicator";
 import { getWorkstationBySlug, workstations } from "@/data/workstations";
 
 interface WorkstationPageProps {
@@ -91,9 +92,10 @@ export default async function WorkstationPage({
             </div>
           </div>
         </div>
+        <HeroScrollIndicator targetId="workstation-details" />
       </section>
 
-      <section className="py-24">
+      <section id="workstation-details" className="py-24">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
             <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-3xl p-8 md:p-10">

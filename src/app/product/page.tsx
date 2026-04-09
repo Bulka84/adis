@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Monitor, Archive, Pill, BookOpen, Server, Shield, Users, ChevronRight } from "lucide-react";
+import HeroScrollIndicator from "@/components/HeroScrollIndicator";
 import { workstations } from "@/data/workstations";
 
 export const metadata: Metadata = {
@@ -47,10 +48,11 @@ export default function ProductPage() {
             ))}
           </div>
         </div>
+        <HeroScrollIndicator targetId="product-subsystems" />
       </section>
 
       {/* Subsystems */}
-      <section className="py-24">
+      <section id="product-subsystems" className="py-24">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-tag mb-4">Состав</span>

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { CheckCircle, ArrowRight } from "lucide-react";
+import HeroScrollIndicator from "@/components/HeroScrollIndicator";
 
 export const metadata: Metadata = {
   title: "Версии",
@@ -67,9 +68,10 @@ export default function VersionsPage() {
             расширяет возможности автоматизации и повышает удобство работы.
           </p>
         </div>
+        <HeroScrollIndicator targetId="versions-timeline" />
       </section>
 
-      <section className="py-24">
+      <section id="versions-timeline" className="py-24">
         <div className="max-w-4xl mx-auto px-6">
           <div className="relative">
             {/* Timeline line */}

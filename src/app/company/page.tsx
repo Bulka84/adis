@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, Building2 } from "lucide-react";
+import HeroScrollIndicator from "@/components/HeroScrollIndicator";
 
 export const metadata: Metadata = {
   title: "Компания",
@@ -40,7 +41,7 @@ export default function CompanyPage() {
               ООО &laquo;АДИС-Новые Системные Технологии&raquo;.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div id="company-cards" className="grid grid-cols-1 lg:grid-cols-2 gap-6">
             {companies.map((company) => (
               <Link
                 key={company.name}
@@ -65,6 +66,7 @@ export default function CompanyPage() {
             ))}
           </div>
         </div>
+        <HeroScrollIndicator targetId="company-cards" />
       </section>
     </>
   );

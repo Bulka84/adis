@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Building2, Cable } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
+import HeroScrollIndicator from "@/components/HeroScrollIndicator";
 
 export const metadata: Metadata = {
   title: "ООО Фирма «НСТ»",
@@ -77,9 +78,10 @@ export default function NstCompanyPage() {
             России от 06.09.2016 № 426).
           </p>
         </div>
+        <HeroScrollIndicator targetId="nst-activities" />
       </section>
 
-      <section className="py-24">
+      <section id="nst-activities" className="py-24">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-3xl p-8 md:p-10">
             <div className="flex items-center gap-3 mb-6">

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Star, Quote, MapPin, Calendar, CheckCircle } from "lucide-react";
+import HeroScrollIndicator from "@/components/HeroScrollIndicator";
 
 export const metadata: Metadata = {
   title: "Кейсы и отзывы",
@@ -233,10 +234,11 @@ export default function CasesPage() {
             ))}
           </div>
         </div>
+        <HeroScrollIndicator targetId="cases-list" />
       </section>
 
       {/* Cases */}
-      <section className="py-24">
+      <section id="cases-list" className="py-24">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-tag mb-4">Внедрения</span>

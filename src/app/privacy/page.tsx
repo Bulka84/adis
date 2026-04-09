@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Shield, FileText, Download } from "lucide-react";
+import HeroScrollIndicator from "@/components/HeroScrollIndicator";
 
 export const metadata: Metadata = {
   title: "Политика обработки персональных данных",
@@ -55,9 +56,10 @@ export default function PrivacyPage() {
             ООО &laquo;АДИС-Новые Системные Технологии&raquo; &middot; Редакция от 01.01.2025
           </p>
         </div>
+        <HeroScrollIndicator targetId="privacy-content" />
       </section>
 
-      <section className="max-w-4xl mx-auto px-6 py-16 lg:py-20">
+      <section id="privacy-content" className="max-w-4xl mx-auto px-6 py-16 lg:py-20">
         <div className="mb-12 p-6 bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5]">
           <h2 className="text-xl font-extrabold text-gray-900 mb-4">Документ политики</h2>
           <div className="bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-4">

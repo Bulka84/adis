@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { clients } from "@/data/clients";
 import { regions } from "@/data/regions";
 import { Building2, Users, Server, CheckCircle } from "lucide-react";
+import HeroScrollIndicator from "@/components/HeroScrollIndicator";
 import RegionBlocks from "@/components/RegionBlocks";
 
 export const metadata: Metadata = {
@@ -45,10 +46,11 @@ export default function ClientsPage() {
             ))}
           </div>
         </div>
+        <HeroScrollIndicator targetId="clients-history" />
       </section>
 
       {/* Full history table */}
-      <section className="py-24 bg-gray-50">
+      <section id="clients-history" className="py-24 bg-gray-50">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-12">
             <span className="section-tag mb-4">История</span>

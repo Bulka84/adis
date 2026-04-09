@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Settings, GraduationCap, Wrench, Database, Monitor, HeadphonesIcon, ChevronRight } from "lucide-react";
+import HeroScrollIndicator from "@/components/HeroScrollIndicator";
 
 export const metadata: Metadata = {
   title: "Услуги и цены",
@@ -47,9 +48,10 @@ export default function ServicesPage() {
             ))}
           </div>
         </div>
+        <HeroScrollIndicator targetId="services-list" />
       </section>
 
-      <section className="py-24">
+      <section id="services-list" className="py-24">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
             {services.map((service) => (
