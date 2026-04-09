@@ -157,13 +157,27 @@ export default function HomePage() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[1]">
-          <ChevronDown size={24} className="text-white/40 animate-[bounce-gentle_2s_ease-in-out_infinite]" />
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-[2]">
+          <a
+            href="#subsystems"
+            className="group inline-flex flex-col items-center gap-2 text-white/70 hover:text-white transition-colors"
+            aria-label="Прокрутить к следующему блоку"
+          >
+            <span className="text-xs md:text-sm font-medium tracking-[0.2em] uppercase text-white/50 group-hover:text-white/70 transition-colors">
+              Листайте ниже
+            </span>
+            <span className="flex items-center justify-center w-12 h-12 rounded-full border border-white/20 bg-white/10 backdrop-blur-sm group-hover:bg-white/15 group-hover:border-white/35 transition-all">
+              <ChevronDown
+                size={24}
+                className="animate-[bounce-gentle_2s_ease-in-out_infinite]"
+              />
+            </span>
+          </a>
         </div>
       </section>
 
       {/* ===== Subsystems Section ===== */}
-      <section className="py-24 lg:py-28">
+      <section id="subsystems" className="py-24 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
             <span className="section-tag mb-4">Продукт</span>
