@@ -102,6 +102,22 @@ const partners = [
     height: 98,
     imageClassName: "h-6 md:h-8 w-auto",
   },
+  {
+    name: "РЕД СОФТ",
+    href: "https://redos.red-soft.ru",
+    src: "/redos-logo.png",
+    width: 184,
+    height: 74,
+    imageClassName: "h-10 md:h-12 w-auto",
+  },
+  {
+    name: "АГАТ-РТ",
+    href: "https://agatrt.ru",
+    src: "/agat-logo.png",
+    width: 518,
+    height: 96,
+    imageClassName: "h-9 md:h-11 w-auto",
+  },
 ];
 
 export default function HomePage() {
@@ -341,7 +357,7 @@ export default function HomePage() {
               Официальные партнёры
             </h2>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-4 max-w-4xl mx-auto">
             {partners.map((partner) => (
               <a
                 key={partner.name}
