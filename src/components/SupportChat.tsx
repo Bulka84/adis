@@ -13,6 +13,7 @@ export default function SupportChat() {
   const [step, setStep] = useState(1);
   const [region, setRegion] = useState("");
   const [city, setCity] = useState("");
+  const [topic, setTopic] = useState("");
   const [contractNumber, setContractNumber] = useState("");
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
@@ -39,6 +40,7 @@ export default function SupportChat() {
     setStep(1);
     setRegion("");
     setCity("");
+    setTopic("");
     setContractNumber("");
     setName("");
     setContact("");
@@ -60,7 +62,7 @@ export default function SupportChat() {
     try {
       await submitSupportTicket({
         source: "support_chat",
-        subject: "Обращение в техподдержку с сайта АДИС",
+        subject: topic || "Обращение в техподдержку с сайта АДИС",
         message,
         customerName: name,
         contact,
@@ -99,7 +101,7 @@ export default function SupportChat() {
         <div className="gradient-bg px-5 py-4 flex items-center justify-between">
           <div>
             <h3 className="text-white font-semibold text-lg">Поддержка</h3>
-            <p className="text-white/70 text-xs">Опишите вашу проблему</p>
+            <p className="text-white/70 text-xs">Опишите ваш вопрос или проблему</p>
           </div>
           <button
             onClick={handleClose}
@@ -223,39 +225,52 @@ export default function SupportChat() {
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                  Имя
+                  Ваше имя
                 </label>
                 <input
                   type="text"
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="Ваше имя"
+                  placeholder="Как к Вам обращаться?"
                   className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                  Телефон или email
+                  Ваш телефон или адрес электронной почты
                 </label>
                 <input
                   type="text"
                   value={contact}
                   onChange={(e) => setContact(e.target.value)}
-                  placeholder="+7 (___) ___-__-__ или email"
+                  placeholder="+7 (___) ___-__-__ или E-mail"
                   className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
                 />
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1.5">
-                  Опишите проблему
+                  Тема обращения
+                </label>
+                <input
+                  type="text"
+                  value={topic}
+                  onChange={(e) => setTopic(e.target.value)}
+                  placeholder="Укажите тему обращения"
+                  className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Опишите ваш вопрос или проблему
                 </label>
                 <textarea
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   rows={4}
-                  placeholder="Что произошло? Какой модуль затронут?"
+                  placeholder="Опишите ваш вопрос или проблему"
                   className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-[#C41E3A]/20 focus:border-[#C41E3A] resize-none"
                 />
               </div>
@@ -318,7 +333,7 @@ export default function SupportChat() {
                 </button>
                 <button
                   onClick={handleSubmit}
-                  disabled={!name || !contact || !message || !consentAccepted || isSubmitting}
+                  disabled={!name || !contact || !topic || !message || !consentAccepted || isSubmitting}
                   className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 btn-gradient text-sm font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {isSubmitting ? (
