@@ -13,9 +13,11 @@ export default function SupportChat() {
   const [step, setStep] = useState(1);
   const [region, setRegion] = useState("");
   const [city, setCity] = useState("");
+  const [contractNumber, setContractNumber] = useState("");
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
+  const [attachments, setAttachments] = useState<File[]>([]);
   const [consentAccepted, setConsentAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
@@ -37,9 +39,11 @@ export default function SupportChat() {
     setStep(1);
     setRegion("");
     setCity("");
+    setContractNumber("");
     setName("");
     setContact("");
     setMessage("");
+    setAttachments([]);
     setConsentAccepted(false);
     setSubmitError("");
   };
@@ -62,6 +66,8 @@ export default function SupportChat() {
         contact,
         region,
         city,
+        contractNumber,
+        attachments,
       });
       setStep(5);
     } catch (error) {
@@ -174,6 +180,19 @@ export default function SupportChat() {
                 </select>
               </div>
 
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Номер договора
+                </label>
+                <input
+                  type="text"
+                  value={contractNumber}
+                  onChange={(e) => setContractNumber(e.target.value)}
+                  placeholder="Введите номер договора"
+                  className="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
+                />
+              </div>
+
               <div className="flex gap-3">
                 <button
                   onClick={() => setStep(1)}
@@ -184,7 +203,7 @@ export default function SupportChat() {
                 </button>
                 <button
                   onClick={() => setStep(3)}
-                  disabled={!region || !city}
+                  disabled={!region || !city || !contractNumber.trim()}
                   className="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 btn-gradient text-sm font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   Далее
@@ -199,6 +218,7 @@ export default function SupportChat() {
             <div className="space-y-4">
               <div className="text-xs text-gray-400 mb-1">
                 {region}, {city}
+                <span className="block mt-1">Договор: {contractNumber}</span>
               </div>
 
               <div>
@@ -240,6 +260,23 @@ export default function SupportChat() {
                 />
               </div>
 
+              <div>
+                <label className="block text-sm font-medium text-gray-700 mb-1.5">
+                  Приложите скриншот, логи ошибки или другие файлы
+                </label>
+                <input
+                  type="file"
+                  multiple
+                  onChange={(e) => setAttachments(Array.from(e.target.files ?? []))}
+                  className="block w-full text-sm text-gray-500 file:mr-4 file:rounded-lg file:border-0 file:bg-[#e8f0fe] file:px-4 file:py-2.5 file:text-sm file:font-medium file:text-primary hover:file:bg-[#dbe8ff]"
+                />
+                {attachments.length > 0 ? (
+                  <div className="mt-2 text-xs text-gray-400">
+                    {attachments.map((file) => file.name).join(", ")}
+                  </div>
+                ) : null}
+              </div>
+
               <label className="flex items-start gap-3 text-xs text-gray-500 leading-relaxed">
                 <input
                   type="checkbox"
@@ -257,15 +294,7 @@ export default function SupportChat() {
                   >
                     согласие
                   </a>{" "}
-                  с нашей{" "}
-                  <a
-                    href={`${BASE_PATH}/documents/nst-ppd.pdf`}
-                    target="_blank"
-                    rel="noreferrer"
-                    className="underline hover:text-primary"
-                  >
-                    политикой конфиденциальности
-                  </a>{" "}
+                  с нашей политикой конфиденциальности{" "}
                   в области сбора и обработки личных данных. Ознакомиться с{" "}
                   <a
                     href={`${BASE_PATH}/documents/nst-ppd.pdf`}
@@ -314,7 +343,7 @@ export default function SupportChat() {
           {step === 4 && (
             <div className="space-y-4">
               <h4 className="text-base font-semibold text-gray-900">
-                Обратитесь в компанию по адресу почты{" "}
+                Обратитесь в компанию по адресу электронной почты{" "}
                 <a
                   href={`mailto:${SUPPORT_EMAIL}`}
                   className="text-primary hover:underline"
