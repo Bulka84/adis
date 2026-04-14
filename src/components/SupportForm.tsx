@@ -12,7 +12,6 @@ export default function SupportForm() {
   const [step, setStep] = useState(1);
   const [region, setRegion] = useState("");
   const [city, setCity] = useState("");
-  const [topic, setTopic] = useState("");
   const [contractNumber, setContractNumber] = useState("");
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
@@ -39,7 +38,6 @@ export default function SupportForm() {
     setStep(1);
     setRegion("");
     setCity("");
-    setTopic("");
     setContractNumber("");
     setName("");
     setContact("");
@@ -56,7 +54,7 @@ export default function SupportForm() {
     try {
       await submitSupportTicket({
         source: "support_form",
-        subject: topic || "Обращение в техподдержку с сайта АДИС",
+        subject: "Обращение в техподдержку с сайта АДИС",
         message,
         customerName: name,
         contact,
@@ -237,19 +235,6 @@ export default function SupportForm() {
             <label className="block text-sm font-medium text-gray-700 mb-1.5">
               Тема обращения
             </label>
-            <input
-              type="text"
-              value={topic}
-              onChange={(e) => setTopic(e.target.value)}
-              placeholder="Укажите тему обращения"
-              className="w-full px-4 py-3 border border-gray-200 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1.5">
-              Опишите ваш вопрос или проблему
-            </label>
             <textarea
               value={message}
               onChange={(e) => setMessage(e.target.value)}
@@ -317,7 +302,7 @@ export default function SupportForm() {
             </button>
             <button
               onClick={handleSubmit}
-              disabled={!name || !contact || !topic || !message || !consentAccepted || isSubmitting}
+              disabled={!name || !contact || !message || !consentAccepted || isSubmitting}
               className="flex-1 flex items-center justify-center gap-2 px-4 py-3 btn-gradient text-sm font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
