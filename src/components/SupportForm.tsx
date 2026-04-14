@@ -3,18 +3,10 @@
 import { useMemo, useState } from "react";
 import { CheckCircle, ChevronLeft, ChevronRight, Send } from "lucide-react";
 import { clients } from "@/data/clients";
+import { submitSupportTicket } from "@/lib/support";
 
-const CONTACT_EMAIL = "nst@adis-nst.ru";
 const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
-function buildMailtoUrl(subject: string, lines: string[]) {
-  const query = [
-    `subject=${encodeURIComponent(subject)}`,
-    `body=${encodeURIComponent(lines.join("\n"))}`,
-  ].join("&");
-
-  return `mailto:${CONTACT_EMAIL}?${query}`;
-}
+const SUPPORT_EMAIL = "nst@adis-nst.ru";
 
 export default function SupportForm() {
   const [step, setStep] = useState(1);
@@ -23,9 +15,9 @@ export default function SupportForm() {
   const [name, setName] = useState("");
   const [contact, setContact] = useState("");
   const [message, setMessage] = useState("");
-  const [policyAccepted, setPolicyAccepted] = useState(false);
   const [consentAccepted, setConsentAccepted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
 
   const regions = useMemo(() => {
     const unique = [...new Set(clients.map((c) => c.region))];
@@ -47,31 +39,35 @@ export default function SupportForm() {
     setName("");
     setContact("");
     setMessage("");
-    setPolicyAccepted(false);
     setConsentAccepted(false);
+    setSubmitError("");
   };
 
   const handleSubmit = async () => {
     setIsSubmitting(true);
+    setSubmitError("");
 
-    const mailtoUrl = buildMailtoUrl("Обращение в техподдержку с сайта АДИС", [
-      "Новое обращение в техподдержку с сайта.",
-      "",
-      `Регион: ${region || "-"}`,
-      `Город: ${city || "-"}`,
-      `Имя: ${name || "-"}`,
-      `Контакт: ${contact || "-"}`,
-      "",
-      "Описание проблемы:",
-      message || "-",
-    ]);
-
-    window.location.href = mailtoUrl;
-    setIsSubmitting(false);
-    setStep(3);
+    try {
+      await submitSupportTicket({
+        source: "support_form",
+        subject: "Обращение в техподдержку с сайта АДИС",
+        message,
+        customerName: name,
+        contact,
+        region,
+        city,
+      });
+      setStep(5);
+    } catch (error) {
+      const messageText =
+        error instanceof Error ? error.message : "Не удалось отправить обращение. Попробуйте позже.";
+      setSubmitError(messageText);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
-  if (step === 3) {
+  if (step === 5) {
     return (
       <div className="text-center py-8">
         <div className="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mx-auto mb-4">
@@ -97,6 +93,30 @@ export default function SupportForm() {
     <div className="space-y-5">
       {step === 1 && (
         <div className="space-y-4">
+          <h4 className="text-base font-semibold text-gray-900">
+            Наличие действующего договора сопровождения?
+          </h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <button
+              onClick={() => setStep(2)}
+              className="w-full flex items-center justify-center gap-2 px-4 py-3 btn-gradient text-sm font-semibold rounded-xl"
+            >
+              Да
+              <ChevronRight size={16} />
+            </button>
+            <button
+              onClick={() => setStep(4)}
+              className="w-full px-4 py-3 text-sm font-semibold text-gray-700 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors"
+            >
+              Нет
+            </button>
+          </div>
+        </div>
+      )}
+
+      {step === 2 && (
+        <div className="space-y-4">
+          <div className="text-xs text-gray-400">Договор сопровождения подтверждён</div>
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-1.5">
               Регион
@@ -139,18 +159,27 @@ export default function SupportForm() {
             </select>
           </div>
 
-          <button
-            onClick={() => setStep(2)}
-            disabled={!region || !city}
-            className="w-full flex items-center justify-center gap-2 px-4 py-3 btn-gradient text-sm font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
-          >
-            Далее
-            <ChevronRight size={16} />
-          </button>
+          <div className="flex gap-3">
+            <button
+              onClick={() => setStep(1)}
+              className="flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+            >
+              <ChevronLeft size={16} />
+              Назад
+            </button>
+            <button
+              onClick={() => setStep(3)}
+              disabled={!region || !city}
+              className="flex-1 flex items-center justify-center gap-2 px-4 py-3 btn-gradient text-sm font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
+            >
+              Далее
+              <ChevronRight size={16} />
+            </button>
+          </div>
         </div>
       )}
 
-      {step === 2 && (
+      {step === 3 && (
         <div className="space-y-4">
           <div className="text-xs text-gray-400 mb-1">
             {region}, {city}
@@ -195,49 +224,48 @@ export default function SupportForm() {
             />
           </div>
 
-          <label className="flex items-start gap-3 text-xs text-gray-500">
-            <input
-              type="checkbox"
-              checked={policyAccepted}
-              onChange={(e) => setPolicyAccepted(e.target.checked)}
-              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20"
-            />
-            <span>
-              Я принимаю{" "}
-              <a
-                href={`${BASE_PATH}/documents/nst-ppd.pdf`}
-                target="_blank"
-                rel="noreferrer"
-                className="underline hover:text-primary"
-              >
-                Политику обработки персональных данных
-              </a>
-            </span>
-          </label>
-
-          <label className="flex items-start gap-3 text-xs text-gray-500">
+          <label className="flex items-start gap-3 text-xs text-gray-500 leading-relaxed">
             <input
               type="checkbox"
               checked={consentAccepted}
               onChange={(e) => setConsentAccepted(e.target.checked)}
-              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20"
+              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20 shrink-0"
             />
             <span>
-              Я даю{" "}
+              Отправляя эту форму, Вы выражаете свое{" "}
               <a
                 href={`${BASE_PATH}/documents/nst-spd.pdf`}
                 target="_blank"
                 rel="noreferrer"
                 className="underline hover:text-primary"
               >
-                согласие на обработку персональных данных
+                согласие
+              </a>{" "}
+              с нашей{" "}
+              <a
+                href={`${BASE_PATH}/documents/nst-ppd.pdf`}
+                target="_blank"
+                rel="noreferrer"
+                className="underline hover:text-primary"
+              >
+                политикой конфиденциальности
+              </a>{" "}
+              в области сбора и обработки личных данных. Ознакомиться с{" "}
+              <a
+                href={`${BASE_PATH}/documents/nst-ppd.pdf`}
+                target="_blank"
+                rel="noreferrer"
+                className="underline hover:text-primary"
+              >
+                политикой конфиденциальности
               </a>
+              .
             </span>
           </label>
 
           <div className="flex gap-3">
             <button
-              onClick={() => setStep(1)}
+              onClick={() => setStep(2)}
               className="flex items-center justify-center gap-1 px-4 py-3 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
             >
               <ChevronLeft size={16} />
@@ -245,7 +273,7 @@ export default function SupportForm() {
             </button>
             <button
               onClick={handleSubmit}
-              disabled={!name || !contact || !message || !policyAccepted || !consentAccepted || isSubmitting}
+              disabled={!name || !contact || !message || !consentAccepted || isSubmitting}
               className="flex-1 flex items-center justify-center gap-2 px-4 py-3 btn-gradient text-sm font-semibold rounded-xl disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
@@ -258,6 +286,31 @@ export default function SupportForm() {
               )}
             </button>
           </div>
+          {submitError ? (
+            <p className="text-sm text-red-600 bg-red-50 border border-red-100 rounded-lg px-4 py-3">
+              {submitError}
+            </p>
+          ) : null}
+        </div>
+      )}
+
+      {step === 4 && (
+        <div className="space-y-4">
+          <h4 className="text-base font-semibold text-gray-900">
+            Обратитесь в компанию по адресу почты{" "}
+            <a
+              href={`mailto:${SUPPORT_EMAIL}`}
+              className="text-primary hover:underline"
+            >
+              {SUPPORT_EMAIL.toUpperCase()}
+            </a>
+          </h4>
+          <button
+            onClick={() => setStep(1)}
+            className="w-full px-4 py-3 text-sm font-medium text-gray-600 border border-gray-200 rounded-lg hover:bg-gray-50 transition-colors"
+          >
+            Назад
+          </button>
         </div>
       )}
     </div>
