@@ -28,7 +28,6 @@ export default function Footer() {
                 { name: "О продукте", href: "/product" },
                 { name: "Внедрения", href: "/clients" },
                 { name: "Услуги и цены", href: "/services" },
-                { name: "Кейсы и отзывы", href: "/cases" },
                 { name: "Версии", href: "/versions" },
                 { name: "Контакты", href: "/contacts" },
               ].map((item) => (

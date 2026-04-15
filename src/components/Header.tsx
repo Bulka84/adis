@@ -10,7 +10,6 @@ const navigation = [
   { name: "Внедрения", href: "/clients" },
   { name: "Услуги", href: "/services" },
   { name: "Версии", href: "/versions" },
-  { name: "Кейсы", href: "/cases" },
   { name: "Контакты", href: "/contacts" },
 ];
 
