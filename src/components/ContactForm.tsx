@@ -124,43 +124,36 @@ export default function ContactForm() {
           placeholder="Опишите ваши задачи или вопросы"
         />
       </div>
-      <label className="flex items-start gap-3 text-sm text-gray-500">
-        <input
-          type="checkbox"
-          name="policy"
-          required
-          className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20"
-        />
-        <span>
-          Я принимаю{" "}
-          <a
-            href={`${BASE_PATH}/documents/nst-ppd.pdf`}
-            target="_blank"
-            rel="noreferrer"
-            className="underline hover:text-primary"
-          >
-            Политику обработки персональных данных
-          </a>
-        </span>
-      </label>
-      <label className="flex items-start gap-3 text-sm text-gray-500">
+      <div className="text-xs text-gray-500 leading-relaxed">
+        Отправляя эту форму, Вы выражаете свое{" "}
+        <a
+          href={`${BASE_PATH}/documents/nst-spd.pdf`}
+          target="_blank"
+          rel="noreferrer"
+          className="text-primary underline hover:text-primary-dark"
+        >
+          согласие с
+        </a>{" "}
+        нашей политикой конфиденциальности в области сбора и обработки личных
+        данных. Ознакомиться с{" "}
+        <a
+          href={`${BASE_PATH}/documents/nst-ppd.pdf`}
+          target="_blank"
+          rel="noreferrer"
+          className="text-primary underline hover:text-primary-dark"
+        >
+          политикой конфиденциальности
+        </a>
+        .
+      </div>
+      <label className="flex items-center gap-3 text-sm text-gray-700">
         <input
           type="checkbox"
           name="consent"
           required
-          className="mt-1 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20"
+          className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20 shrink-0"
         />
-        <span>
-          Я даю{" "}
-          <a
-            href={`${BASE_PATH}/documents/nst-spd.pdf`}
-            target="_blank"
-            rel="noreferrer"
-            className="underline hover:text-primary"
-          >
-            согласие на обработку персональных данных
-          </a>
-        </span>
+        <span>Я соглашаюсь с политикой конфиденциальности</span>
       </label>
       <button
         type="submit"
