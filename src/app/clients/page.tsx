@@ -46,7 +46,20 @@ export default function ClientsPage() {
             ))}
           </div>
         </div>
-        <HeroScrollIndicator targetId="clients-history" />
+        <HeroScrollIndicator targetId="clients-regions" />
+      </section>
+
+      {/* Active Region Blocks (detailed) */}
+      <section id="clients-regions" className="max-w-[1200px] mx-auto px-6 py-24">
+        <div className="text-center mb-12">
+          <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.02em] mb-4">
+            Регионы
+          </h2>
+          <p className="text-gray-500 max-w-2xl mx-auto">
+            Подробная информация по городам и рабочим местам в регионах
+          </p>
+        </div>
+        <RegionBlocks clients={activeClients} />
       </section>
 
       {/* Full history table */}
@@ -105,19 +118,6 @@ export default function ClientsPage() {
             </table>
           </div>
         </div>
-      </section>
-
-      {/* Active Region Blocks (detailed) */}
-      <section className="max-w-[1200px] mx-auto px-6 py-24">
-        <div className="text-center mb-12">
-          <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.02em] mb-4">
-            Регионы
-          </h2>
-          <p className="text-gray-500 max-w-2xl mx-auto">
-            Подробная информация по городам и рабочим местам в регионах
-          </p>
-        </div>
-        <RegionBlocks clients={activeClients} />
       </section>
     </>
   );
