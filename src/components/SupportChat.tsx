@@ -284,22 +284,21 @@ export default function SupportChat() {
                   className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20 shrink-0"
                 />
                 <span>
-                  Отправляя эту форму, Вы выражаете свое{" "}
+                  Отправляя эту форму, я соглашаюсь с{" "}
                   <a
                     href={`${BASE_PATH}/documents/nst-spd.pdf`}
                     target="_blank"
                     rel="noreferrer"
-                    className="underline hover:text-primary"
+                    className="text-primary underline hover:text-primary-dark"
                   >
-                    согласие
+                    политикой конфиденциальности
                   </a>{" "}
-                  с нашей политикой конфиденциальности{" "}
                   в области сбора и обработки личных данных. Ознакомиться с{" "}
                   <a
                     href={`${BASE_PATH}/documents/nst-ppd.pdf`}
                     target="_blank"
                     rel="noreferrer"
-                    className="underline hover:text-primary"
+                    className="text-primary underline hover:text-primary-dark"
                   >
                     политикой конфиденциальности
                   </a>
