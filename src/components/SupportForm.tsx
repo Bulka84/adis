@@ -269,15 +269,16 @@ export default function SupportForm() {
               className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20 shrink-0"
             />
             <span>
-              Отправляя эту форму, я соглашаюсь с{" "}
+              Отправляя эту форму, я{" "}
               <a
                 href={`${BASE_PATH}/documents/nst-spd.pdf`}
                 target="_blank"
                 rel="noreferrer"
                 className="text-primary underline hover:text-primary-dark"
               >
-                политикой конфиденциальности
+                соглашаюсь
               </a>{" "}
+              с политикой конфиденциальности{" "}
               в области сбора и обработки личных данных. Ознакомиться с{" "}
               <a
                 href={`${BASE_PATH}/documents/nst-ppd.pdf`}
