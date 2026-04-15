@@ -112,7 +112,7 @@ export default function ProductPage() {
               </p>
               <p>
                 <strong className="text-gray-900">Технологии:</strong> C, C++, PHP, JavaScript.
-                СУБД PostgreSQL, MySQL. Серверная ОС — Linux.
+                СУБД PostgreSQL. Серверная ОС — Linux.
               </p>
             </div>
           </div>
