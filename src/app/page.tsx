@@ -12,10 +12,10 @@ import {
   Shield,
   Star,
 } from "lucide-react";
+import ContactForm from "@/components/ContactForm";
 import AnimatedCounters from "@/components/AnimatedCounters";
 import HeroMapOverlay from "@/components/HeroMapOverlay";
 import HeroScrollIndicator from "@/components/HeroScrollIndicator";
-import SupportForm from "@/components/SupportForm";
 
 const subsystems = [
   {
@@ -379,18 +379,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== Support Form Section ===== */}
+      {/* ===== Contact Form Section ===== */}
       <section id="form" className="py-24 lg:py-28 bg-[#dce0ea]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <span className="section-tag mb-4">Поддержка</span>
+              <span className="section-tag mb-4">Контакты</span>
               <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-gray-900 leading-[1.2] tracking-[-0.03em] mb-5">
-                Техническая поддержка
+                Свяжитесь с нами
               </h2>
               <p className="text-base text-gray-500 leading-relaxed mb-8">
-                Оставьте обращение, и мы поможем разобраться с вопросами
-                сопровождения и эксплуатации программного комплекса.
+                Оставьте заявку, и мы подготовим предложение по автоматизации
+                вашей станции скорой медицинской помощи с учётом её специфики.
               </p>
               <div className="space-y-4">
                 {[
@@ -407,8 +407,8 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <div className="bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] shadow-lg p-8 self-start">
-              <SupportForm />
+            <div className="bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] shadow-lg p-6 md:p-7 self-start max-w-[560px] w-full">
+              <ContactForm />
             </div>
           </div>
         </div>

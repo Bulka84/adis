@@ -261,24 +261,18 @@ export default function SupportForm() {
             ) : null}
           </div>
 
-          <label className="flex items-start gap-3 text-xs text-gray-500 leading-relaxed">
-            <input
-              type="checkbox"
-              checked={consentAccepted}
-              onChange={(e) => setConsentAccepted(e.target.checked)}
-              className="mt-0.5 h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20 shrink-0"
-            />
+          <div className="text-xs text-gray-500 leading-relaxed">
             <span>
-              Отправляя эту форму, я{" "}
+              Отправляя эту форму, Вы выражаете свое{" "}
               <a
                 href={`${BASE_PATH}/documents/nst-spd.pdf`}
                 target="_blank"
                 rel="noreferrer"
                 className="text-primary underline hover:text-primary-dark"
               >
-                соглашаюсь
+                согласие с
               </a>{" "}
-              с политикой конфиденциальности{" "}
+              нашей политикой конфиденциальности{" "}
               в области сбора и обработки личных данных. Ознакомиться с{" "}
               <a
                 href={`${BASE_PATH}/documents/nst-ppd.pdf`}
@@ -290,6 +284,16 @@ export default function SupportForm() {
               </a>
               .
             </span>
+          </div>
+
+          <label className="flex items-center gap-3 text-sm text-gray-700">
+            <input
+              type="checkbox"
+              checked={consentAccepted}
+              onChange={(e) => setConsentAccepted(e.target.checked)}
+              className="h-4 w-4 rounded border-gray-300 text-primary focus:ring-primary/20 shrink-0"
+            />
+            <span>Я соглашаюсь с политикой конфиденциальности</span>
           </label>
 
           <div className="flex gap-3">

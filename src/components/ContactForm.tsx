@@ -59,8 +59,8 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-5">
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+    <form onSubmit={handleSubmit} className="space-y-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
             Имя *
@@ -70,7 +70,7 @@ export default function ContactForm() {
             id="name"
             name="name"
             required
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+            className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
             placeholder="Ваше имя"
           />
         </div>
@@ -83,7 +83,7 @@ export default function ContactForm() {
             id="phone"
             name="phone"
             required
-            className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+            className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
             placeholder="+7 (___) ___-__-__"
           />
         </div>
@@ -96,7 +96,7 @@ export default function ContactForm() {
           type="email"
           id="email"
           name="email"
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+          className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
           placeholder="ivanov@mail.ru"
         />
       </div>
@@ -108,7 +108,7 @@ export default function ContactForm() {
           type="text"
           id="organization"
           name="organization"
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
+          className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all"
           placeholder="Название станции СМП или организации"
         />
       </div>
@@ -120,7 +120,7 @@ export default function ContactForm() {
           id="message"
           name="message"
           rows={4}
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
+          className="w-full px-3 py-2.5 border border-gray-200 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
           placeholder="Опишите ваши задачи или вопросы"
         />
       </div>
@@ -165,7 +165,7 @@ export default function ContactForm() {
       <button
         type="submit"
         disabled={loading}
-        className="w-full sm:w-auto px-8 py-3.5 btn-gradient font-semibold rounded-xl flex items-center justify-center gap-2 disabled:opacity-60"
+        className="w-full sm:w-auto px-6 py-3 btn-gradient font-semibold rounded-xl flex items-center justify-center gap-2 disabled:opacity-60"
       >
         <Send size={18} />
         {loading ? "Отправка..." : "Отправить заявку"}
