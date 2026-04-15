@@ -382,7 +382,7 @@ export default function HomePage() {
       {/* ===== Support Form Section ===== */}
       <section id="form" className="py-24 lg:py-28 bg-[#dce0ea]">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
               <span className="section-tag mb-4">Поддержка</span>
               <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-gray-900 leading-[1.2] tracking-[-0.03em] mb-5">
@@ -407,7 +407,7 @@ export default function HomePage() {
                 ))}
               </div>
             </div>
-            <div className="bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] shadow-lg p-8">
+            <div className="bg-[#e8f0fe] rounded-2xl border border-[#b0ccf5] shadow-lg p-8 self-start">
               <SupportForm />
             </div>
           </div>
