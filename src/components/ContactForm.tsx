@@ -63,7 +63,7 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1.5">
-            Имя *
+            Ваше имя *
           </label>
           <input
             type="text"
@@ -76,7 +76,7 @@ export default function ContactForm() {
         </div>
         <div>
           <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1.5">
-            Телефон *
+            Номер телефона *
           </label>
           <input
             type="tel"
@@ -90,7 +90,7 @@ export default function ContactForm() {
       </div>
       <div>
         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1.5">
-          Email
+          Адрес вашей электронной почты
         </label>
         <input
           type="email"
@@ -102,7 +102,7 @@ export default function ContactForm() {
       </div>
       <div>
         <label htmlFor="organization" className="block text-sm font-medium text-gray-700 mb-1.5">
-          Организация
+          Ваша организация
         </label>
         <input
           type="text"
