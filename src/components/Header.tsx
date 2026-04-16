@@ -41,7 +41,7 @@ export default function Header() {
             className={`text-sm font-semibold transition-colors duration-200 ${
               scrolled
                 ? "text-gray-700 hover:text-primary"
-                : "text-white hover:text-white/80"
+                : "text-slate-800 hover:text-primary"
             }`}
           >
             Главная
@@ -55,7 +55,7 @@ export default function Header() {
                 className={`text-sm font-medium transition-colors duration-200 ${
                   scrolled
                     ? "text-gray-500 hover:text-gray-900"
-                    : "text-white/80 hover:text-white"
+                    : "text-slate-600 hover:text-slate-900"
                 }`}
               >
                 {item.name}
@@ -67,7 +67,7 @@ export default function Header() {
             <a
               href="tel:+74957394807"
               className={`flex items-center gap-2 text-sm font-medium transition-colors ${
-                scrolled ? "text-gray-500 hover:text-gray-900" : "text-white/80 hover:text-white"
+                scrolled ? "text-gray-500 hover:text-gray-900" : "text-slate-600 hover:text-slate-900"
               }`}
               title="(495) 739-48-07"
             >
@@ -87,9 +87,9 @@ export default function Header() {
             className="lg:hidden p-2"
           >
             {mobileMenuOpen ? (
-              <X size={22} className={scrolled ? "text-gray-700" : "text-white"} />
+              <X size={22} className={scrolled ? "text-gray-700" : "text-slate-800"} />
             ) : (
-              <Menu size={22} className={scrolled ? "text-gray-700" : "text-white"} />
+              <Menu size={22} className={scrolled ? "text-gray-700" : "text-slate-800"} />
             )}
           </button>
         </div>

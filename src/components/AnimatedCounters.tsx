@@ -9,7 +9,11 @@ const counters = [
   { target: 18, suffix: "M+", label: "населения обслуживается" },
 ];
 
-export default function AnimatedCounters() {
+export default function AnimatedCounters({
+  variant = "dark",
+}: {
+  variant?: "dark" | "light";
+}) {
   const ref = useRef<HTMLDivElement>(null);
   const [animated, setAnimated] = useState(false);
   const [values, setValues] = useState(counters.map(() => 0));
@@ -58,14 +62,14 @@ export default function AnimatedCounters() {
       {counters.map((counter, i) => (
         <div key={counter.label} className="flex items-center gap-10">
           <div className="text-center">
-            <div className="text-4xl font-extrabold text-white tracking-[-0.02em]">
+            <div className={`text-4xl font-extrabold tracking-[-0.02em] ${variant === "light" ? "text-slate-900" : "text-white"}`}>
               {values[i]}
-              <span className="text-[28px] font-bold text-blue-400">{counter.suffix}</span>
+              <span className={`text-[28px] font-bold ${variant === "light" ? "text-sky-600" : "text-blue-400"}`}>{counter.suffix}</span>
             </div>
-            <div className="text-sm text-white/50 mt-1 font-medium">{counter.label}</div>
+            <div className={`text-sm mt-1 font-medium ${variant === "light" ? "text-slate-500" : "text-white/50"}`}>{counter.label}</div>
           </div>
           {i < counters.length - 1 && (
-            <div className="w-px h-10 bg-white/15 hidden sm:block" />
+            <div className={`w-px h-10 hidden sm:block ${variant === "light" ? "bg-slate-200" : "bg-white/15"}`} />
           )}
         </div>
       ))}

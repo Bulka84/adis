@@ -124,9 +124,9 @@ export default function HomePage() {
   return (
     <>
       {/* ===== Hero Section ===== */}
-      <section className="hero-dark min-h-screen flex items-center justify-center pt-12">
-        <div className="hero-gradient-overlay" />
-        <div className="hero-grid-pattern" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f7fbff_58%,#eef4fb_100%)] pt-12">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.10),transparent_26%),radial-gradient(circle_at_bottom_left,rgba(14,165,233,0.08),transparent_24%)]" />
+        <div className="absolute inset-0 opacity-45 [background-image:linear-gradient(rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.12)_1px,transparent_1px)] [background-size:56px_56px]" />
 
         {/* Russia map background */}
         <div className="absolute inset-0 pointer-events-none z-[1] flex items-center justify-center px-6 translate-y-2 lg:translate-y-4 xl:translate-y-8 2xl:translate-y-10">
@@ -134,28 +134,28 @@ export default function HomePage() {
         </div>
 
         {/* Floating orbs */}
-        <div className="absolute w-[500px] h-[500px] bg-blue-600 rounded-full blur-[80px] opacity-25 -top-[150px] -right-[150px] animate-[float_8s_ease-in-out_infinite]" />
-        <div className="absolute w-[400px] h-[400px] bg-violet-600 rounded-full blur-[80px] opacity-25 -bottom-[100px] -left-[100px] animate-[float_10s_ease-in-out_infinite_reverse]" />
+        <div className="absolute w-[500px] h-[500px] bg-sky-300 rounded-full blur-[110px] opacity-20 -top-[150px] -right-[150px] animate-[float_8s_ease-in-out_infinite]" />
+        <div className="absolute w-[400px] h-[400px] bg-cyan-200 rounded-full blur-[110px] opacity-20 -bottom-[100px] -left-[100px] animate-[float_10s_ease-in-out_infinite_reverse]" />
 
         {/* Content */}
         <div className="relative z-[2] mt-4 lg:mt-2 xl:-mt-4 2xl:-mt-2 text-center max-w-[1120px] xl:max-w-[1280px] mx-auto px-6">
-          <h1 className="mx-auto max-w-[920px] text-[clamp(24px,3.2vw,38px)] lg:text-[clamp(28px,3.5vw,46px)] xl:text-[clamp(36px,4.6vw,60px)] font-extrabold text-white leading-[1.03] tracking-[-0.03em] mb-4" style={{ textShadow: "0 2px 20px rgba(2,6,23,0.85), 0 0 50px rgba(2,6,23,0.6)" }}>
+          <h1 className="mx-auto max-w-[920px] text-[clamp(24px,3.2vw,38px)] lg:text-[clamp(28px,3.5vw,46px)] xl:text-[clamp(36px,4.6vw,60px)] font-extrabold text-slate-950 leading-[1.03] tracking-[-0.03em] mb-4" style={{ textShadow: "0 8px 24px rgba(148,163,184,0.16)" }}>
             Программный комплекс
             <br />
             <span className="text-red-500">АДИС</span>
           </h1>
 
-          <p className="text-[clamp(15px,1.5vw,19px)] text-white/60 max-w-[560px] mx-auto mb-8 leading-relaxed" style={{ textShadow: "0 1px 12px rgba(2,6,23,0.7)" }}>
+          <p className="text-[clamp(15px,1.5vw,19px)] text-slate-600 max-w-[560px] mx-auto mb-8 leading-relaxed">
             Комплексная автоматизация диспетчерской службы
             <br />
             скорой медицинской помощи
           </p>
 
           {/* Animated Counters */}
-          <AnimatedCounters />
+          <AnimatedCounters variant="light" />
         </div>
 
-        <HeroScrollIndicator targetId="subsystems" />
+        <HeroScrollIndicator targetId="subsystems" variant="light" />
       </section>
 
       {/* ===== Subsystems Section ===== */}
