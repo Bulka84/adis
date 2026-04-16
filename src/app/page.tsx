@@ -138,14 +138,14 @@ export default function HomePage() {
         <div className="absolute w-[400px] h-[400px] bg-violet-600 rounded-full blur-[80px] opacity-25 -bottom-[100px] -left-[100px] animate-[float_10s_ease-in-out_infinite_reverse]" />
 
         {/* Content */}
-        <div className="relative z-[2] mt-2 lg:-mt-1 xl:-mt-6 text-center max-w-[1180px] xl:max-w-[1320px] mx-auto px-6">
-          <h1 className="text-[clamp(26px,3.7vw,44px)] lg:text-[clamp(30px,4vw,50px)] xl:text-[clamp(38px,5vw,64px)] font-extrabold text-white leading-[1.04] tracking-[-0.03em] mb-5" style={{ textShadow: "0 2px 20px rgba(2,6,23,0.85), 0 0 50px rgba(2,6,23,0.6)" }}>
+        <div className="relative z-[2] mt-4 lg:mt-2 xl:-mt-4 2xl:-mt-2 text-center max-w-[1120px] xl:max-w-[1280px] mx-auto px-6">
+          <h1 className="mx-auto max-w-[920px] text-[clamp(24px,3.2vw,38px)] lg:text-[clamp(28px,3.5vw,46px)] xl:text-[clamp(36px,4.6vw,60px)] font-extrabold text-white leading-[1.03] tracking-[-0.03em] mb-4" style={{ textShadow: "0 2px 20px rgba(2,6,23,0.85), 0 0 50px rgba(2,6,23,0.6)" }}>
             Программный комплекс
             <br />
             <span className="text-red-500">АДИС</span>
           </h1>
 
-          <p className="text-[clamp(15px,1.6vw,20px)] text-white/60 max-w-[580px] mx-auto mb-9 leading-relaxed" style={{ textShadow: "0 1px 12px rgba(2,6,23,0.7)" }}>
+          <p className="text-[clamp(15px,1.5vw,19px)] text-white/60 max-w-[560px] mx-auto mb-8 leading-relaxed" style={{ textShadow: "0 1px 12px rgba(2,6,23,0.7)" }}>
             Комплексная автоматизация диспетчерской службы
             <br />
             скорой медицинской помощи
