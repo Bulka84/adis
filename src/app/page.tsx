@@ -138,7 +138,7 @@ export default function HomePage() {
         <div className="absolute w-[400px] h-[400px] bg-violet-600 rounded-full blur-[80px] opacity-25 -bottom-[100px] -left-[100px] animate-[float_10s_ease-in-out_infinite_reverse]" />
 
         {/* Content */}
-        <div className="relative z-[2] -mt-8 text-center max-w-[1200px] mx-auto px-6">
+        <div className="relative z-[2] -mt-8 text-center max-w-[1320px] mx-auto px-6">
           <h1 className="text-[clamp(38px,5.3vw,64px)] font-extrabold text-white leading-[1.08] tracking-[-0.03em] mb-5" style={{ textShadow: "0 2px 20px rgba(2,6,23,0.85), 0 0 50px rgba(2,6,23,0.6)" }}>
             Программный комплекс
             <br />

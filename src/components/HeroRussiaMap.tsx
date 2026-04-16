@@ -21,7 +21,7 @@ export default function HeroRussiaMap() {
   const maskImage = `url("${mapSrc}")`;
 
   return (
-    <div className="relative mx-auto w-full max-w-[1320px] opacity-75">
+    <div className="relative mx-auto w-[min(118vw,1760px)] max-w-none opacity-75 xl:w-[min(124vw,1920px)] 2xl:w-[min(130vw,2200px)]">
       <Image
         src={mapSrc}
         alt=""
