@@ -14,7 +14,7 @@ import {
 } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 import AnimatedCounters from "@/components/AnimatedCounters";
-import HeroMapOverlay from "@/components/HeroMapOverlay";
+import HeroRussiaMap from "@/components/HeroRussiaMap";
 import HeroScrollIndicator from "@/components/HeroScrollIndicator";
 
 const subsystems = [
@@ -129,25 +129,8 @@ export default function HomePage() {
         <div className="hero-grid-pattern" />
 
         {/* Russia map background */}
-        <div className="absolute inset-[-10%] pointer-events-none z-[1]"
-          style={{
-            maskImage: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 2%, rgba(0,0,0,0.2) 8%, black 20%, rgba(0,0,0,0.15) 55%, transparent 70%)",
-            WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 50%, transparent 2%, rgba(0,0,0,0.2) 8%, black 20%, rgba(0,0,0,0.15) 55%, transparent 70%)",
-          }}
-        >
-          <Image
-            src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/russia-map-3d.jpg`}
-            alt=""
-            fill
-            className="object-cover opacity-70"
-            style={{
-              filter: "invert(1) brightness(1.8) sepia(1) hue-rotate(190deg) saturate(1.5) brightness(0.9) contrast(1.1)",
-            }}
-            priority
-          />
-        </div>
-        <div className="absolute inset-0 pointer-events-none overflow-hidden z-[1]">
-          <HeroMapOverlay />
+        <div className="absolute inset-0 pointer-events-none z-[1] flex items-center justify-center px-6">
+          <HeroRussiaMap />
         </div>
 
         {/* Floating orbs */}
