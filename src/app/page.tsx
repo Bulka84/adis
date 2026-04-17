@@ -125,40 +125,22 @@ export default function HomePage() {
     <>
       {/* ===== Hero Section ===== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#e8ebf2] pt-12">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.06),transparent_26%),radial-gradient(circle_at_bottom_left,rgba(14,165,233,0.05),transparent_24%)]" />
-        <div className="absolute inset-0 opacity-45 [background-image:linear-gradient(rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.12)_1px,transparent_1px)] [background-size:56px_56px]" />
-
         {/* Russia map background */}
-        <div className="absolute inset-0 pointer-events-none z-[1] flex items-center justify-center px-6 translate-y-2 lg:translate-y-4 xl:translate-y-8 2xl:translate-y-10">
+        <div className="absolute inset-0 pointer-events-none z-[1] flex items-center justify-center px-6 translate-y-0 lg:translate-y-1 xl:translate-y-3 2xl:translate-y-4">
           <HeroRussiaMap />
         </div>
-
-        {/* Floating orbs */}
-        <div className="absolute w-[500px] h-[500px] bg-sky-300 rounded-full blur-[110px] opacity-20 -top-[150px] -right-[150px] animate-[float_8s_ease-in-out_infinite]" />
-        <div className="absolute w-[400px] h-[400px] bg-cyan-200 rounded-full blur-[110px] opacity-20 -bottom-[100px] -left-[100px] animate-[float_10s_ease-in-out_infinite_reverse]" />
 
         {/* Heading */}
         <div className="absolute inset-x-0 top-20 sm:top-20 md:top-20 lg:top-20 xl:top-20 2xl:top-22 z-[3]">
           <div className="max-w-[1280px] mx-auto px-6">
-            <h1 className="flex max-w-[390px] flex-col items-start text-left leading-none">
-              <span
-                className="text-[clamp(18px,1.55vw,24px)] font-extrabold uppercase tracking-[-0.03em] text-slate-950"
-                style={{ textShadow: "0 8px 24px rgba(148,163,184,0.12)" }}
-              >
-                Программный комплекс
-              </span>
-              <span className="mt-0.5 max-w-[320px] text-[clamp(10px,0.72vw,12px)] font-semibold uppercase tracking-[-0.02em] text-slate-800/90 leading-[1.02]">
-                автоматизации диспетчерской службы
-                <br />
-                станции скорой медицинской помощи
-              </span>
-              <span
-                className="mt-2 text-[clamp(44px,4.25vw,70px)] font-black uppercase tracking-[-0.06em] text-red-700"
-                style={{ textShadow: "0 10px 26px rgba(127,29,29,0.12)" }}
-              >
-                АДИС
-              </span>
-            </h1>
+            <Image
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-title-adis-cut.png`}
+              alt="Программный комплекс автоматизации диспетчерской службы станции скорой медицинской помощи АДИС"
+              width={393}
+              height={140}
+              className="h-auto w-[min(34vw,393px)] min-w-[250px] max-w-[393px]"
+              priority
+            />
           </div>
         </div>
 
