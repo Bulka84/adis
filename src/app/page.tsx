@@ -132,13 +132,13 @@ export default function HomePage() {
 
         {/* Heading */}
         <div className="absolute inset-x-0 top-20 sm:top-20 md:top-20 lg:top-20 xl:top-20 2xl:top-22 z-[3]">
-          <div className="max-w-[1280px] mx-auto px-6">
+          <div className="max-w-[1200px] mx-auto px-6">
             <Image
               src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-title-adis-cut.png`}
               alt="Программный комплекс автоматизации диспетчерской службы станции скорой медицинской помощи АДИС"
               width={393}
               height={140}
-              className="h-auto w-[min(34vw,393px)] min-w-[250px] max-w-[393px]"
+              className="h-auto w-[min(27vw,315px)] min-w-[200px] max-w-[315px]"
               priority
             />
           </div>
