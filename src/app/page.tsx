@@ -124,8 +124,8 @@ export default function HomePage() {
   return (
     <>
       {/* ===== Hero Section ===== */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[linear-gradient(180deg,#ffffff_0%,#f7fbff_58%,#eef4fb_100%)] pt-12">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.10),transparent_26%),radial-gradient(circle_at_bottom_left,rgba(14,165,233,0.08),transparent_24%)]" />
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#e8ebf2] pt-12">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(59,130,246,0.06),transparent_26%),radial-gradient(circle_at_bottom_left,rgba(14,165,233,0.05),transparent_24%)]" />
         <div className="absolute inset-0 opacity-45 [background-image:linear-gradient(rgba(148,163,184,0.12)_1px,transparent_1px),linear-gradient(90deg,rgba(148,163,184,0.12)_1px,transparent_1px)] [background-size:56px_56px]" />
 
         {/* Russia map background */}
@@ -137,21 +137,33 @@ export default function HomePage() {
         <div className="absolute w-[500px] h-[500px] bg-sky-300 rounded-full blur-[110px] opacity-20 -top-[150px] -right-[150px] animate-[float_8s_ease-in-out_infinite]" />
         <div className="absolute w-[400px] h-[400px] bg-cyan-200 rounded-full blur-[110px] opacity-20 -bottom-[100px] -left-[100px] animate-[float_10s_ease-in-out_infinite_reverse]" />
 
-        {/* Content */}
-        <div className="relative z-[2] mt-4 lg:mt-2 xl:-mt-4 2xl:-mt-2 text-center max-w-[1120px] xl:max-w-[1280px] mx-auto px-6">
-          <h1 className="mx-auto max-w-[920px] text-[clamp(24px,3.2vw,38px)] lg:text-[clamp(28px,3.5vw,46px)] xl:text-[clamp(36px,4.6vw,60px)] font-extrabold text-slate-950 leading-[1.03] tracking-[-0.03em] mb-4" style={{ textShadow: "0 8px 24px rgba(148,163,184,0.16)" }}>
-            Программный комплекс
-            <br />
-            <span className="text-red-500">АДИС</span>
-          </h1>
+        {/* Heading */}
+        <div className="absolute inset-x-0 top-20 sm:top-20 md:top-20 lg:top-20 xl:top-20 2xl:top-22 z-[3]">
+          <div className="max-w-[1280px] mx-auto px-6">
+            <h1 className="flex max-w-[390px] flex-col items-start text-left leading-none">
+              <span
+                className="text-[clamp(18px,1.55vw,24px)] font-extrabold uppercase tracking-[-0.03em] text-slate-950"
+                style={{ textShadow: "0 8px 24px rgba(148,163,184,0.12)" }}
+              >
+                Программный комплекс
+              </span>
+              <span className="mt-0.5 max-w-[320px] text-[clamp(10px,0.72vw,12px)] font-semibold uppercase tracking-[-0.02em] text-slate-800/90 leading-[1.02]">
+                автоматизации диспетчерской службы
+                <br />
+                станции скорой медицинской помощи
+              </span>
+              <span
+                className="mt-2 text-[clamp(44px,4.25vw,70px)] font-black uppercase tracking-[-0.06em] text-red-700"
+                style={{ textShadow: "0 10px 26px rgba(127,29,29,0.12)" }}
+              >
+                АДИС
+              </span>
+            </h1>
+          </div>
+        </div>
 
-          <p className="text-[clamp(15px,1.5vw,19px)] text-slate-600 max-w-[560px] mx-auto mb-8 leading-relaxed">
-            Комплексная автоматизация диспетчерской службы
-            <br />
-            скорой медицинской помощи
-          </p>
-
-          {/* Animated Counters */}
+        {/* Counters */}
+        <div className="relative z-[2] text-center max-w-[1280px] mx-auto px-6 pt-72 sm:pt-76 md:pt-80 lg:pt-80 xl:pt-80">
           <AnimatedCounters variant="light" />
         </div>
 
