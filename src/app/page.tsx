@@ -126,19 +126,19 @@ export default function HomePage() {
       {/* ===== Hero Section ===== */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#e8ebf2] pt-12">
         {/* Russia map background */}
-        <div className="absolute inset-0 pointer-events-none z-[1] flex items-center justify-center px-6 translate-y-0 lg:translate-y-1 xl:translate-y-3 2xl:translate-y-4">
+        <div className="absolute inset-0 pointer-events-none z-[1] flex items-center justify-center px-6 -translate-y-[35px]">
           <HeroRussiaMap />
         </div>
 
         {/* Heading */}
         <div className="absolute inset-x-0 top-20 sm:top-20 md:top-20 lg:top-20 xl:top-20 2xl:top-22 z-[3]">
-          <div className="max-w-[1200px] mx-auto px-6 -ml-px">
+          <div className="max-w-[1200px] mx-auto px-6">
             <Image
               src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-title-adis-cut.png`}
               alt="Программный комплекс автоматизации диспетчерской службы станции скорой медицинской помощи АДИС"
               width={393}
               height={140}
-              className="h-auto w-[min(27vw,315px)] min-w-[200px] max-w-[315px]"
+              className="h-auto w-[min(27vw,317px)] min-w-[202px] max-w-[317px]"
               priority
             />
           </div>

@@ -84,7 +84,7 @@ export default function SupportChat() {
       {/* Floating button */}
       <button
         onClick={() => setIsOpen(true)}
-        className={`fixed bottom-6 right-6 z-50 btn-gradient text-white rounded-xl shadow-lg shadow-blue-600/25 transition-all hover:scale-[1.02] hover:shadow-blue-600/35 flex items-center gap-2 px-5 py-2.5 text-sm font-semibold ${isOpen ? "scale-0 opacity-0" : "scale-100 opacity-100"}`}
+        className={`fixed bottom-6 right-[34px] z-50 btn-gradient text-white rounded-xl shadow-lg shadow-blue-600/25 transition-all hover:scale-[1.02] hover:shadow-blue-600/35 flex items-center gap-2 px-5 py-2.5 text-sm font-semibold ${isOpen ? "scale-0 opacity-0" : "scale-100 opacity-100"}`}
         aria-label="Обратиться в техподдержку"
       >
         <MessageCircle size={20} />

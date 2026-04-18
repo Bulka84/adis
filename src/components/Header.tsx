@@ -38,7 +38,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            className={`text-sm font-semibold transition-colors duration-200 ${
+            className={`ml-[3px] text-sm font-semibold transition-colors duration-200 ${
               scrolled
                 ? "text-gray-700 hover:text-primary"
                 : "text-slate-800 hover:text-primary"
@@ -63,24 +63,7 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:flex items-center gap-3">
-            <a
-              href="tel:+74957394807"
-              className={`flex items-center gap-2 text-sm font-medium transition-colors ${
-                scrolled ? "text-gray-500 hover:text-gray-900" : "text-slate-600 hover:text-slate-900"
-              }`}
-              title="(495) 739-48-07"
-            >
-              <Phone size={16} />
-              <span className="hidden xl:inline">(495) 739-48-07</span>
-            </a>
-            <Link
-              href="/contacts#form"
-              className="btn-gradient px-5 py-2.5 text-sm font-semibold rounded-xl"
-            >
-              Оставить заявку
-            </Link>
-          </div>
+          <div className="hidden lg:block w-[310px]" aria-hidden="true" />
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -93,6 +76,25 @@ export default function Header() {
             )}
           </button>
         </div>
+      </div>
+
+      <div className="hidden lg:flex absolute right-[34px] top-1/2 -translate-y-1/2 z-[60] items-center gap-[10px]">
+        <a
+          href="tel:+74957394807"
+          className={`flex items-center gap-2 text-sm font-medium transition-colors ${
+            scrolled ? "text-gray-500 hover:text-gray-900" : "text-slate-600 hover:text-slate-900"
+          }`}
+          title="(495) 739-48-07"
+        >
+          <Phone size={16} />
+          <span className="hidden xl:inline">(495) 739-48-07</span>
+        </a>
+        <Link
+          href="/contacts#form"
+          className="inline-flex btn-gradient px-5 py-2.5 text-sm font-semibold rounded-xl"
+        >
+          Оставить заявку
+        </Link>
       </div>
 
       {mobileMenuOpen && (
