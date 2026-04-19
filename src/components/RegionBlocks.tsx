@@ -137,10 +137,6 @@ export default function RegionBlocks({ clients }: { clients: Client[] }) {
                       <Server size={12} />
                       {region.totalWorkstations} АРМ
                     </span>
-                    <span className="hidden sm:flex items-center gap-1">
-                      <Calendar size={12} />
-                      {region.yearRange}
-                    </span>
                   </div>
                 </div>
                 <div className="flex items-center gap-3 flex-shrink-0">

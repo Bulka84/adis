@@ -53,21 +53,19 @@ const requisites = [
 export default function AdisNstCompanyPage() {
   return (
     <>
-      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
-        <div className="hero-gradient-overlay" />
-        <div className="hero-grid-pattern" />
-        <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
+      <section className="bg-[#e8ebf2] min-h-screen flex items-center py-32 lg:py-40">
+        <div className="max-w-[1200px] mx-auto px-6">
           <Link
             href="/company"
-            className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors mb-8"
           >
             <ArrowLeft size={18} />
             К странице Компании
           </Link>
-          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
+          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-gray-900 leading-[1.1] tracking-[-0.03em] mb-6">
             ООО &laquo;АДИС-Новые Системные Технологии&raquo;
           </h1>
-          <p className="text-xl text-white/60 max-w-4xl leading-relaxed">
+          <p className="text-xl text-gray-500 max-w-4xl leading-relaxed">
             ООО &laquo;АДИС-Новые Системные Технологии&raquo; занимается внедрением и
             обслуживанием программного продукта Программный комплекс автоматизации
             диспетчерской службы станции скорой медицинской помощи ПК &laquo;АДИС&raquo;
@@ -76,7 +74,7 @@ export default function AdisNstCompanyPage() {
             основании приказа Минкомсвязи России от 06.09.2016 № 426).
           </p>
         </div>
-        <HeroScrollIndicator targetId="adis-nst-activities" />
+        <HeroScrollIndicator targetId="adis-nst-activities" variant="light" />
       </section>
 
       <section id="adis-nst-activities" className="py-24">
@@ -103,7 +101,7 @@ export default function AdisNstCompanyPage() {
 
       <section className="pb-24">
         <div className="max-w-[1200px] mx-auto px-6">
-          <div className="bg-[#dce0ea] border border-white rounded-3xl p-8 md:p-10">
+          <div className="bg-[#e8ebf2] border border-white rounded-3xl p-8 md:p-10">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-12 h-12 gradient-bg-subtle rounded-xl flex items-center justify-center text-primary">
                 <LifeBuoy size={22} />

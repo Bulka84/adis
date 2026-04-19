@@ -54,21 +54,19 @@ const requisites = [
 export default function NstCompanyPage() {
   return (
     <>
-      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
-        <div className="hero-gradient-overlay" />
-        <div className="hero-grid-pattern" />
-        <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
+      <section className="bg-[#e8ebf2] min-h-screen flex items-center py-32 lg:py-40">
+        <div className="max-w-[1200px] mx-auto px-6">
           <Link
             href="/company"
-            className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors mb-8"
           >
             <ArrowLeft size={18} />
             К странице Компании
           </Link>
-          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
+          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-gray-900 leading-[1.1] tracking-[-0.03em] mb-6">
             ООО Фирма &laquo;Новые Системные Технологии&raquo;
           </h1>
-          <p className="text-xl text-white/60 max-w-4xl leading-relaxed">
+          <p className="text-xl text-gray-500 max-w-4xl leading-relaxed">
             ООО Фирма &laquo;Новые Системные Технологии&raquo; занимается разработкой,
             внедрением и обслуживанием собственного программного продукта
             &laquo;Программный комплекс автоматизации диспетчерской службы станции
@@ -78,7 +76,7 @@ export default function NstCompanyPage() {
             России от 06.09.2016 № 426).
           </p>
         </div>
-        <HeroScrollIndicator targetId="nst-activities" />
+        <HeroScrollIndicator targetId="nst-activities" variant="light" />
       </section>
 
       <section id="nst-activities" className="py-24">
@@ -107,7 +105,6 @@ export default function NstCompanyPage() {
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[0.9fr_1.1fr] gap-10 items-start">
             <div>
-              <span className="section-tag mb-4">Заявка</span>
               <h2 className="text-[clamp(28px,3.4vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em] mb-5">
                 Оставить заявку
               </h2>

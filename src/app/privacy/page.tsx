@@ -39,24 +39,22 @@ export default function PrivacyPage() {
 
   return (
     <>
-      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
-        <div className="hero-gradient-overlay" />
-        <div className="hero-grid-pattern" />
-        <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
+      <section className="bg-[#e8ebf2] min-h-screen flex items-center py-32 lg:py-40">
+        <div className="max-w-[1200px] mx-auto px-6">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-12 h-12 bg-white/10 backdrop-blur rounded-xl flex items-center justify-center">
-              <Shield size={24} className="text-blue-400" />
+            <div className="w-12 h-12 bg-[#e8f0fe] rounded-xl flex items-center justify-center">
+              <Shield size={24} className="text-primary" />
             </div>
-            <FileText size={20} className="text-white/40" />
+            <FileText size={20} className="text-gray-500" />
           </div>
-          <h1 className="text-[clamp(28px,4vw,48px)] font-extrabold text-white leading-[1.15] tracking-[-0.03em] mb-6">
+          <h1 className="text-[clamp(28px,4vw,48px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em] mb-6">
             Политика обработки персональных данных
           </h1>
-          <p className="text-lg text-white/50">
+          <p className="text-lg text-gray-500">
             ООО &laquo;АДИС-Новые Системные Технологии&raquo; &middot; Редакция от 01.01.2025
           </p>
         </div>
-        <HeroScrollIndicator targetId="privacy-content" />
+        <HeroScrollIndicator targetId="privacy-content" variant="light" />
       </section>
 
       <section id="privacy-content" className="max-w-4xl mx-auto px-6 py-16 lg:py-20">

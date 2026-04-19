@@ -55,20 +55,17 @@ const versions = [
 export default function VersionsPage() {
   return (
     <>
-      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
-        <div className="hero-gradient-overlay" />
-        <div className="hero-grid-pattern" />
-        <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
-          <span className="section-tag section-tag-light mb-4">Версии</span>
-          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
+      <section className="bg-[#e8ebf2] min-h-screen flex items-center py-32 lg:py-40">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-gray-900 leading-[1.1] tracking-[-0.03em] mb-6">
             Версии ПК &laquo;АДИС&raquo;
           </h1>
-          <p className="text-xl text-white/60 max-w-3xl mb-12">
+          <p className="text-xl text-gray-500 max-w-3xl mb-12">
             История развития программного комплекса. Каждая новая версия
             расширяет возможности автоматизации и повышает удобство работы.
           </p>
         </div>
-        <HeroScrollIndicator targetId="versions-timeline" />
+        <HeroScrollIndicator targetId="versions-timeline" variant="light" />
       </section>
 
       <section id="versions-timeline" className="py-24">

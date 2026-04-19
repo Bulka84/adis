@@ -25,28 +25,25 @@ export default function ClientsPage() {
 
   return (
     <>
-      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
-        <div className="hero-gradient-overlay" />
-        <div className="hero-grid-pattern" />
-        <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
-          <span className="section-tag section-tag-light mb-4">Внедрения</span>
-          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
+      <section className="bg-[#e8ebf2] min-h-screen flex items-center py-32 lg:py-40">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-gray-900 leading-[1.1] tracking-[-0.03em] mb-6">
             География внедрений
           </h1>
-          <p className="text-xl text-white/60 max-w-3xl mb-12">
+          <p className="text-xl text-gray-500 max-w-3xl mb-12">
             С 1992 года ПК &laquo;АДИС&raquo; был внедрён в 35 регионах России и за рубежом.
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {stats.map((stat) => (
-              <div key={stat.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
+              <div key={stat.label} className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-2xl p-5 text-center">
                 <stat.icon size={24} className="text-primary mx-auto mb-3" />
-                <div className="text-2xl font-extrabold text-white mb-1">{stat.value}</div>
-                <div className="text-sm text-white/50">{stat.label}</div>
+                <div className="text-2xl font-extrabold text-gray-900 mb-1">{stat.value}</div>
+                <div className="text-sm text-gray-500">{stat.label}</div>
               </div>
             ))}
           </div>
         </div>
-        <HeroScrollIndicator targetId="clients-regions" />
+        <HeroScrollIndicator targetId="clients-regions" variant="light" />
       </section>
 
       {/* Active Region Blocks (detailed) */}
@@ -66,7 +63,6 @@ export default function ClientsPage() {
       <section id="clients-history" className="py-24 bg-gray-50">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-12">
-            <span className="section-tag mb-4">История</span>
             <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.02em] mb-4">
               История внедрений
             </h2>

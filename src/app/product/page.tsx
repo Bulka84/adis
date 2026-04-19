@@ -20,15 +20,12 @@ export default function ProductPage() {
   return (
     <>
       {/* Hero */}
-      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
-        <div className="hero-gradient-overlay" />
-        <div className="hero-grid-pattern" />
-        <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
-          <span className="section-tag section-tag-light mb-4">Продукт</span>
-          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
+      <section className="bg-[#e8ebf2] min-h-screen flex items-center py-32 lg:py-40">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-gray-900 leading-[1.1] tracking-[-0.03em] mb-6">
             ПК &laquo;АДИС&raquo;
           </h1>
-          <p className="text-xl text-white/60 max-w-3xl leading-relaxed mb-12">
+          <p className="text-xl text-gray-500 max-w-3xl leading-relaxed mb-12">
             Уникальный программный продукт, поддерживающий в полном объёме весь процесс
             обработки вызовов на станциях скорой медицинской помощи — от приёма вызова
             диспетчером &laquo;03&raquo; до статистической обработки накопленных данных.
@@ -40,22 +37,21 @@ export default function ProductPage() {
               { icon: Shield, value: "3 мин", label: "переход на резерв" },
               { icon: Users, value: "16 часов", label: "подготовка диспетчера" },
             ].map((item) => (
-              <div key={item.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 text-center">
+              <div key={item.label} className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-2xl p-5 text-center">
                 <item.icon size={24} className="text-primary mx-auto mb-3" />
-                <div className="text-2xl font-extrabold text-white mb-1">{item.value}</div>
-                <div className="text-sm text-white/50">{item.label}</div>
+                <div className="text-2xl font-extrabold text-gray-900 mb-1">{item.value}</div>
+                <div className="text-sm text-gray-500">{item.label}</div>
               </div>
             ))}
           </div>
         </div>
-        <HeroScrollIndicator targetId="product-subsystems" />
+        <HeroScrollIndicator targetId="product-subsystems" variant="light" />
       </section>
 
       {/* Subsystems */}
       <section id="product-subsystems" className="py-24">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="section-tag mb-4">Состав</span>
             <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">Подсистемы</h2>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -77,10 +73,9 @@ export default function ProductPage() {
       </section>
 
       {/* Technical Details */}
-      <section className="py-24 bg-[#dce0ea]">
+      <section className="py-24 bg-[#e8ebf2]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="section-tag mb-4">Технологии</span>
             <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">Техническая реализация</h2>
           </div>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
@@ -123,7 +118,6 @@ export default function ProductPage() {
       <section className="py-24">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="section-tag mb-4">АРМ</span>
             <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
               Автоматизированные рабочие места
             </h2>

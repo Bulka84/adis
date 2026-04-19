@@ -18,35 +18,32 @@ const contacts = [
 export default function ContactsPage() {
   return (
     <>
-      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
-        <div className="hero-gradient-overlay" />
-        <div className="hero-grid-pattern" />
-        <div className="relative z-[2] max-w-[1200px] mx-auto px-6">
-          <span className="section-tag section-tag-light mb-4">Контакты</span>
-          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
+      <section className="bg-[#e8ebf2] min-h-screen flex items-center py-32 lg:py-40">
+        <div className="max-w-[1200px] mx-auto px-6">
+          <h1 className="text-[clamp(36px,5vw,60px)] font-extrabold text-gray-900 leading-[1.1] tracking-[-0.03em] mb-6">
             Контакты
           </h1>
-          <p className="text-xl text-white/60 max-w-3xl mb-12">
+          <p className="text-xl text-gray-500 max-w-3xl mb-12">
             Свяжитесь с нами для получения информации о ПК &laquo;АДИС&raquo;
-            и обсуждения возможностей автоматизации вашей станции СМП.
+            и обсуждения возможностей автоматизации вашей станции скорой медицинской помощи.
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {contacts.map((item) => (
-              <div key={item.title} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
+              <div key={item.title} className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-2xl p-5">
                 <item.icon size={24} className="text-primary mb-3" />
-                <div className="text-sm text-white/50 mb-1">{item.title}</div>
+                <div className="text-sm text-gray-500 mb-1">{item.title}</div>
                 {item.lines.map((line) =>
                   item.href ? (
-                    <a key={line} href={item.href} className="text-white font-medium text-sm hover:text-primary transition-colors">{line}</a>
+                    <a key={line} href={item.href} className="text-gray-900 font-medium text-sm hover:text-primary transition-colors">{line}</a>
                   ) : (
-                    <div key={line} className="text-white font-medium text-sm">{line}</div>
+                    <div key={line} className="text-gray-900 font-medium text-sm">{line}</div>
                   )
                 )}
               </div>
             ))}
           </div>
         </div>
-        <HeroScrollIndicator targetId="contacts-content" />
+        <HeroScrollIndicator targetId="contacts-content" variant="light" />
       </section>
 
       <section id="contacts-content" className="py-24">

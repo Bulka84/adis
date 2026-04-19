@@ -10,6 +10,7 @@ const navigation = [
   { name: "Внедрения", href: "/clients" },
   { name: "Услуги", href: "/services" },
   { name: "Версии", href: "/versions" },
+  { name: "Инструкции", href: "/instructions" },
   { name: "Контакты", href: "/contacts" },
 ];
 
@@ -36,23 +37,22 @@ export default function Header() {
     >
       <div className="max-w-[1200px] mx-auto px-6">
         <div className="flex items-center justify-between">
-          <Link
-            href="/"
-            className={`ml-[3px] text-sm font-semibold transition-colors duration-200 ${
-              scrolled
-                ? "text-gray-700 hover:text-primary"
-                : "text-slate-800 hover:text-primary"
-            }`}
-          >
-            Главная
-          </Link>
-
           <nav className="hidden lg:flex items-center gap-8">
+            <Link
+              href="/"
+              className={`text-[15px] font-semibold transition-colors duration-200 ${
+                scrolled
+                  ? "text-gray-700 hover:text-primary"
+                  : "text-slate-800 hover:text-primary"
+              }`}
+            >
+              Главная
+            </Link>
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className={`text-sm font-medium transition-colors duration-200 ${
+                className={`text-[15px] font-medium transition-colors duration-200 ${
                   scrolled
                     ? "text-gray-500 hover:text-gray-900"
                     : "text-slate-600 hover:text-slate-900"
@@ -63,7 +63,7 @@ export default function Header() {
             ))}
           </nav>
 
-          <div className="hidden lg:block w-[310px]" aria-hidden="true" />
+          <div className="hidden lg:block" aria-hidden="true" />
 
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -78,10 +78,10 @@ export default function Header() {
         </div>
       </div>
 
-      <div className="hidden lg:flex absolute right-[34px] top-1/2 -translate-y-1/2 z-[60] items-center gap-[10px]">
+      <div className="hidden lg:flex absolute right-[34px] top-1/2 -translate-y-1/2 z-[60] items-center gap-[16px]">
         <a
           href="tel:+74957394807"
-          className={`flex items-center gap-2 text-sm font-medium transition-colors ${
+          className={`flex items-center gap-2 text-[15px] font-medium transition-colors ${
             scrolled ? "text-gray-500 hover:text-gray-900" : "text-slate-600 hover:text-slate-900"
           }`}
           title="(495) 739-48-07"
@@ -91,7 +91,7 @@ export default function Header() {
         </a>
         <Link
           href="/contacts#form"
-          className="inline-flex btn-gradient px-5 py-2.5 text-sm font-semibold rounded-xl"
+          className="inline-flex btn-gradient px-5 py-2.5 text-[15px] font-semibold rounded-xl"
         >
           Оставить заявку
         </Link>

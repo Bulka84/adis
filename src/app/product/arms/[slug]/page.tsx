@@ -47,59 +47,53 @@ export default async function WorkstationPage({
 
   return (
     <>
-      <section className="hero-dark min-h-screen flex items-center py-32 lg:py-40">
-        <div className="hero-gradient-overlay" />
-        <div className="hero-grid-pattern" />
-        <div className="relative z-[2] max-w-[1200px] mx-auto px-6 w-full">
+      <section className="bg-[#e8ebf2] min-h-screen flex items-center py-32 lg:py-40">
+        <div className="max-w-[1200px] mx-auto px-6 w-full">
           <Link
             href="/product"
-            className="inline-flex items-center gap-2 text-white/70 hover:text-white transition-colors mb-8"
+            className="inline-flex items-center gap-2 text-gray-500 hover:text-gray-900 transition-colors mb-8"
           >
             <ArrowLeft size={18} />
             К списку АРМ
           </Link>
 
           <div className="max-w-4xl">
-            <span className="section-tag section-tag-light mb-4">
-              АРМ {String(workstation.number).padStart(2, "0")}
-            </span>
-            <h1 className="text-[clamp(34px,4.6vw,58px)] font-extrabold text-white leading-[1.1] tracking-[-0.03em] mb-6">
+            <h1 className="text-[clamp(34px,4.6vw,58px)] font-extrabold text-gray-900 leading-[1.1] tracking-[-0.03em] mb-6">
               {workstation.name}
             </h1>
-            <p className="text-xl text-white/70 max-w-3xl leading-relaxed mb-10">
+            <p className="text-xl text-gray-600 max-w-3xl leading-relaxed mb-10">
               {workstation.overview}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
-                <div className="text-sm text-white/50 mb-2">Назначение</div>
-                <div className="text-base font-semibold text-white">
+              <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-2xl p-5">
+                <div className="text-sm text-gray-500 mb-2">Назначение</div>
+                <div className="text-base font-semibold text-gray-900">
                   {workstation.description}
                 </div>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
-                <div className="text-sm text-white/50 mb-2">Функций</div>
-                <div className="text-3xl font-extrabold text-white">
+              <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-2xl p-5">
+                <div className="text-sm text-gray-500 mb-2">Функций</div>
+                <div className="text-3xl font-extrabold text-gray-900">
                   {workstation.capabilities.length}
                 </div>
               </div>
-              <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5">
-                <div className="text-sm text-white/50 mb-2">Раздел</div>
-                <div className="text-base font-semibold text-white">
+              <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-2xl p-5">
+                <div className="text-sm text-gray-500 mb-2">Раздел</div>
+                <div className="text-base font-semibold text-gray-900">
                   Состав ПК «АДИС»
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <HeroScrollIndicator targetId="workstation-details" />
+        <HeroScrollIndicator targetId="workstation-details" variant="light" />
       </section>
 
       <section id="workstation-details" className="py-24">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-[1.2fr_0.8fr] gap-8 items-start">
             <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-3xl p-8 md:p-10">
-              <span className="section-tag mb-4">Описание</span>
               <h2 className="text-[clamp(28px,3.4vw,40px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em] mb-5">
                 Основные возможности
               </h2>
@@ -120,8 +114,7 @@ export default async function WorkstationPage({
               </div>
             </div>
 
-            <div className="bg-[#dce0ea] rounded-3xl p-8 border border-white/70 sticky top-28">
-              <span className="section-tag mb-4">Навигация</span>
+            <div className="bg-[#e8ebf2] rounded-3xl p-8 border border-white/70 sticky top-28">
               <h2 className="text-[clamp(24px,3vw,34px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em] mb-4">
                 Другие АРМ
               </h2>

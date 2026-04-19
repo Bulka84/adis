@@ -134,10 +134,10 @@ export default function HomePage() {
         <div className="absolute inset-x-0 top-20 sm:top-20 md:top-20 lg:top-20 xl:top-20 2xl:top-22 z-[3]">
           <div className="max-w-[1200px] mx-auto px-6">
             <Image
-              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-title-adis-cut.png`}
+              src={`${process.env.NEXT_PUBLIC_BASE_PATH || ""}/hero-title-logo1.png`}
               alt="Программный комплекс автоматизации диспетчерской службы станции скорой медицинской помощи АДИС"
-              width={393}
-              height={140}
+              width={385}
+              height={132}
               className="h-auto w-[min(27vw,317px)] min-w-[202px] max-w-[317px]"
               priority
             />
@@ -145,7 +145,7 @@ export default function HomePage() {
         </div>
 
         {/* Counters */}
-        <div className="relative z-[2] text-center max-w-[1280px] mx-auto px-6 pt-72 sm:pt-76 md:pt-80 lg:pt-80 xl:pt-80">
+        <div className="relative z-[2] text-center max-w-[1280px] mx-auto px-6 w-full translate-y-[20%]">
           <AnimatedCounters variant="light" />
         </div>
 
@@ -156,7 +156,6 @@ export default function HomePage() {
       <section id="subsystems" className="py-24 lg:py-28">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="section-tag mb-4">Продукт</span>
             <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
               Подсистемы ПК &laquo;АДИС&raquo;
             </h2>
@@ -196,10 +195,9 @@ export default function HomePage() {
       </section>
 
       {/* ===== Advantages Section ===== */}
-      <section className="py-24 lg:py-28 bg-[#dce0ea]">
+      <section className="py-24 lg:py-28 bg-[#e8ebf2]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="section-tag mb-4">Эффективность</span>
             <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
               Эффект от внедрения
             </h2>
@@ -229,15 +227,14 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ===== Geography Section (Dark) ===== */}
-      <section className="py-24 lg:py-28 bg-gray-950 text-white">
+      {/* ===== Geography Section ===== */}
+      <section className="py-24 lg:py-28 bg-[#e8ebf2]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-12">
-            <span className="section-tag-light section-tag mb-4">География</span>
-            <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-white leading-[1.15] tracking-[-0.03em]">
+            <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
               География внедрений
             </h2>
-            <p className="text-lg text-white/60 max-w-[560px] mx-auto mt-4 leading-relaxed">
+            <p className="text-lg text-gray-500 max-w-[560px] mx-auto mt-4 leading-relaxed">
               ПК &laquo;АДИС&raquo; внедрён и работает на станциях СМП более чем в 500 городах
             </p>
           </div>
@@ -247,7 +244,7 @@ export default function HomePage() {
             {geoRegions.map((region) => (
               <span
                 key={region}
-                className="px-5 py-2.5 rounded-full text-sm font-medium border transition-all bg-white/[0.06] border-white/10 text-white/70 hover:bg-white/[0.12] hover:border-white/20 hover:text-white"
+                className="px-5 py-2.5 rounded-full text-sm font-medium border transition-all bg-[#e8f0fe] border-[#b0ccf5] text-gray-700 hover:bg-white hover:border-primary/40 hover:text-gray-900"
               >
                 {region}
               </span>
@@ -256,27 +253,27 @@ export default function HomePage() {
 
           {/* Geo stat cards */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 text-center hover:bg-white/[0.08] hover:border-white/[0.15] transition-all">
+            <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-2xl p-8 text-center card-hover">
               <div className="text-[42px] font-extrabold leading-none mb-2 bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">500+</div>
-              <div className="text-base font-semibold text-white mb-1">Городов</div>
-              <div className="text-sm text-white/45">по всей России</div>
+              <div className="text-base font-semibold text-gray-900 mb-1">Городов</div>
+              <div className="text-sm text-gray-500">по всей России</div>
             </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 text-center hover:bg-white/[0.08] hover:border-white/[0.15] transition-all">
+            <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-2xl p-8 text-center card-hover">
               <div className="text-[42px] font-extrabold leading-none mb-2 bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">570</div>
-              <div className="text-base font-semibold text-white mb-1">Рабочих места</div>
-              <div className="text-sm text-white/45">Активных АРМ</div>
+              <div className="text-base font-semibold text-gray-900 mb-1">Рабочих места</div>
+              <div className="text-sm text-gray-500">Активных АРМ</div>
             </div>
-            <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8 text-center hover:bg-white/[0.08] hover:border-white/[0.15] transition-all">
+            <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-2xl p-8 text-center card-hover">
               <div className="text-[42px] font-extrabold leading-none mb-2 bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">18M+</div>
-              <div className="text-base font-semibold text-white mb-1">Населения</div>
-              <div className="text-sm text-white/45">Обслуживается системой</div>
+              <div className="text-base font-semibold text-gray-900 mb-1">Населения</div>
+              <div className="text-sm text-gray-500">Обслуживается системой</div>
             </div>
           </div>
 
           <div className="text-center mt-10">
             <Link
               href="/clients"
-              className="inline-flex items-center text-blue-400 font-semibold hover:text-blue-300 transition-colors"
+              className="inline-flex items-center text-primary font-semibold hover:text-primary-dark transition-colors"
             >
               Посмотреть все внедрения
               <ChevronRight size={18} className="ml-1" />
@@ -286,10 +283,9 @@ export default function HomePage() {
       </section>
 
       {/* ===== Testimonials Section ===== */}
-      <section className="py-24 lg:py-28 bg-[#dce0ea]">
+      <section className="py-24 lg:py-28 bg-[#e8ebf2]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-16">
-            <span className="section-tag mb-4">Отзывы</span>
             <h2 className="text-[clamp(32px,4vw,48px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
               Отзывы заказчиков
             </h2>
@@ -329,7 +325,6 @@ export default function HomePage() {
       <section className="py-10 lg:py-12">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="text-center mb-6">
-            <span className="section-tag mb-4">Партнёры</span>
             <h2 className="text-[clamp(24px,3vw,32px)] font-extrabold text-gray-900 leading-[1.15] tracking-[-0.03em]">
               Официальные партнёры
             </h2>
@@ -357,11 +352,10 @@ export default function HomePage() {
       </section>
 
       {/* ===== Contact Form Section ===== */}
-      <section id="form" className="py-24 lg:py-28 bg-[#dce0ea]">
+      <section id="form" className="py-24 lg:py-28 bg-[#e8ebf2]">
         <div className="max-w-[1200px] mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             <div>
-              <span className="section-tag mb-4">Контакты</span>
               <h2 className="text-[clamp(28px,3.5vw,40px)] font-extrabold text-gray-900 leading-[1.2] tracking-[-0.03em] mb-5">
                 Свяжитесь с нами
               </h2>
