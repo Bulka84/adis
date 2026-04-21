@@ -64,6 +64,8 @@ export async function submitSupportTicket(payload: SupportTicketPayload) {
     attachment_names: payload.attachments?.map((file) => file.name) ?? [],
   };
 
+  const url = hasAttachments ? endpoint.replace(/\/tickets$/, "/tickets/multipart") : endpoint;
+
   const body = hasAttachments
     ? (() => {
         const formData = new FormData();
@@ -94,7 +96,7 @@ export async function submitSupportTicket(payload: SupportTicketPayload) {
         metadata,
       });
 
-  const response = await fetch(endpoint, {
+  const response = await fetch(url, {
     method: "POST",
     headers: buildHeaders(hasAttachments),
     body,
