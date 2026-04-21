@@ -5,13 +5,13 @@ import HeroScrollIndicator from "@/components/HeroScrollIndicator";
 
 export const metadata: Metadata = {
   title: "Контакты",
-  description: "Свяжитесь с ООО «АДИС-Новые Системные Технологии» для получения информации о ПК «АДИС». Москва, (495) 739-48-07.",
+  description: "Свяжитесь с ООО «АДИС-Новые Системные Технологии» для получения информации о ПК «АДИС». Москва, +7 (495) 739-48-07.",
 };
 
 const contacts = [
   { icon: MapPin, title: "Адрес офиса", lines: ["г. Москва, ул. Космонавта Волкова, д.10, офис 512"] },
   { icon: MapPin, title: "Почтовый адрес", lines: ["123154, г. Москва, ул. Маршала Тухачевского, 32-2-401"] },
-  { icon: Phone, title: "Телефон", lines: ["(495) 739-48-07"], href: "tel:+74957394807" },
+  { icon: Phone, title: "Телефон", lines: ["+7 (495) 739-48-07"], href: "tel:+74957394807" },
   { icon: Mail, title: "Email", lines: ["nst@adis-nst.ru"], href: "mailto:nst@adis-nst.ru" },
 ];
 

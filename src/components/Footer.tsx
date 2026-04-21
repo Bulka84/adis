@@ -47,7 +47,7 @@ export default function Footer() {
               <li>
                 <a href="tel:+74957394807" className="flex items-start gap-2 text-sm text-white/45 hover:text-white transition-colors">
                   <Phone size={16} className="mt-0.5 shrink-0" />
-                  <span>(495) 739-48-07</span>
+                  <span>+7 (495) 739-48-07</span>
                 </a>
               </li>
               <li>
@@ -62,8 +62,8 @@ export default function Footer() {
               </li>
             </ul>
             <div className="mt-6 pt-4 border-t border-white/[0.08]">
-              <p className="text-sm text-white/45">ООО &laquo;АДИС-Новые Системные Технологии&raquo;</p>
-              <p className="text-sm text-white/45 mt-1">ИНН / КПП: 7734615804 / 773401001</p>
+              <p className="text-sm text-white/45">ООО Фирма &laquo;Новые Системные Технологии&raquo;</p>
+              <p className="text-sm text-white/45 mt-1">ИНН / КПП: 7717026492 / 771701001</p>
               <a
                 href={`${basePath}/documents/nst-ppd.pdf`}
                 target="_blank"

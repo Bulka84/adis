@@ -17,7 +17,7 @@ export default function ClientsPage() {
   const totalWorkstations = activeClients.reduce((sum, c) => sum + c.workstations, 0);
 
   const stats = [
-    { icon: Building2, value: "35", label: "Регионов" },
+    { icon: Building2, value: "30", label: "Регионов" },
     { icon: CheckCircle, value: "500+", label: "внедрённых городов" },
     { icon: Server, value: `${totalWorkstations}+`, label: "АРМ установлено" },
     { icon: Users, value: "18M+", label: "населения обслуживается" },
@@ -31,7 +31,7 @@ export default function ClientsPage() {
             География внедрений
           </h1>
           <p className="text-xl text-gray-500 max-w-3xl mb-12">
-            С 1992 года ПК &laquo;АДИС&raquo; был внедрён в 35 регионах России и за рубежом.
+            С 1992 года ПК &laquo;АДИС&raquo; был внедрён в 30 регионах России и за рубежом.
           </p>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
             {stats.map((stat) => (

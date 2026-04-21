@@ -18,7 +18,6 @@ export const regions: Region[] = [
   { id: 5, region: "Смоленская область", city: "Смоленск", date: "24.07.1995", year: 1995, active: false, country: "Россия", totalArm: 49, totalSubstations: 13 },
   { id: 6, region: "Волгоградская область", city: "Волгоград", date: "04.11.1995", year: 1995, active: false, country: "Россия", totalArm: 367, totalSubstations: 0 },
   { id: 7, region: "ХМАО", city: "Сургут", date: "09.12.1995", year: 1995, active: false, country: "Россия", totalArm: 78, totalSubstations: 10 },
-  { id: 8, region: "Республика Латвия", city: "Рига", date: "14.04.1997", year: 1997, active: false, country: "Латвия", totalArm: 169, totalSubstations: 15 },
   { id: 9, region: "Вологодская область", city: "Череповец", date: "17.02.1998", year: 1998, active: false, country: "Россия", totalArm: 47, totalSubstations: 7 },
   { id: 10, region: "Ивановская область", city: "Иваново", date: "26.02.2000", year: 2000, active: false, country: "Россия", totalArm: 36, totalSubstations: 6 },
   { id: 11, region: "Владимирская область", city: "Владимир", date: "30.06.2001", year: 2001, active: false, country: "Россия", totalArm: 26, totalSubstations: 3 },
