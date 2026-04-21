@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { FileText, ExternalLink, BookOpen, Archive, Smartphone, AlertTriangle } from "lucide-react";
 import HeroScrollIndicator from "@/components/HeroScrollIndicator";
 
@@ -113,12 +114,12 @@ export default function InstructionsPage() {
               Обратитесь в службу технической поддержки — мы подготовим
               необходимые материалы и проконсультируем по работе с комплексом.
             </p>
-            <a
+            <Link
               href="/contacts#form"
               className="inline-flex btn-gradient px-6 py-3 text-sm font-semibold rounded-xl"
             >
               Связаться с техподдержкой
-            </a>
+            </Link>
           </div>
         </div>
       </section>
