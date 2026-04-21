@@ -114,7 +114,7 @@ export default function InstructionsPage() {
               необходимые материалы и проконсультируем по работе с комплексом.
             </p>
             <a
-              href="/support"
+              href="/contacts#form"
               className="inline-flex btn-gradient px-6 py-3 text-sm font-semibold rounded-xl"
             >
               Связаться с техподдержкой
