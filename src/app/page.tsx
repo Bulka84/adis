@@ -259,8 +259,8 @@ export default function HomePage() {
               <div className="text-sm text-gray-500">по всей России</div>
             </div>
             <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-2xl p-8 text-center card-hover">
-              <div className="text-[42px] font-extrabold leading-none mb-2 bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">570</div>
-              <div className="text-base font-semibold text-gray-900 mb-1">Рабочих места</div>
+              <div className="text-[42px] font-extrabold leading-none mb-2 bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">1979</div>
+              <div className="text-base font-semibold text-gray-900 mb-1">Рабочих мест</div>
               <div className="text-sm text-gray-500">Активных АРМ</div>
             </div>
             <div className="bg-[#e8f0fe] border border-[#b0ccf5] rounded-2xl p-8 text-center card-hover">
