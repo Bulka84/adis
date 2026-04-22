@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { FileText, ExternalLink, BookOpen, Archive, Smartphone, AlertTriangle } from "lucide-react";
+import { FileText, ExternalLink, BookOpen, Archive, Smartphone, AlertTriangle, Pill } from "lucide-react";
 import HeroScrollIndicator from "@/components/HeroScrollIndicator";
 
 export const metadata: Metadata = {
@@ -16,29 +16,36 @@ const documents = [
     title: "Руководство пользователя",
     description: "Основное руководство по работе с программным комплексом ПК «АДИС».",
     href: `${basePath}/documents/user-guide.pdf`,
-    size: "5.1 МБ",
+    size: "5.2 МБ",
     icon: BookOpen,
   },
   {
     title: "Подсистема «Архив»",
     description: "Руководство по использованию архива вызовов, отчётов и статистики.",
     href: `${basePath}/documents/archive-guide.pdf`,
-    size: "624 КБ",
+    size: "673 КБ",
     icon: Archive,
   },
   {
     title: "Мобильный АРМ",
     description: "Руководство пользователя мобильного АРМ выездной бригады.",
     href: `${basePath}/documents/mobile-arm-guide.pdf`,
-    size: "1.1 МБ",
+    size: "1.3 МБ",
     icon: Smartphone,
   },
   {
     title: "Действия в нештатных ситуациях",
     description: "Инструкции для нештатных ситуаций и восстановления работоспособности.",
     href: `${basePath}/documents/instructions-emergency.pdf`,
-    size: "253 КБ",
+    size: "512 КБ",
     icon: AlertTriangle,
+  },
+  {
+    title: "Подсистема «Аптека»",
+    description: "Руководство по работе с подсистемой учёта медикаментов и расходных материалов.",
+    href: `${basePath}/documents/pharmacy-guide.pdf`,
+    size: "507 КБ",
+    icon: Pill,
   },
 ];
 
