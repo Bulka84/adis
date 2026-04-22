@@ -24,6 +24,7 @@ export default function Logo({
         height={height}
         className={`h-auto ${variant === "light" ? "brightness-[1.15]" : ""}`}
         style={{ height, width: "auto" }}
+        sizes="120px"
         priority
       />
       {showLabel && (

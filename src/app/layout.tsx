@@ -39,6 +39,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ru">
+      <head>
+        <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+        <meta name="theme-color" content="#e8ebf2" />
+      </head>
       <body className="antialiased">
         <Header />
         <main>{children}</main>

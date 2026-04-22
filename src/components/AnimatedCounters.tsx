@@ -62,7 +62,7 @@ export default function AnimatedCounters({
       {counters.map((counter, i) => (
         <div key={counter.label} className="flex items-center gap-10">
           <div className="text-center">
-            <div className={`text-4xl font-extrabold tracking-[-0.02em] ${variant === "light" ? "text-slate-900" : "text-white"}`}>
+            <div className={`text-4xl font-extrabold tracking-[-0.02em] will-change-contents ${variant === "light" ? "text-slate-900" : "text-white"}`}>
               {values[i]}
               <span className={`text-[28px] font-bold ${variant === "light" ? "text-sky-600" : "text-blue-400"}`}>{counter.suffix}</span>
             </div>

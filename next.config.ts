@@ -10,8 +10,12 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_BASE_PATH: basePath,
   },
   images: {
+    // Static export requires unoptimized: true (no server-side image processing)
     unoptimized: true,
+    formats: ["image/avif", "image/webp"],
   },
+  compress: true,
+  poweredByHeader: false,
 };
 
 export default nextConfig;

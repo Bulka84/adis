@@ -139,6 +139,7 @@ export default function HomePage() {
               width={385}
               height={132}
               className="h-auto w-[min(27vw,317px)] min-w-[202px] max-w-[317px]"
+              sizes="(max-width: 640px) 202px, (max-width: 1024px) 27vw, 317px"
               priority
             />
           </div>
@@ -344,6 +345,7 @@ export default function HomePage() {
                   width={partner.width}
                   height={partner.height}
                   className={partner.imageClassName}
+                  sizes="(max-width: 640px) 120px, 160px"
                 />
               </a>
             ))}

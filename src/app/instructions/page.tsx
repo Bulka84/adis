@@ -71,6 +71,7 @@ export default function InstructionsPage() {
                 width={1280}
                 height={1280}
                 className="w-[min(80vw,460px)] h-auto drop-shadow-xl"
+                sizes="(max-width: 640px) 80vw, 460px"
                 priority
               />
             </div>

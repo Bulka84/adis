@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Segoe UI";
+  font-display: swap;
+}
+
 @theme inline {
   --color-primary: #2563eb;
   --color-primary-dark: #1d4ed8;
